@@ -1,0 +1,235 @@
+\chapter{MOTIVATION}
+\label{chap-one}
+
+Bridges are designed based on discrete events with minimal consideration of interactions between hazards/loading or aging and bridge performance. Therefore a Time Dependent Performance Based Design is proposed to take into account the effects of time and damage in the properties of the materials as a function of time like corrosion effects, strain aging, creep and strength aging; Also since there is a high likelihood for a structure to be subjected to more than one main shock through the life of a structure in regions of high seismicity it is dimmed important to consider the effects multiple earthquakes, as a consequence the effects of repairs on the structural response are also of great importance. A procedure to implement these effects into the analysis of a bridge will be proposed and recommendations on changes that may be made in the design phase to improve the behavior of a bridge during its service life.
+
+\section{Properties that change with time}
+
+\begin{itemize}
+   \item Corrosion
+   \item Strain Aging
+   \item Concrete Strength
+   \item Creep
+   \item Fatigue
+   \item Repairs
+\end{itemize}
+
+\section{Corrosion}
+
+A structure that is originally designed to meet code specifications may not have the same margin of safety once the structure has undergone significant corrosion. 
+
+Research on the cyclic behavior of Corroded RC Columns \cite{Yuan2017a} have shown that at high corrosion levels as high as 35\% the yield strength of the columns decreased by 28\% and the ultimate strength decreased by 30\%, also the ductility is reduced by as much as 18\%. This research was performed by fixing the percentage of corrosion and then run physical tests, then the properties of the materials are modified using empirical equations developed from the tests. While the results appear to correlate well with the tests, this model is not time dependent.
+
+There are time dependent models which first determine the time at which corrosion starts and then a time dependent function in which the diameter of the bar is simulated to reduce it’s section with time \cite{Y.Liu1998a}, \cite{Choe2008}, \cite{Thoft-Christensen}, \cite{Vu2000}.
+
+\subsection{Time to Corrosion}
+
+\textbf{Christensen Model}
+
+Christensen model is based on a probabilistic approach to determine the time to corrosion based on the likelihood of the phenomenon to occur at a certain time in the life of a structure. 
+\begin{equation}
+  T_{corr}=X_I \left[\frac{d_c^2}{4k_e k_t k_c D_0 (t_0 )^n }\left[erf^{-1} \left(1-\frac{C_cr}{C_s} \right) \right]^{-2} \right]^{\frac{1}{1-n}}
+  \label{eq:one}
+\end{equation} 
+
+$X_I$ Model Uncertainty
+
+$d_c$ Depth of reinforcement
+
+$k_e k_t k_c$ Factors that take into account test methods, curing and environment
+
+$D_0$ Diffusion
+
+$C_s$ Water to binder ratio $C_s=A_{cs}\frac{w}{b}+\varepsilon_cs$
+
+
+\textbf{Gosh \& Padgett Model}
+
+The Gosh \& Padgett model is more practical in the sense that it depends on know variables for the concentration of corrosion on the surface of concrete and the internal concentration to calculate the time to corrosion. The model main variable is the Concrete Cover.
+\begin{equation}
+T_{corr}=\frac{x^2}{4 D_c} \left[erf^{-1} \left(\frac{C_0-C_cr}{C_0} \right) \right]^{-2}
+  \label{eq.ten}
+\end{equation} 
+
+\textbf{Liu \& Weyers Model}
+
+\begin{equation}
+  T_{cr}=\frac{W_{crit}^2}{2k_p}
+  \label{eq.two}
+\end{equation} 
+
+\begin{equation}
+  W_{crit}=\rho_{rust} \left[ \pi \left[ \frac{C f'_t}{E_{ef}} \left( \frac{a^2+b^2}{a^2-b^2}+\nu_c \right)+d_o \right] D+ \frac{W_{st}}{\rho_{st}} \right]
+  \label{eq.three}
+\end{equation} 
+
+\begin{equation}
+  k_p=0.098 (\frac{1}{\alpha})\pi Di_{corr}
+  \label{eq.four}
+\end{equation} 
+
+$W_{crit}$: Critical amount of corrosion needed to induce cracking.
+
+$W_{st}$: Mass of corroded steel.
+
+$\rho_{rust}$: Density of rust material.
+
+$\rho_{st}$: Density of steel.
+
+$f'_t$: Tensile strength of the concrete. 
+
+$E_{ef}$: Effective elastic modulus of concrete $E_{ef}=\frac{E_c}{1+\phi_{crit}}$ 
+
+$\phi_{crit}$ Creep coefficient of the concrete.
+
+$D$: Diameter of bar.
+
+$d_o$: Thickness of pore band around the steel/concrete interface.
+
+$\nu_c$: Poisson's ratio of concrete.
+
+$C$: Cover depth
+
+$a=\frac{D+2d_o}{2}$
+
+$b=C+\frac{D+2d_o}{2}$
+
+\subsection{Rate of corrosion (Vu et al.)}
+
+To estimate the loss of steel cross section due to corrosion a time dependent corrosion rate model was developed by \cite{Vu2000}, this model implies that corrosion diminishes with time since as corrosion accumulates with time around the steel, it precludes uncorroded steel to react with the environment. The model is shown in \eref{eq.five}.
+
+\begin{equation}
+  i_{corr}=\frac{37.5(1-w/c)}{d_c}
+  \label{eq.five}
+\end{equation} 
+
+$w/c$: Water Cement ratio
+$d_c$: Cover depth
+
+In \fref{fig:hist1} the behavior of this model for different values of $w/c$ ratios is shown. It can be seen that at larger values of cover depth the rate of corrosion decreases rapidly and as the water cement ratio increases the rate of corrosion decreases.
+%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{Chapter-1/figs/dcvsicor}
+\caption{Concrete cover depth vs rate of corrosion}
+\label{fig:hist1}
+\end{figure}
+
+From the Vu et al model the diamater degradation is calculated according to Choe et al as:
+
+\begin{equation}
+  d_{corr}=d_{bi}-\frac{1.0508(1-w/c)}{d_c} (t-t_{corr})^{0.71}
+  \label{eq.six}
+\end{equation} 
+
+$d_{bi}$: Is the initial diameter of the bar
+
+The diameter is plotted in \fref{fig:hist2}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{Chapter-1/figs/DiameterDecrease}
+\caption{Diameter decrease due to corrosion}
+\label{fig:hist2}
+\end{figure}
+
+These values would correspond to a level of corrosion that varies from 7\% corrosion to 21\% of corrosion for w/c ratios that ranges from 0.4 to 0.6
+The level of corrosion is calculated as:
+
+\begin{equation}
+  C=\frac{G_o-G}{g_ol_o} *100%
+  \label{eq.seven}
+\end{equation} 
+
+Then the Corrosion level is plotted as a function of time in \fref{fig:hist3}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{Chapter-1/figs/CorrosionLevel}
+\caption{Corrosion Level vs Time (years)}
+\label{fig:hist3}
+\end{figure}
+
+\subsection{Corrosion modified properties of reinforcing steel bars}
+
+In a study presented by Yuan et al \cite{Yuan2000} it was shown from experimental results that the mechanical properties of steel for different levels of corrosion could be modified for analysis as follows:
+
+\begin{equation}
+  f_{y,C}=f_{yo}(1-0.021C)
+  \label{eq.eight}
+\end{equation} 
+
+\[
+  f_{u,C}=f_{yo}(1.018-0.019C)
+\]
+\[
+  \delta_{s,C}=\delta_{so}(1-0.021C)
+\]
+\[
+  \varepsilon_{y,C}=\varepsilon_{yo}(1-0.021C)
+\]
+
+\section{Steel Strain Aging}
+
+\subsection{Metallurgical Process}
+
+It is generally accepted that strain aging is due to the diffusion of carbon and/or nitrogen atoms in solution to dislocations that have been generated by plastic deformation. Initially, an atmosphere of carbon and nitrogen atoms is formed along the length of a dislocation, immobilizing it. Extended aging, however, results in sufficient carbon and nitrogen atoms for precipitates to form along the length of the dislocation.
+
+These precipitates impede the motion of subsequent dislocations, and result in some hardening and loss in ductility. The extent of strain aging, which is a thermally activated process, depends primarily on aging time and temperature. In general, extended aging results in a saturation value above which further aging has no effect.
+
+A second strengthening mechanism occurs when cold deformation (alone) is applied to steels. When dislocations break away for their pinning interstitial atoms and begin the movement causing slip they begin to intersect with each other. A complex series of interactions between the dislocations occurs, causing them to pin each other, decreasing their mobility. The decreased mobility also results in higher strength, lower ductility and lower toughness. As a result, cold deformed steels already have lowered ductility and toughness before any strain aging occurs and when heating follows cold deformation, the loss in ductility and toughness is greater. It is this combination of events that is the most damaging to the toughness of structural steels.
+
+\subsection{Strain aging effects in structures}
+
+Since it has already been established that strain aging is the process in which steel after being subjected to large strains develops an increased strength and reduced ductility with time and therefore important to include it in a time dependent analysis, considering the fact that plastic hinges will form in a ductile structure and the steel could reach high strains in this regions of the structure. Furthermore strain aging will cause an increased in the strength of the plastic hinge and as a consequence plastic hinges might be formed in regions of the structures that have not been designed for such demands. The effects of strain aging may also alter the transverse reinforcement due to both cold bending, making them susceptible to brittle failure.
+
+According to \cite{Restrepo-Posada1994} most strain aging occurs in the first 37 days. Also \cite{Momtahan2009} studied strain aging effects with respect to time for different levels of pre-strains that ranged from $2\varepsilon_y - 10\varepsilon_y$ and for a time frame of 3 days to 50 days, from this study it was determined that a significant effect of strain aging took place from pre-strains $5\varepsilon_y$ and on. Strains higher than $15\varepsilon_y$ indicate a performance level in which substantial damage has been induced in the structure such that it is deemed unrepairable and therefore pre-strains higher that $15\varepsilon_y$ are unpractical and not studied by Montahan et al\cite{Momtahan2009}.
+\\
+\textbf{Momtahan et al Strain Aging Effects in Yield Strength of Steel}
+
+Momtahan et al was able to correlate the increase in yield strength as a function of time and the pre-strain in reinforcing steel bars. The proposed equations are shown below:
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{Chapter-1/figs/StrainAging_TimeDependent}
+\caption{Strain Aging effect on Yield Strength vs Time (days)}
+\label{fig:hist4}
+\end{figure}
+
+
+For $10\varepsilon_y$
+
+\begin{equation}
+  \frac{f_y}{f_{yi}}=0.0026t+0.9838
+  \label{eq.nine}
+\end{equation} 
+
+For $5\varepsilon_y$
+
+\begin{equation}
+  \frac{f_y}{f_{yi}}=0.0008t+0.996
+  \label{eq.ten}
+\end{equation} 
+
+For $2\varepsilon_y$
+
+\begin{equation}
+  \frac{f_y}{f_{yi}}=0.0004t+0.9979
+  \label{eq.eleven}
+\end{equation} 
+
+It is proposed to limit the increase in yield strength to the one obtained at 50 days. These equations are plotted in \fref{fig:hist4}
+
+\section{Concrete Strength}
+
+\section{Welding and Fatigue in Steel Structures}
+
+\section{Repair Effects}
+
+\section{Multiple Seismic Events}
+
+\subsection{Main Shock Series}
+
+\subsection{Main Shock - After Shock Series}
+
+\subsection{Main Shock - After Shock Series - Repair Series}
