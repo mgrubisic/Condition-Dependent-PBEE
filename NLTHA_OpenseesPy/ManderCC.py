@@ -27,4 +27,4 @@ def ManderCC(fpc,Ah,fyh,Dprime,S):
     FCU=-fcu
     ECU=-ecu
        
-    return FCC, ECC, FCU, ECU;
+    return FCC, ECC, FCU, ECU

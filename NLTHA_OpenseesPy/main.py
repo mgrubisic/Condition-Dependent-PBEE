@@ -54,7 +54,7 @@ dti= 0.375
 MS_path=r'C:\Users\vacalder\Documents\TimeDependent_PBEE\EarthquakeSelection\MainShock_Test'
 MSListing = os.listdir(MS_path)
 rootdir=r'C:\Users\vacalder\Documents\TimeDependent_PBEE\NLTHA_OpenseesPy'
-PCol = 2000.0*kip
+PCol = 150.0*kip
 
 # ----------------------------------------------------------------------------
 #|                             BATCH RUN
