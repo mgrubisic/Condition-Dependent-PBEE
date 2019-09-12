@@ -7,8 +7,9 @@ Created on Wed Aug 14 16:51:13 2019
 
 from openseespy.opensees import *
 from __main__ import *
-import readrecord
+import ReadRecord
 import math
+from LibUnitsMUS import *
 
 def NLTHA_Run(MS_path,GM,PCol):
     #------------------------------------------------------------------------------ 
@@ -16,9 +17,10 @@ def NLTHA_Run(MS_path,GM,PCol):
     #------------------------------------------------------------------------------
 
     infile=MS_path+"\\"+GM
-    outfile=r'C:\Users\vacalder\Documents\TimeDependent_PBEE\EarthquakeSelection\Mainshock_Test_g3files'+"\\"+GM+".g3"
-    rrec=readrecord.readrecord(infile,outfile)
-      
+    outfile=r'C:\Users\vacalder\Documents\ConditionDependent_PBEE\Condition-Dependent-PBEE\EarthquakeSelection\Mainshock_Test_g3files'+"\\"+GM+".g3"
+    dt,npt = ReadRecord.ReadRecord(infile,outfile)
+    print(dt)
+    
     ##import the os module
     #import os
     #import math
@@ -50,12 +52,13 @@ def NLTHA_Run(MS_path,GM,PCol):
     #applying Dynamic Ground motion analysis
     GMdirection = 1
     GMfile = outfile
-    GMfact = 980.0
+    GMfact = 1*g
     
     
     
     Lambda = eigen('-fullGenLapack', 1) # eigenvalue mode 1
     Omega = math.pow(Lambda, 0.5)
+    
     betaKcomm = 2 * (0.02/Omega)
     
     xDamp = 0.02				# 2% damping ratio
@@ -67,10 +70,10 @@ def NLTHA_Run(MS_path,GM,PCol):
     
     # Uniform EXCITATION: acceleration input
     IDloadTag = 400			# load tag
-    dt = 0.005			# time step for input ground motion
+    Dt = dt			# time step for input ground motion
     GMfatt = 1.0*g			# data in input file is in g Unifts -- ACCELERATION TH
     maxNumIter = 10
-    timeSeries('Path', 2, '-dt', dt, '-filePath', GMfile, '-factor', GMfact)
+    timeSeries('Path', 2, '-dt', Dt, '-filePath', GMfile, '-factor', GMfact)
     pattern('UniformExcitation', IDloadTag, GMdirection, '-accel', 2) 
     
     wipeAnalysis()
@@ -85,8 +88,8 @@ def NLTHA_Run(MS_path,GM,PCol):
     integrator('Newmark', NewmarkGamma, NewmarkBeta)
     analysis('Transient')
     
-    DtAnalysis = rrec[0]
-    TmaxAnalysis = DtAnalysis*rrec[1]
+    DtAnalysis = dt
+    TmaxAnalysis = DtAnalysis*npt
     
     Nsteps =  int(TmaxAnalysis/ DtAnalysis)
     
@@ -120,7 +123,7 @@ def NLTHA_Run(MS_path,GM,PCol):
             else:
                 continue
     
-    u2 = nodeDisp(2, 1)
+    #u2 = nodeDisp(2, 1)
     #print("u2 = ", u2)
     #
     #d=open("C:\\Opensees Python\\OpenseesPy examples\\Data-2c\\DFree.out")
@@ -142,4 +145,4 @@ def NLTHA_Run(MS_path,GM,PCol):
     #plt.show()
     #
     #
-    #wipe()
+    wipe()

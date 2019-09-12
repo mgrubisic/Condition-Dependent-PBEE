@@ -5,38 +5,108 @@ Created on Wed Sep  4 16:30:08 2019
 @author: VACALDER
 """
 
-# PROGRAM TO READ GROUND MOTION FILES
-#   Victor A Calderon
-#   PhD Student/ Research Assistant
-#   NC STATE UNIVERSITY 
-#   2019 (c)
+# ReadRecord.py
+# ------------------------------------------------------------------------------------------------------------
+#
+# Written: minjie
+# Date: May 2016
 
-def readrecord(inFile, outFile):
+# A procedure which parses a ground motion record from the PEER
+# strong motion database by finding dt in the record header, then
+# echoing data values to the output file.
+#
+# Formal arguments
+#	inFilename -- file which contains PEER strong motion record
+#	outFilename -- file to be written in format G3 can read
+# Return values
+#	dt -- time step determined from file header
+#	nPts -- number of data points from file header
+#
+# Assumptions
+#	The header in the PEER record is, e.g., formatted as 1 of following:
+#  1) new PGA database
+#	 PACIFIC ENGINEERING AND ANALYSIS STRONG-MOTION DATA
+#	  IMPERIAL VALLEY 10/15/79 2319, EL CENTRO ARRAY 6, 230                           
+#	  ACCELERATION TIME HISTORY IN UNITS OF G                                         
+#	  3930 0.00500 NPTS, DT
 
-    with open(inFile) as GMi:
-        head1  = [next(GMi) for x in range(4)]
-        Data1 = GMi.read()
-        GMi.close
-    #print(head)
+#   2) old SMD database
+#	 PACIFIC ENGINEERING AND ANALYSIS STRONG-MOTION DATA
+#	  IMPERIAL VALLEY 10/15/79 2319, EL CENTRO ARRAY 6, 230                           
+#	  ACCELERATION TIME HISTORY IN UNITS OF G                                         
+#	  NPTS=  3930, DT= .00500 SEC
+
+
+def ReadRecord (inFilename, outFilename):
+
+    dt = 0.0
+    npts = 0
     
-    EQ_DataLine1 = head1[3]
-    dt_pos1      = EQ_DataLine1.find("DT=")
+    # Open the input file and catch the error if it can't be read
+    inFileID = open(inFilename, 'r')
     
-    # Read from i to i+5 in line 3
-    
-    dt  = float(EQ_DataLine1[dt_pos1+5:dt_pos1+11])
-    a1   = Data1.split()
-    A1   = [float(i) for i in a1]
-    npt = len(A1)
-    
-    #        plt.plot(t1,A1)
-    #        plt.plot(t2,A2)
-    #        plt.plot(t2_new,A2_new)
-    
-    
-    with open(outFile, 'w') as f:
-        for item in A1:
-            f.write("%s\n" % item)
-    
-    f.close
-    return dt,npt
+    # Open output file for writing
+    outFileID = open(outFilename, 'w')
+	
+    # Flag indicating dt is found and that ground motion
+    # values should be read -- ASSUMES dt is on last line
+    # of header!!!
+    flag = 0
+	
+    # Look at each line in the file
+    for line in inFileID:
+        if line == '\n':
+            # Blank line --> do nothing
+            continue
+        elif flag == 1:
+            # Echo ground motion values to output file
+            outFileID.write(line)
+        else:
+            # Search header lines for dt
+            words = line.split()
+            lengthLine = len(words)
+
+            if lengthLine >= 4:
+
+                if words[0] == 'NPTS=':
+                    # old SMD format
+                    for word in words:
+                        if word != '':
+                            # Read in the time step
+                            if flag == 1:
+                                dt = float(word)
+                                break
+
+                            if flag == 2:
+                                npts = int(word.strip(','))
+                                flag = 0
+
+                            # Find the desired token and set the flag
+                            if word == 'DT=' or word == 'dt':
+                                flag = 1
+
+                            if word == 'NPTS=':
+                                flag = 2
+                        
+                    
+                elif words[-1] == 'DT':
+                    # new NGA format
+                    count = 0
+                    for word in words:
+                        if word != '':
+                            if count == 0:
+                                npts = int(word)
+                            elif count == 1:
+                                dt = float(word)
+                            elif word == 'DT':
+                                flag = 1
+                                break
+
+                            count += 1
+
+                        
+
+    inFileID.close()
+    outFileID.close()
+
+    return dt, npts

@@ -25,13 +25,13 @@ import matplotlib.pyplot as plt
 
 
 
-MS_path=r'C:\Users\vacalder\Documents\TimeDependent_PBEE\EarthquakeSelection\MainShock_Test'
+MS_path=r'C:\Users\vacalder\Documents\ConditionDependent_PBEE\Condition-Dependent-PBEE\EarthquakeSelection\MainShock_Test'
 MSListing = os.listdir(MS_path)
 icover=[4.,5.,7.5]
 iTcorr= [1.1307,1.7667,3.975]
 iTime= [5.,10.,15., 20., 25., 30., 35., 40., 45., 50., 55., 60., 65., 70., 75.]
 iwcr= [0.40, 0.45, 0.50, 0.55, 0.60, 0.65, 0.70]
-rootdir=r'C:\Users\vacalder\Documents\TimeDependent_PBEE\NLTHA_OpenseesPy\data'
+rootdir=r'C:\Users\vacalder\Documents\ConditionDependent_PBEE\Condition-Dependent-PBEE\NLTHA_OpenseesPy\data'
 
 GM=r"RSN1231_CHICHI_CHY080-E.AT2"
 

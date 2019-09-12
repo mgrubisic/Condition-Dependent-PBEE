@@ -51,10 +51,10 @@ iTime= [5.,10.,15., 20., 25., 30., 35., 40., 45., 50., 55., 60., 65., 70., 75.]
 iwcr= [0.40, 0.45, 0.50, 0.55, 0.60, 0.65, 0.70]
 dbi= 0.75   
 dti= 0.375  
-MS_path=r'C:\Users\vacalder\Documents\TimeDependent_PBEE\EarthquakeSelection\MainShock_Test'
+MS_path=r'C:\Users\vacalder\Documents\ConditionDependent_PBEE\Condition-Dependent-PBEE\EarthquakeSelection\MainShock_Test'
 MSListing = os.listdir(MS_path)
-rootdir=r'C:\Users\vacalder\Documents\TimeDependent_PBEE\NLTHA_OpenseesPy'
-PCol = 150.0*kip
+rootdir=r'C:\Users\vacalder\Documents\ConditionDependent_PBEE\Condition-Dependent-PBEE\NLTHA_OpenseesPy'
+PCol =2000.0*kip
 
 # ----------------------------------------------------------------------------
 #|                             BATCH RUN
@@ -69,6 +69,7 @@ for GM in MSListing:
         for Time in iTime:
             for wcr in iwcr:
                 #set Functions for Fiber Model and NLTHA
+                print ('cover is: ', cover,' and Time is:', Time,'and w/c: ',wcr)
                 Tcorr=iTcorr[i]
                 
                 
@@ -85,10 +86,10 @@ for GM in MSListing:
                 CLt   = (0.55795-Atcm*7800./0.55795)*100
                 datadir=rootdir+"\\"+"data"+"\\"+GM+"\\"+str(cover)+"\\"+str(wcr)+"\\"+str(Time)
                 
-#               if not os.path.exists(datadir):
-#               os.makedirs(datadir)
+                if not os.path.exists(datadir):
+                    os.makedirs(datadir)
                 
-                Build_RC_Column.Build_RC_Column(CLl,dblc,cover,Ablc,CLt,Atc,dbtc,datadir)
+                Build_RC_Column.Build_RC_Column(CLl,dblc,cover,Ablc,CLt,Atc,dbtc,datadir,PCol)
                 NLTHA_Run.NLTHA_Run(MS_path,GM,PCol)
                     
                     

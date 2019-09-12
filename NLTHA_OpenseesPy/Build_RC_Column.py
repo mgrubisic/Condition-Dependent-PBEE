@@ -16,7 +16,7 @@ import ManderCC
 from __main__ import *
 
 
-def Build_RC_Column(CLl, dblc, cover, Ablc, CLt, Atc, dbtc, datadir):
+def Build_RC_Column(CLl, dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol):
     # -----------------------------------------------------------------------------
     #	OpenSees (Tcl) code by:	Silvia Mazzoni & Frank McKenna, 2006
 
@@ -45,12 +45,12 @@ def Build_RC_Column(CLl, dblc, cover, Ablc, CLt, Atc, dbtc, datadir):
 
     model('basic', '-ndm', 2, '-ndf', 3)
     LCol = 36.0 * ft  # column length
-    Weight = 2000.0 * kip  # superstructure weight
+    Weight = PCol  # superstructure weight
 
     # define section geometry
     DCol = 40.0 * inch  # Column Diameterepth
 
-    PCol = Weight  # nodal dead-load weight per column
+    #PCol = Weight  # nodal dead-load weight per column
     Mass = PCol / g
 
     ACol = 0.25 * math.pi * DCol ** 2  # cross-sectional area, make stiff
