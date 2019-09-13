@@ -16,7 +16,7 @@ import ManderCC
 from __main__ import *
 
 
-def Build_RC_Column(CLl, dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol):
+def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol):
     # -----------------------------------------------------------------------------
     #	OpenSees (Tcl) code by:	Silvia Mazzoni & Frank McKenna, 2006
 
@@ -49,6 +49,7 @@ def Build_RC_Column(CLl, dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol):
 
     # define section geometry
     DCol = 40.0 * inch  # Column Diameterepth
+    
 
     #PCol = Weight  # nodal dead-load weight per column
     Mass = PCol / g
@@ -86,14 +87,16 @@ def Build_RC_Column(CLl, dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol):
     numBarsSec = 16  # number of uniformly-distributed longitudinal-reinforcement bars
     barAreaSec = Ablc * mm2  # area of longitudinal-reinforcement bars
     dbl = dblc * mm
+     
 
     # Transverse Steel Properties
     fyt = 60.0 * ksi * (1 - 0.021 * CLt)  # Yield Stress of Transverse Steel
     Ast = Atc * mm2  # Area of transverse steel
     dbt = dbtc * mm  # Diameter of transverse steel
     st = 2.0 * inch  # Spacing of spiral
-    Dprime = DCol - 2 * c - dbt  # Inner core diameter
-    Rbl = Dprime * 0.5 - dbt - dbl * 0.5  # Location of longitudinal bar
+    Dprime = DCol - 2 * c - dti*0.5  # Inner core diameter
+    Rbl = Dprime * 0.5 - dti*0.5 - dbi * 0.5  # Location of longitudinal bar
+    
 
     # nominal concrete compressive strength
     fpc = 5.0 * ksi  # CONCRETE Compressive Strength, ksi   (+Tension, -Compression)
@@ -148,11 +151,11 @@ def Build_RC_Column(CLl, dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol):
     patch('circ', 2, nfCoverT, nfCoverR, 0.0, 0.0, rc, ro, 0.0, 360.0)  # Define Cover Patch
 
     # Create the reinforcing fibers
-    layer('circ', 3, numBarsSec, barAreaSec, 0.0, 0.0, rc, theta, 360.0)
+    layer('circ', 3, numBarsSec, barAreaSec, 0.0, 0.0, Rbl, theta, 360.0)
 
     ColTransfTag = 1
     geomTransf('Linear', ColTransfTag)
-    numIntgrPts = 5
+    numIntgrPts = 9
     eleTag = 1
 
     # import InelasticFiberSection
@@ -160,9 +163,10 @@ def Build_RC_Column(CLl, dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol):
     element('nonlinearBeamColumn', eleTag, 1, 2, numIntgrPts, ColSecTag, ColTransfTag)
 
     recorder('Node', '-file', datadir + '/DFree.out', '-time', '-node', 2, '-dof', 1, 2, 3, 'disp')
-    recorder('Node', '-file', datadir + '/DBase.out', '-time', '-node', 1, '-dof', 1, 2, 3, 'disp')
+    # recorder('Node', '-file', datadir + '/DBase.out', '-time', '-node', 1, '-dof', 1, 2, 3, 'disp')
     recorder('Node', '-file', datadir + '/RBase.out', '-time', '-node', 1, '-dof', 1, 2, 3, 'reaction')
     # recorder('Drift', '-file', datadir+'Data-2c/Drift.out','-time', '-node', 1, '-dof', 1,2,3, 'disp')
-    recorder('Element', '-file', datadir + '/FCol.out', '-time', '-ele', 1, 'globalForce')
-    recorder('Element', '-file', datadir + '/ForceColSec1.out', '-time', '-ele', 1, 'section', 1, 'force')
+    # recorder('Element', '-file', datadir + '/FCol.out', '-time', '-ele', 1, 'globalForce')
+    # recorder('Element', '-file', datadir + '/ForceColSec1.out', '-time', '-ele', 1, 'section', 1, 'force')
+    recorder('Element', '-file', datadir + '/StressStrain.out', '-time', '-ele', 1, 'section', 1, 'fiber', '1', 'stressStrain')  #Rbl,0, IDreinf
     # recorder('Element', '-file', datadir+'Data-2c/DCol.out','-time', '-ele', 1, 'deformations')

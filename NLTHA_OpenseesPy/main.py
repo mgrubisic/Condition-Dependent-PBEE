@@ -23,6 +23,8 @@ Created on Wed Aug 14 16:32:05 2019
 # ----------------------------------------------------------------------------
 
 #import the os module
+import time
+start_time = time.time()
 import os
 import math
 import numpy as np
@@ -64,6 +66,7 @@ PCol =2000.0*kip
 
 for GM in MSListing:
     i=-1
+    print('GM = ',GM)
     for cover in icover:
         i=i+1
         for Time in iTime:
@@ -73,24 +76,37 @@ for GM in MSListing:
                 Tcorr=iTcorr[i]
                 
                 
-                dblc  = dbi*25.4-(1.0508*(1-wcr)**1.64)*(Time-Tcorr)**0.71
+                dblc  = dbi*25.4-(((1.0508*(1-wcr)**(-1.64))/(cover*10))*(Time-Tcorr)**0.71)
                 Ablc  = 0.25*math.pi*dblc**2
                 Ablcm = Ablc/(1000.**2)
                 Mcorr = Ablcm*7800.
                 CLl   = (1-Ablcm*7800./2.223179)*100
                 
                 
-                dbtc  = dti*25.4-(1.0508*(1-wcr)**1.64)*(Time-Tcorr)**0.71
+                dbtc  = dti*25.4-(((1.0508*(1-wcr)**(-1.64))/(cover*10))*(Time-Tcorr)**0.71)
                 Atc  = 0.25*math.pi*dbtc**2
                 Atcm = Atc/(1000.**2)
-                CLt   = (0.55795-Atcm*7800./0.55795)*100
+                CLt   = ((0.55795-Atcm*7800.)/0.55795)*100
                 datadir=rootdir+"\\"+"data"+"\\"+GM+"\\"+str(cover)+"\\"+str(wcr)+"\\"+str(Time)
+                
+                
+                
+#                print('Tcorr = ',Tcorr)
+#                print('Ablc  = ',Ablc)
+#                print('Ablcm = ',Ablcm)
+#                print('Mcorr = ',Mcorr)
+#                print('CLl   = ',CLl )
+#                print('dbtc  = ',dbtc)
+#                print('Atc  = ',Atc)
+#                print('Atcm = ',Atcm)
+#                print('CLt   = ',CLt)
                 
                 if not os.path.exists(datadir):
                     os.makedirs(datadir)
                 
-                Build_RC_Column.Build_RC_Column(CLl,dblc,cover,Ablc,CLt,Atc,dbtc,datadir,PCol)
+                Build_RC_Column.Build_RC_Column(dbi,dti,CLl,dblc,cover,Ablc,CLt,Atc,dbtc,datadir,PCol)
                 NLTHA_Run.NLTHA_Run(MS_path,GM,PCol)
                     
                     
 print("ALL ANALYSIS COMPLETE")
+print("--- %s minutes ---" % ((time.time() - start_time)/60))
