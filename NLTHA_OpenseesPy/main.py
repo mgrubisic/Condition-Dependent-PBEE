@@ -31,7 +31,7 @@ import numpy as np
 from LibUnitsMUS import *
 import Build_RC_Column
 import math
-import NLTHA_Run
+
 
 # ----------------------------------------------------------------------------
 #| VARIABLES THAT CHANGE WITH TIME
@@ -50,13 +50,13 @@ import NLTHA_Run
 icover=[4.,5.,7.5]
 iTcorr= [1.1307,1.7667,3.975]
 iTime= [5.,10.,15., 20., 25., 30., 35., 40., 45., 50., 55., 60., 65., 70., 75.]
-iwcr= [0.40, 0.45, 0.50, 0.55, 0.60, 0.65, 0.70]
+iwcr= [0.40, 0.45, 0.50, 0.55, 0.60]
 dbi= 0.75   
 dti= 0.375  
 MS_path=r'C:\Users\vacalder\Documents\ConditionDependent_PBEE\Condition-Dependent-PBEE\EarthquakeSelection\MainShock_Test'
 MSListing = os.listdir(MS_path)
 rootdir=r'C:\Users\vacalder\Documents\ConditionDependent_PBEE\Condition-Dependent-PBEE\NLTHA_OpenseesPy'
-PCol =2000.0*kip
+PCol =225.0*kip
 
 # ----------------------------------------------------------------------------
 #|                             BATCH RUN
@@ -104,8 +104,8 @@ for GM in MSListing:
                 if not os.path.exists(datadir):
                     os.makedirs(datadir)
                 
-                Build_RC_Column.Build_RC_Column(dbi,dti,CLl,dblc,cover,Ablc,CLt,Atc,dbtc,datadir,PCol)
-                NLTHA_Run.NLTHA_Run(MS_path,GM,PCol)
+                Build_RC_Column.Build_RC_Column(dbi,dti,CLl,dblc,cover,Ablc,CLt,Atc,dbtc,datadir,PCol,MS_path,GM)
+                #NLTHA_Run.NLTHA_Run(MS_path,GM,PCol)
                     
                     
 print("ALL ANALYSIS COMPLETE")
