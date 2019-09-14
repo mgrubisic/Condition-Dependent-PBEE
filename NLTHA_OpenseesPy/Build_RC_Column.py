@@ -44,7 +44,7 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol)
     # ------------------------------------------------------------------------------
 
     model('basic', '-ndm', 2, '-ndf', 3)
-    LCol = 36.0 * ft  # column length
+    LCol = 8.0 * ft  # column length
     Weight = PCol  # superstructure weight
 
     # define section geometry

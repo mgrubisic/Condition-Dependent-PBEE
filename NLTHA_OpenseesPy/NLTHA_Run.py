@@ -52,7 +52,7 @@ def NLTHA_Run(MS_path,GM,PCol):
     #applying Dynamic Ground motion analysis
     GMdirection = 1
     GMfile = outfile
-    GMfact = 1*g
+    GMfact = 1.5
     
     
     
@@ -71,9 +71,9 @@ def NLTHA_Run(MS_path,GM,PCol):
     # Uniform EXCITATION: acceleration input
     IDloadTag = 400			# load tag
     Dt = dt			# time step for input ground motion
-    GMfatt = 1.0*g			# data in input file is in g Unifts -- ACCELERATION TH
+    GMfatt = GMfact*g			# data in input file is in g Unifts -- ACCELERATION TH
     maxNumIter = 10
-    timeSeries('Path', 2, '-dt', Dt, '-filePath', GMfile, '-factor', GMfact)
+    timeSeries('Path', 2, '-dt', Dt, '-filePath', GMfile, '-factor', GMfatt)
     pattern('UniformExcitation', IDloadTag, GMdirection, '-accel', 2) 
     
     wipeAnalysis()
@@ -145,4 +145,4 @@ def NLTHA_Run(MS_path,GM,PCol):
     #plt.show()
     #
     #
-    wipe()
+    #wipe()
