@@ -94,9 +94,9 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
     dbt = dbtc * mm  # Diameter of transverse steel
     st = 2.0 * inch  # Spacing of spiral
     Dprime = DCol - 2 * c - dti*0.5  # Inner core diameter
-    print('Dprime= ',Dprime)
+    #print('Dprime= ',Dprime)
     Rbl = Dprime * 0.5 - dti*0.5 - dbi * 0.5  # Location of longitudinal bar
-    print('Rbl =', Rbl)
+    #print('Rbl =', Rbl)
 
     # nominal concrete compressive strength
     fpc = 5.0 * ksi  # CONCRETE Compressive Strength, ksi   (+Tension, -Compression)
@@ -155,20 +155,24 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
 
     ColTransfTag = 1
     geomTransf('Linear', ColTransfTag)
-    numIntgrPts = 5
+    numIntgrPts = 9
     eleTag = 1
 
     # import InelasticFiberSection
+    #element('nonlinearBeamColumn', eleTag, 1, 2, numIntgrPts, ColSecTag, ColTransfTag)
+    ColIntTag=1
+    beamIntegration('Lobatto',ColIntTag,ColSecTag,numIntgrPts)
+    element('forceBeamColumn', eleTag, 1, 2, ColTransfTag,ColIntTag,'-mass',0.0)
 
-    element('nonlinearBeamColumn', eleTag, 1, 2, numIntgrPts, ColSecTag, ColTransfTag)
-
-    recorder('Node', '-file', datadir + '/DFree.out', '-time', '-node', 2, '-dof', 1, 2, 3, 'disp')
+    recorder('Node', '-file', datadir + '/DFree.out', '-time','-node', 2, '-dof', 1, 2, 3, 'disp')
     # recorder('Node', '-file', datadir + '/DBase.out', '-time', '-node', 1, '-dof', 1, 2, 3, 'disp')
     recorder('Node', '-file', datadir + '/RBase.out', '-time', '-node', 1, '-dof', 1, 2, 3, 'reaction')
     # recorder('Drift', '-file', datadir+'Data-2c/Drift.out','-time', '-node', 1, '-dof', 1,2,3, 'disp')
     # recorder('Element', '-file', datadir + '/FCol.out', '-time', '-ele', 1, 'globalForce')
     # recorder('Element', '-file', datadir + '/ForceColSec1.out', '-time', '-ele', 1, 'section', 1, 'force')
-    recorder('Element', '-file', datadir + '/StressStrain.out', '-time', '-ele', 1, 'section', 1, 'fiber', '1', 'stressStrain')  #Rbl,0, IDreinf
+    recorder('Element', '-file', datadir + '/StressStrain.out', '-time','-ele', 1, 'section', '1', 'fiber', str(Rbl)+', 0.0','mat','3','stressStrain')  #Rbl,0, IDreinf
+    recorder('Element', '-file', datadir + '/StressStrain2.out','-time','-ele', 1, 'section', '2', 'fiber', str(-Dprime)+', 0.0','mat','1','stressStrain')  #Rbl,0, IDreinf
+    recorder('Element', '-file', datadir + '/StressStrain3.out','-time','-ele', 1, 'section', '2', 'fiber', str(-DCol)+', 0.0','mat','2','stressStrain')
     # recorder('Element', '-file', datadir+'Data-2c/DCol.out','-time', '-ele', 1, 'deformations')
     
     #------------------------------------------------------------------------------ 
@@ -179,7 +183,7 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
     outfile=r'C:\Users\vacalder\Documents\ConditionDependent_PBEE\Condition-Dependent-PBEE\EarthquakeSelection\Mainshock_Test_g3files'+"\\"+GM+".g3"
     dt,npt = ReadRecord.ReadRecord(infile,outfile)
 
-    print('DCol =',DCol)
+    #('DCol =',DCol)
     ##import the os module
     #import os
     #import math
