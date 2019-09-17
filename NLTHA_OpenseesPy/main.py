@@ -105,7 +105,9 @@ for GM in MSListing:
                     os.makedirs(datadir)
                 
                 Build_RC_Column.Build_RC_Column(dbi,dti,CLl,dblc,cover,Ablc,CLt,Atc,dbtc,datadir,PCol,MS_path,GM)
-                #NLTHA_Run.NLTHA_Run(MS_path,GM,PCol)
+                with open(datadir+"\\Conditions.out", 'w') as f:
+                    f.write("%s %s %s %s %s \n" %(cover,Time,wcr,CLl,CLt) )
+                
                     
                     
 print("ALL ANALYSIS COMPLETE")

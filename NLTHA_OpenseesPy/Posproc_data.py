@@ -10,7 +10,8 @@ Created on Thu Sep  5 13:23:30 2019
 #   PhD Student/ Research Assistant
 #   NC STATE UNIVERSITY 
 #   2019 (c)
-
+#
+#
 # ----------------------------------------------------------------------------
 #|                             IMPORTS
 # ----------------------------------------------------------------------------
@@ -42,7 +43,22 @@ cover=4.0
 wcr=0.4
 for Time in iTime:
     datadir=rootdir+"\\"+GM+"\\"+str(cover)+"\\"+str(wcr)+"\\"+str(Time)
-   
+    
+    
+    #Read Conditions
+    
+    conditions=open(datadir+"\\Conditions.out")
+    linesconditions=conditions.readline()
+    
+    cov=float(linesconditions.split()[0])
+    t=float(linesconditions.split()[1])
+    wc=float(linesconditions.split()[2])
+    CLl=float(linesconditions.split()[3])
+    CLt=float(linesconditions.split()[4])
+    
+    #Force Displacement Plot
+    
+    
     d=open(datadir+"\\"+"DFree.out")
     F=open(datadir+"\\"+"RBase.out")
     
@@ -115,8 +131,3 @@ for Time in iTime:
     plt.tick_params(direction='out',axis='both',labelsize=20)
     plt.grid()
     plt.show()
-
-                    
-                    
-                    
-                    
