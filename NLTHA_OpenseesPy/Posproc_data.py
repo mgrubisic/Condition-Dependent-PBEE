@@ -19,6 +19,7 @@ import os
 import math
 import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
 #-----------------------------------------------------------------------------
 
 # Opening folder to acces data
@@ -34,6 +35,17 @@ iTime= [5.,10.,15., 20., 25., 30., 35., 40., 45., 50., 55., 60., 65., 70., 75.]
 iwcr= [0.40, 0.45, 0.50, 0.55, 0.60]
 rootdir=r'C:\Users\vacalder\Documents\ConditionDependent_PBEE\Condition-Dependent-PBEE\NLTHA_OpenseesPy\data'
 
+covers=[]
+times=[]
+WaterCement_Ratios=[]
+CorrosionLvls_Long=[]
+CorrosionLvls_Trans=[]
+Steel_Strains=[]
+CConc_Strains=[]
+UConc_Strains=[]
+
+
+
 GM=r"RSN1231_CHICHI_CHY080-E.AT2"
 
 #for GM in MSListing:
@@ -41,7 +53,10 @@ cover=4.0
 #for cover in icover:
 #for wcr in iwcr:
 wcr=0.4
+i=-1
 for Time in iTime:
+    i=i+1
+    
     datadir=rootdir+"\\"+GM+"\\"+str(cover)+"\\"+str(wcr)+"\\"+str(Time)
     
     
@@ -55,6 +70,8 @@ for Time in iTime:
     wc=float(linesconditions.split()[2])
     CLl=float(linesconditions.split()[3])
     CLt=float(linesconditions.split()[4])
+    
+    
     
     #Force Displacement Plot
     
@@ -131,3 +148,22 @@ for Time in iTime:
     plt.tick_params(direction='out',axis='both',labelsize=20)
     plt.grid()
     plt.show()
+    
+    covers.append(cov)
+    times.append(Time)
+    WaterCement_Ratios.append(wcr)
+    CorrosionLvls_Long.append(CLl)
+    CorrosionLvls_Trans.append(CLt)
+    Steel_Strains.append(max(epsilonStl))
+    CConc_Strains.append(-min(epsilonCConc))
+    UConc_Strains.append(-min(epsilonUnConc))
+
+
+dataDict={'cover_cm':covers,'water_cement_ratio':WaterCement_Ratios,'time_yrs':times,'CorrosionLvl_Long':CorrosionLvls_Long,'CorrosionLvl_Transv':CorrosionLvls_Trans,'Steel_Strain':Steel_Strains,'Conf_Conc_Strain':CConc_Strains,'Unc_Conc_srain':UConc_Strains}
+DataFrame_Out=pd.DataFrame(dataDict)
+DataFrame_Out.plot.line(x='time_yrs',y='Conf_Conc_Strain')#,s=20,c='time_yrs',colormap='viridis')
+plt.title('Confined Concrete maax Strain vs Time',fontsize=32)
+plt.xlabel('Time (yrs)',fontsize=24)
+plt.ylabel('Cnfined Concrete Strain (in/in)',fontsize=24)
+plt.tick_params(direction='out',axis='both',labelsize=20)
+plt.show
