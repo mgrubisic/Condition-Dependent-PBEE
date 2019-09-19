@@ -43,8 +43,15 @@ CorrosionLvls_Trans=[]
 Steel_Strains=[]
 CConc_Strains=[]
 UConc_Strains=[]
-
-
+YieldStresses=[]
+YielStressesTrans=[]
+AreaOfSteels=[]
+spacings=[]
+CoreDiameters=[]
+AxialLoads=[]
+Diameters=[]
+AreaRebars=[]
+CompStrength=[]
 
 GM=r"RSN1231_CHICHI_CHY080-E.AT2"
 
@@ -71,6 +78,21 @@ for Time in iTime:
     CLl=float(linesconditions.split()[3])
     CLt=float(linesconditions.split()[4])
     
+    #Read Material Properties for run
+    
+    material_prop=open(datadir+"\\mat.out")
+    lines_material_prop=material_prop.readline()
+    
+    
+    YieldStress_Long=float(lines_material_prop.split()[0])
+    YieldStress_Trans=float(lines_material_prop.split()[1])
+    AreaOfSteel=float(lines_material_prop.split()[2])
+    spacing_of_steel=float(lines_material_prop.split()[3])
+    CoreDiameter=float(lines_material_prop.split()[4])
+    AxialLoad=float(lines_material_prop.split()[5])
+    Diameter=float(lines_material_prop.split()[6])
+    AreaRebar=float(lines_material_prop.split()[7])
+    CompStrengths=float(lines_material_prop.split()[8])
     
     
     #Force Displacement Plot
@@ -157,9 +179,18 @@ for Time in iTime:
     Steel_Strains.append(max(epsilonStl))
     CConc_Strains.append(-min(epsilonCConc))
     UConc_Strains.append(-min(epsilonUnConc))
+    YieldStresses.append(YieldStress_Long)
+    YielStressesTrans.append(YieldStress_Trans)
+    AreaOfSteels.append(AreaOfSteel)
+    spacings.append(spacing_of_steel)
+    CoreDiameters.append(CoreDiameter)
+    AxialLoads.append(AxialLoad)
+    Diameters.append(Diameter)
+    AreaRebars.append(AreaRebar)
+    CompStrength.append(-CompStrengths)    
+    
 
-
-dataDict={'cover_cm':covers,'water_cement_ratio':WaterCement_Ratios,'time_yrs':times,'CorrosionLvl_Long':CorrosionLvls_Long,'CorrosionLvl_Transv':CorrosionLvls_Trans,'Steel_Strain':Steel_Strains,'Conf_Conc_Strain':CConc_Strains,'Unc_Conc_srain':UConc_Strains}
+dataDict={'cover_cm':covers,'water_cement_ratio':WaterCement_Ratios,'time_yrs':times,'CorrosionLvl_Long':CorrosionLvls_Long,'CorrosionLvl_Transv':CorrosionLvls_Trans,'Steel_Strain':Steel_Strains,'Conf_Conc_Strain':CConc_Strains,'Unc_Conc_srain':UConc_Strains,'Fy_ksi':YieldStresses, 'fyt_ksi':YielStressesTrans, 'Ast_in2':AreaOfSteel, 'st_in':spacings, 'Dprime_in':CoreDiameters, 'PCol_kip':AxialLoads, 'DCol_in':Diameters, 'barAreaSec_in2':AreaRebars, 'fc_ksi':CompStrength}
 DataFrame_Out=pd.DataFrame(dataDict)
 DataFrame_Out.plot.line(x='time_yrs',y='Conf_Conc_Strain')#,s=20,c='time_yrs',colormap='viridis')
 plt.title('Confined Concrete maax Strain vs Time',fontsize=32)

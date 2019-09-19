@@ -107,7 +107,7 @@ for GM in MSListing:
                 Build_RC_Column.Build_RC_Column(dbi,dti,CLl,dblc,cover,Ablc,CLt,Atc,dbtc,datadir,PCol,MS_path,GM)
                 with open(datadir+"\\Conditions.out", 'w') as f:
                     f.write("%s %s %s %s %s \n" %(cover,Time,wcr,CLl,CLt) )
-                
+                f.close
                     
                     
 print("ALL ANALYSIS COMPLETE")

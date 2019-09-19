@@ -129,6 +129,11 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
     #                        tag  fy E0    b
     uniaxialMaterial('Steel02', IDreinf, Fy, Es, Bs, R0, cR1, cR2)
 
+    # Writing Material data to file
+    with open(datadir+"\\mat.out", 'w') as matfile:
+        matfile.write("%s %s %s %s %s %s %s %s %s \n" %(Fy, fyt, Ast, st, Dprime, PCol, DCol, barAreaSec, fc))
+    matfile.close
+    
     # FIBER SECTION properties -------------------------------------------------------------
     # Define cross-section for nonlinear columns
     # ------------------------------------------
