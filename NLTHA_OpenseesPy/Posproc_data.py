@@ -35,6 +35,7 @@ iTime= [5.,10.,15., 20., 25., 30., 35., 40., 45., 50., 55., 60., 65., 70., 75.]
 iwcr= [0.40, 0.45, 0.50, 0.55, 0.60]
 rootdir=r'C:\Users\vacalder\Documents\ConditionDependent_PBEE\Condition-Dependent-PBEE\NLTHA_OpenseesPy\data'
 
+Es=29000
 covers=[]
 times=[]
 WaterCement_Ratios=[]
@@ -52,6 +53,9 @@ AxialLoads=[]
 Diameters=[]
 AreaRebars=[]
 CompStrength=[]
+LS_ConcCover=[]
+LS_SteelBB=[]
+LS_ConfYield=[]
 
 GM=r"RSN1231_CHICHI_CHY080-E.AT2"
 
@@ -94,6 +98,12 @@ for Time in iTime:
     AreaRebar=float(lines_material_prop.split()[7])
     CompStrengths=float(lines_material_prop.split()[8])
     
+    ros=(4*AreaOfSteel)/(CoreDiameter*spacing_of_steel)
+    Ag=0.25*math.pi*Diameter**2
+    
+    e_ccc=0.004
+    e_bb=0.03+700*ros*YieldStress_Trans/Es-0.1*AxialLoad/(CompStrengths*Ag)
+    e_csy=0.009-0.3*AreaRebar/Ag+3.9*YieldStress_Trans/Es
     
     #Force Displacement Plot
     
@@ -112,7 +122,7 @@ for Time in iTime:
     
     plt.figure(1)    
     plt.plot(X,Y)
-    plt.title('Example of Force Displacement Response for ChiChi EQ w/c=0.4', fontsize=32)
+    plt.title('Example for ChiChi EQ w/c=0.4', fontsize=32)
     plt.xlabel('Diplacement (in)', fontsize=24)
     plt.ylabel('BaseShear (kip)', fontsize=24)
     plt.tick_params(direction='out',axis='both',labelsize=20)
@@ -129,7 +139,7 @@ for Time in iTime:
     
     plt.figure(2)
     plt.plot(epsilonStl,sigmaStl)
-    plt.title('Example of Steel Stress - Strain Response for ChiChi EQ w/c=0.4', fontsize=32)
+    plt.title('Example of Steel Response for ChiChi EQ w/c=0.4', fontsize=32)
     plt.xlabel('strain (in/in)', fontsize=24)
     plt.ylabel('Stress (ksi)', fontsize=24)
     plt.tick_params(direction='out',axis='both',labelsize=20)
@@ -146,8 +156,9 @@ for Time in iTime:
     
     plt.figure(3)
     plt.plot(epsilonCConc,sigmaCConc)
-    plt.title('Example of CConc Stress - Strain Response for ChiChi EQ w/c=0.4', fontsize=32)
+    plt.title('Example Conf Concrete Response for ChiChi EQ w/c=0.4', fontsize=32)
     plt.xlabel('strain (in/in)', fontsize=24)
+    plt.xlim(-0.05,0)
     plt.ylabel('Stress (ksi)', fontsize=24)
     plt.tick_params(direction='out',axis='both',labelsize=20)
     plt.grid()
@@ -164,7 +175,7 @@ for Time in iTime:
     
     plt.figure(4)
     plt.plot(epsilonUnConc,sigmaUnConc)
-    plt.title('Example of UnConc Stress - Strain Response for ChiChi EQ w/c=0.4', fontsize=32)
+    plt.title('Example Unconf. Concret Strain Response for ChiChi EQ w/c=0.4', fontsize=32)
     plt.xlabel('strain (in/in)', fontsize=24)
     plt.ylabel('Stress (ksi)', fontsize=24)
     plt.tick_params(direction='out',axis='both',labelsize=20)
@@ -188,9 +199,11 @@ for Time in iTime:
     Diameters.append(Diameter)
     AreaRebars.append(AreaRebar)
     CompStrength.append(-CompStrengths)    
-    
+    LS_ConcCover.append(e_ccc)
+    LS_ConfYield.append(e_csy)
+    LS_SteelBB.append(e_bb)
 
-dataDict={'cover_cm':covers,'water_cement_ratio':WaterCement_Ratios,'time_yrs':times,'CorrosionLvl_Long':CorrosionLvls_Long,'CorrosionLvl_Transv':CorrosionLvls_Trans,'Steel_Strain':Steel_Strains,'Conf_Conc_Strain':CConc_Strains,'Unc_Conc_srain':UConc_Strains,'Fy_ksi':YieldStresses, 'fyt_ksi':YielStressesTrans, 'Ast_in2':AreaOfSteel, 'st_in':spacings, 'Dprime_in':CoreDiameters, 'PCol_kip':AxialLoads, 'DCol_in':Diameters, 'barAreaSec_in2':AreaRebars, 'fc_ksi':CompStrength}
+dataDict={'cover_cm':covers,'water_cement_ratio':WaterCement_Ratios,'time_yrs':times,'CorrosionLvl_Long':CorrosionLvls_Long,'CorrosionLvl_Transv':CorrosionLvls_Trans,'Steel_Strain':Steel_Strains,'Conf_Conc_Strain':CConc_Strains,'Unc_Conc_srain':UConc_Strains,'Fy_ksi':YieldStresses, 'fyt_ksi':YielStressesTrans, 'Ast_in2':AreaOfSteel, 'st_in':spacings, 'Dprime_in':CoreDiameters, 'PCol_kip':AxialLoads, 'DCol_in':Diameters, 'barAreaSec_in2':AreaRebars, 'fc_ksi':CompStrength,'LimitState_ConcreteCoverCrushing':LS_ConcCover,'ConfinementSteelYielding':LS_ConfYield, 'LongitudinlSteelBuckling':LS_SteelBB}
 DataFrame_Out=pd.DataFrame(dataDict)
 DataFrame_Out.plot.line(x='time_yrs',y='Conf_Conc_Strain')#,s=20,c='time_yrs',colormap='viridis')
 plt.title('Confined Concrete maax Strain vs Time',fontsize=32)
