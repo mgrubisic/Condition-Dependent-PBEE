@@ -79,7 +79,7 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
     Fy = 60.0 * ksi * (1 - 0.021 * CLl)  # STEEL yield stress
     Es = 29000.0 * ksi  # modulus of steel
     Bs = 0.01  # strain-hardening ratio
-    R0 = 18.0  # control the transition from elastic to plastic branches
+    R0 = 20¶.0  # control the transition from elastic to plastic branches
     cR1 = 0.925  # control the transition from elastic to plastic branches
     cR2 = 0.15  # control the transition from elastic to plastic branches
     c = cover * cm  # Column cover to reinforcing steel NA.
@@ -185,7 +185,7 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
     #------------------------------------------------------------------------------
 
     infile=MS_path+"\\"+GM
-    outfile=r'C:\Users\vacalder\Documents\ConditionDependent_PBEE\Condition-Dependent-PBEE\EarthquakeSelection\Mainshock_Test_g3files'+"\\"+GM+".g3"
+    outfile=r'C:\Condition-Dependent-PBEE\EarthquakeSelection\Mainshock_Test_g3files'+"\\"+GM+".g3"
     dt,npt = ReadRecord.ReadRecord(infile,outfile)
 
     #('DCol =',DCol)

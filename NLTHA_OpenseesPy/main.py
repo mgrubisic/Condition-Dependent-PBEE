@@ -53,9 +53,9 @@ iTime= [5.,10.,15., 20., 25., 30., 35., 40., 45., 50., 55., 60., 65., 70., 75.] 
 iwcr= [0.40, 0.45, 0.50, 0.55, 0.60] #[0.40]#
 dbi= 0.75   
 dti= 0.375  
-MS_path=r'C:\Users\vacalder\Documents\ConditionDependent_PBEE\Condition-Dependent-PBEE\EarthquakeSelection\MainShock_Test'
+MS_path=r'C:\Condition-Dependent-PBEE\EarthquakeSelection\MainShock_Test'
 MSListing = os.listdir(MS_path)
-rootdir=r'C:\Users\vacalder\Documents\ConditionDependent_PBEE\Condition-Dependent-PBEE\NLTHA_OpenseesPy'
+rootdir=r'C:\Condition-Dependent-PBEE\NLTHA_OpenseesPy'
 PCol =225.0*kip
 
 # ----------------------------------------------------------------------------

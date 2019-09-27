@@ -203,7 +203,27 @@ for Time in iTime:
     LS_ConfYield.append(e_csy)
     LS_SteelBB.append(e_bb)
 
-dataDict={'cover_cm':covers,'water_cement_ratio':WaterCement_Ratios,'time_yrs':times,'CorrosionLvl_Long':CorrosionLvls_Long,'CorrosionLvl_Transv':CorrosionLvls_Trans,'Steel_Strain':Steel_Strains,'Conf_Conc_Strain':CConc_Strains,'Unc_Conc_srain':UConc_Strains,'Fy_ksi':YieldStresses, 'fyt_ksi':YielStressesTrans, 'Ast_in2':AreaOfSteel, 'st_in':spacings, 'Dprime_in':CoreDiameters, 'PCol_kip':AxialLoads, 'DCol_in':Diameters, 'barAreaSec_in2':AreaRebars, 'fc_ksi':CompStrength,'LimitState_ConcreteCoverCrushing':LS_ConcCover,'ConfinementSteelYielding':LS_ConfYield, 'LongitudinlSteelBuckling':LS_SteelBB}
+dataDict={'cover_cm':covers,
+          'water_cement_ratio':WaterCement_Ratios,
+          'time_yrs':times,
+          'CorrosionLvl_Long':CorrosionLvls_Long,
+          'CorrosionLvl_Transv':CorrosionLvls_Trans,
+          'Steel_Strain':Steel_Strains,
+          'Conf_Conc_Strain':CConc_Strains,
+          'Unc_Conc_srain':UConc_Strains,
+          'Fy_ksi':YieldStresses, 
+          'fyt_ksi':YielStressesTrans, 
+          'Ast_in2':AreaOfSteel, 
+          'st_in':spacings, 
+          'Dprime_in':CoreDiameters, 
+          'PCol_kip':AxialLoads, 
+          'DCol_in':Diameters, 
+          'barAreaSec_in2':AreaRebars, 
+          'fc_ksi':CompStrength,
+          'LimitState_ConcreteCoverCrushing':LS_ConcCover,
+          'ConfinementSteelYielding':LS_ConfYield, 
+          'LongitudinlSteelBuckling':LS_SteelBB}
+
 DataFrame_Out=pd.DataFrame(dataDict)
 DataFrame_Out.plot.line(x='time_yrs',y='Conf_Conc_Strain')#,s=20,c='time_yrs',colormap='viridis')
 plt.title('Confined Concrete maax Strain vs Time',fontsize=32)
