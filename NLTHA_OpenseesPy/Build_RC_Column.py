@@ -77,6 +77,7 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
     # ------------------------------------------
     # Longitudinal steel properties
     Fy = 60.0 * ksi * (1 - 0.021 * CLl)  # STEEL yield stress
+    Fu = 1.375*Fy #Steel Ultimate Stress
     Es = 29000.0 * ksi  # modulus of steel
     Bs = 0.01  # strain-hardening ratio
     R0 = 20.0  # control the transition from elastic to plastic branches
@@ -134,6 +135,16 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
         matfile.write("%s %s %s %s %s %s %s %s %s \n" %(Fy, fyt, Ast, st, Dprime, PCol, DCol, barAreaSec, fc))
     matfile.close
     
+    #-------------------------------------------------------------------------
+    #               DEFINE PLASTICE HIGE PROPERTIES
+    #-------------------------------------------------------------------------    
+    
+    k=0.2*(Fu/Fy - 1)
+    if k > 0.08:
+        k=0.08
+    Leff=LCol
+    Lpt=k*Leff + 0.4*DCol
+    
     # FIBER SECTION properties -------------------------------------------------------------
     # Define cross-section for nonlinear columns
     # ------------------------------------------
@@ -166,7 +177,8 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
     # import InelasticFiberSection
     #element('nonlinearBeamColumn', eleTag, 1, 2, numIntgrPts, ColSecTag, ColTransfTag)
     ColIntTag=1
-    beamIntegration('Lobatto',ColIntTag,ColSecTag,numIntgrPts)
+    # beamIntegration('Lobatto',ColIntTag,ColSecTag,numIntgrPts)
+    beamIntegration('HingeRadau',ColIntTag,ColSecTag,Lpt,ColSecTag,1e-10,ColSecTag)
     element('forceBeamColumn', eleTag, 1, 2, ColTransfTag,ColIntTag,'-mass',0.0)
 
     recorder('Node', '-file', datadir + '/DFree.out', '-time','-node', 2, '-dof', 1, 2, 3, 'disp')
@@ -176,8 +188,8 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
     # recorder('Element', '-file', datadir + '/FCol.out', '-time', '-ele', 1, 'globalForce')
     # recorder('Element', '-file', datadir + '/ForceColSec1.out', '-time', '-ele', 1, 'section', 1, 'force')
     recorder('Element', '-file', datadir + '/StressStrain.out', '-time','-ele', 1, 'section', '1', 'fiber', str(Rbl)+', 0.0','mat','3','stressStrain')  #Rbl,0, IDreinf
-    recorder('Element', '-file', datadir + '/StressStrain2.out','-time','-ele', 1, 'section', '2', 'fiber', str(-Dprime)+', 0.0','mat','1','stressStrain')  #Rbl,0, IDreinf
-    recorder('Element', '-file', datadir + '/StressStrain3.out','-time','-ele', 1, 'section', '2', 'fiber', str(-DCol)+', 0.0','mat','2','stressStrain')
+    recorder('Element', '-file', datadir + '/StressStrain2.out','-time','-ele', 1, 'section', '1', 'fiber', str(-Dprime)+', 0.0','mat','1','stressStrain')  #Rbl,0, IDreinf
+    recorder('Element', '-file', datadir + '/StressStrain3.out','-time','-ele', 1, 'section', '1', 'fiber', str(-DCol)+', 0.0','mat','2','stressStrain')
     # recorder('Element', '-file', datadir+'Data-2c/DCol.out','-time', '-ele', 1, 'deformations')
     
     #------------------------------------------------------------------------------ 
