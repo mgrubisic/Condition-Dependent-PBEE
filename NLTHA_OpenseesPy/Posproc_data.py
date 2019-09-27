@@ -27,13 +27,13 @@ import pandas as pd
 
 
 
-MS_path=r'C:\Users\vacalder\Documents\ConditionDependent_PBEE\Condition-Dependent-PBEE\EarthquakeSelection\MainShock_Test'
+MS_path=r'C:\Condition-Dependent-PBEE\EarthquakeSelection\MainShock_Test'
 MSListing = os.listdir(MS_path)
 icover=[4.,5.,7.5]
 iTcorr= [1.1307,1.7667,3.975]
 iTime= [5.,10.,15., 20., 25., 30., 35., 40., 45., 50., 55., 60., 65., 70., 75.]
 iwcr= [0.40, 0.45, 0.50, 0.55, 0.60]
-rootdir=r'C:\Users\vacalder\Documents\ConditionDependent_PBEE\Condition-Dependent-PBEE\NLTHA_OpenseesPy\data'
+rootdir=r'C:\Condition-Dependent-PBEE\NLTHA_OpenseesPy\data'
 
 Es=29000
 covers=[]
@@ -56,6 +56,7 @@ CompStrength=[]
 LS_ConcCover=[]
 LS_SteelBB=[]
 LS_ConfYield=[]
+FirstPeriods=[]
 
 GM=r"RSN1231_CHICHI_CHY080-E.AT2"
 
@@ -81,6 +82,11 @@ for Time in iTime:
     wc=float(linesconditions.split()[2])
     CLl=float(linesconditions.split()[3])
     CLt=float(linesconditions.split()[4])
+    
+    #Read Period of the Structure
+    Period_01=open(datadir+"\\Period.out")
+    lines_Period_01=Period_01.readline()
+    T1=float(lines_Period_01.split()[0])
     
     #Read Material Properties for run
     
@@ -202,18 +208,20 @@ for Time in iTime:
     LS_ConcCover.append(e_ccc)
     LS_ConfYield.append(e_csy)
     LS_SteelBB.append(e_bb)
+    FirstPeriods.append(T1)
 
 dataDict={'cover_cm':covers,
           'water_cement_ratio':WaterCement_Ratios,
           'time_yrs':times,
           'CorrosionLvl_Long':CorrosionLvls_Long,
           'CorrosionLvl_Transv':CorrosionLvls_Trans,
+          'First_Period_s':FirstPeriods,
           'Steel_Strain':Steel_Strains,
           'Conf_Conc_Strain':CConc_Strains,
           'Unc_Conc_srain':UConc_Strains,
           'Fy_ksi':YieldStresses, 
           'fyt_ksi':YielStressesTrans, 
-          'Ast_in2':AreaOfSteel, 
+          'Ast_in2':AreaOfSteels, 
           'st_in':spacings, 
           'Dprime_in':CoreDiameters, 
           'PCol_kip':AxialLoads, 
@@ -231,3 +239,4 @@ plt.xlabel('Time (yrs)',fontsize=24)
 plt.ylabel('Cnfined Concrete Strain (in/in)',fontsize=24)
 plt.tick_params(direction='out',axis='both',labelsize=20)
 plt.show
+DataFrame_Out.to_csv(r'C:\Condition-Dependent-PBEE\NLTHA_OpenseesPy\Postproc\PosprocData.csv')

@@ -9,7 +9,7 @@ from openseespy.opensees import *
 # import the os module
 #    import os
 import math
-#    import numpy as np
+import numpy as np
 #    import matplotlib.pyplot as plt
 import ReadRecord
 from LibUnitsMUS import *
@@ -79,7 +79,7 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
     Fy = 60.0 * ksi * (1 - 0.021 * CLl)  # STEEL yield stress
     Es = 29000.0 * ksi  # modulus of steel
     Bs = 0.01  # strain-hardening ratio
-    R0 = 20¶.0  # control the transition from elastic to plastic branches
+    R0 = 20.0  # control the transition from elastic to plastic branches
     cR1 = 0.925  # control the transition from elastic to plastic branches
     cR2 = 0.15  # control the transition from elastic to plastic branches
     c = cover * cm  # Column cover to reinforcing steel NA.
@@ -225,9 +225,13 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
     
     
     Lambda = eigen('-fullGenLapack', 1) # eigenvalue mode 1
-    Omega = math.pow(Lambda, 0.5)
-    
+    Omega = math.pow(Lambda[0], 0.5)
+    T1 = 2*np.pi/Omega
     betaKcomm = 2 * (0.02/Omega)
+    
+    with open(datadir+"\\Period.out", 'w') as Periodfile:
+        Periodfile.write("%s\n" %(T1))
+    Periodfile.close
     
     xDamp = 0.02				# 2% damping ratio
     alphaM = 0.0				# M-pr damping; D = alphaM*M	
