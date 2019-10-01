@@ -24,16 +24,16 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
     #
     #    ^Y
     #    |
-    #    2       __ 
+    #    3       __ 
     #    |          | 
     #    |          |
     #    |          |
-    #  (1)       LCol
+    #  (2)       LCol
     #    |          |
     #    |          |
     #    |          |
-    #  =1=      _|_  -------->X
-    #
+    #  =2=      _|_  -------->X
+    #  =1=      ZeroLength
 
     # ------------------------------------------------------------------------------
     # |                      IMPORTS
@@ -57,22 +57,23 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
 
     ACol = 0.25 * math.pi * DCol ** 2  # cross-sectional area, make stiff
     IzCol = 0.25 * math.pi * DCol ** 4  # Column moment of inertia
-
+    
     node(1, 0.0, 0.0)
-    node(2, 0.0, LCol)
-
+    node(2, 0.0, 0.0)
+    node(3, 0.0, LCol)
+    #  Node, Dx, Dy, Rz
     fix(1, 1, 1, 1)
+    fix(2, 1, 0, 0)
+    
+    mass(3, Mass, 1e-9, 0.0)
+    
 
-    mass(2, Mass, 1e-9, 0.0)
-
-    ColSecTag = 1  # assign a tag number to the column section
-
-
+    
     # MATERIAL parameters
     IDconcC = 1  # material ID tag -- confined cover concrete
     IDconcU = 2  # material ID tag -- unconfined cover concrete
     IDreinf = 3  # material ID tag -- reinforcement
-
+    IDSP    = 4  # material ID tag -- Strain Penetration
     # Define materials for nonlinear columns
     # ------------------------------------------
     # Longitudinal steel properties
@@ -129,10 +130,22 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
     params = [R0, cR1, cR2]
     #                        tag  fy E0    b
     uniaxialMaterial('Steel02', IDreinf, Fy, Es, Bs, R0, cR1, cR2)
-
+    
+    
+    # STRAIN PENETRATION MATERIAL
+    SPalpha=0.4
+    SPsy=0.1*((dbl*Fy)*(2*SPalpha+1)/(4000*((-fc)**0.5)))**(1/SPalpha)+0.013
+    SPsu=35*SPsy
+    SPb=0.45
+    SPR=1.01
+    
+    
+    #uniaxialMaterial StrPen01   Tag  fy  sy fu su b  R  
+    uniaxialMaterial('Bond_SP01',IDSP, Fy,SPsy,Fu,SPsu,SPb,SPR)
+    
     # Writing Material data to file
     with open(datadir+"\\mat.out", 'w') as matfile:
-        matfile.write("%s %s %s %s %s %s %s %s %s \n" %(Fy, fyt, Ast, st, Dprime, PCol, DCol, barAreaSec, fc))
+        matfile.write("%s %s %s %s %s %s %s %s %s %s %s %s %s \n" %(Fy, fyt, Ast, st, Dprime, PCol, DCol, barAreaSec, fc,SPsy,SPsu,SPb,SPR))
     matfile.close
     
     #-------------------------------------------------------------------------
@@ -143,14 +156,15 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
     if k > 0.08:
         k=0.08
     Leff=LCol
-    Lpt=k*Leff + 0.4*DCol
-    
+    Lpc=k*Leff + 0.4*DCol
+    gamma=0.33 #Assuming unidirectional action
+    Lpt=Lpc+gamma*DCol
     # FIBER SECTION properties -------------------------------------------------------------
     # Define cross-section for nonlinear columns
     # ------------------------------------------
 
-    # set some paramaters
-    SecTag1 = 1
+    # set some paramaters Section 1
+    ColSecTag = 1
     ri = 0.0
     ro = DCol / 2.0
     nfCoreR = 8
@@ -160,7 +174,7 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
     rc = ro - c
     theta = 360.0 / numBarsSec
 
-    section('Fiber', SecTag1)
+    section('Fiber', ColSecTag,'-GJ',1e+10)
 
     # Create the concrete fibers
     patch('circ', 1, nfCoreT, nfCoreR, 0.0, 0.0, ri, rc, 0.0, 360.0)  # Define the core patch
@@ -168,28 +182,48 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
 
     # Create the reinforcing fibers
     layer('circ', 3, numBarsSec, barAreaSec, 0.0, 0.0, Rbl, theta, 360.0)
+    
+    #Set parameters for ZeroLength Element
+    
+    SecTag2 = 2
+    section('Fiber',SecTag2,'-GJ',1e+10)
 
+    # Create the concrete fibers
+    patch('circ', 1, nfCoreT, nfCoreR, 0.0, 0.0, ri, rc, 0.0, 360.0)  # Define the core patch
+    patch('circ', 2, nfCoverT, nfCoverR, 0.0, 0.0, rc, ro, 0.0, 360.0)  # Define Cover Patch
+
+    # Create the reinforcing fibers
+    layer('circ', IDSP, numBarsSec, barAreaSec, 0.0, 0.0, Rbl, theta, 360.0)
+    
+    # Creating Elements
+    
     ColTransfTag = 1
     geomTransf('Linear', ColTransfTag)
-    numIntgrPts = 9
-    eleTag = 1
-
-    # import InelasticFiberSection
+    
+    ZL_eleTag=1
+    element('zeroLengthSection',ZL_eleTag,1,2,SecTag2,'-orient',[0.,1.,0.],[1,0,0])
+    
+    ColeleTag = 2
+    
+    # Defining Fiber Elements as ForceBeamColumn
     #element('nonlinearBeamColumn', eleTag, 1, 2, numIntgrPts, ColSecTag, ColTransfTag)
     ColIntTag=1
     # beamIntegration('Lobatto',ColIntTag,ColSecTag,numIntgrPts)
     beamIntegration('HingeRadau',ColIntTag,ColSecTag,Lpt,ColSecTag,1e-10,ColSecTag)
-    element('forceBeamColumn', eleTag, 1, 2, ColTransfTag,ColIntTag,'-mass',0.0)
-
-    recorder('Node', '-file', datadir + '/DFree.out', '-time','-node', 2, '-dof', 1, 2, 3, 'disp')
+    element('forceBeamColumn', ColeleTag, 2, 3, ColTransfTag,ColIntTag,'-mass',0.0)
+    
+    # Setting Recorders
+    
+    
+    recorder('Node', '-file', datadir + '/DFree.out', '-time','-node', 3, '-dof', 1, 2, 3, 'disp')
     # recorder('Node', '-file', datadir + '/DBase.out', '-time', '-node', 1, '-dof', 1, 2, 3, 'disp')
     recorder('Node', '-file', datadir + '/RBase.out', '-time', '-node', 1, '-dof', 1, 2, 3, 'reaction')
     # recorder('Drift', '-file', datadir+'Data-2c/Drift.out','-time', '-node', 1, '-dof', 1,2,3, 'disp')
     # recorder('Element', '-file', datadir + '/FCol.out', '-time', '-ele', 1, 'globalForce')
     # recorder('Element', '-file', datadir + '/ForceColSec1.out', '-time', '-ele', 1, 'section', 1, 'force')
-    recorder('Element', '-file', datadir + '/StressStrain.out', '-time','-ele', 1, 'section', '1', 'fiber', str(Rbl)+', 0.0','mat','3','stressStrain')  #Rbl,0, IDreinf
-    recorder('Element', '-file', datadir + '/StressStrain2.out','-time','-ele', 1, 'section', '1', 'fiber', str(-Dprime)+', 0.0','mat','1','stressStrain')  #Rbl,0, IDreinf
-    recorder('Element', '-file', datadir + '/StressStrain3.out','-time','-ele', 1, 'section', '1', 'fiber', str(-DCol)+', 0.0','mat','2','stressStrain')
+    recorder('Element', '-file', datadir + '/StressStrain.out', '-time','-ele', 2, 'section', '1', 'fiber', str(Rbl)+', 0.0','mat','3','stressStrain')  #Rbl,0, IDreinf
+    recorder('Element', '-file', datadir + '/StressStrain2.out','-time','-ele', 2, 'section', '1', 'fiber', str(-Dprime)+', 0.0','mat','1','stressStrain')  #Rbl,0, IDreinf
+    recorder('Element', '-file', datadir + '/StressStrain3.out','-time','-ele', 2, 'section', '1', 'fiber', str(-DCol)+', 0.0','mat','2','stressStrain')
     # recorder('Element', '-file', datadir+'Data-2c/DCol.out','-time', '-ele', 1, 'deformations')
     
     #------------------------------------------------------------------------------ 
@@ -213,9 +247,9 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
     #defining gravity loads
     timeSeries('Linear', 1)
     pattern('Plain', 1, 1)
-    load(2, 0.0, -PCol, 0.0)
+    load(3, 0.0, -PCol, 0.0)
     
-    Tol = 1e-3 # convergence tolerance for test
+    Tol = 1e-8 # convergence tolerance for test
     NstepGravity = 10
     DGravity = 1/NstepGravity
     integrator('LoadControl', DGravity) # determine the next time step for an analysis
@@ -236,8 +270,8 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
     
     
     
-    Lambda = eigen('-fullGenLapack', 1) # eigenvalue mode 1
-    Omega = math.pow(Lambda[0], 0.5)
+    Lambda = eigen('-fullGenLapack', 2) # eigenvalue mode 1
+    Omega = math.pow(Lambda[1], 0.5)
     T1 = 2*np.pi/Omega
     betaKcomm = 2 * (0.02/Omega)
     
@@ -307,26 +341,7 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
             else:
                 continue
     
-    u2 = nodeDisp(2, 1)
-    print("u2 = ", u2)
-    #
-    #d=open("C:\\Opensees Python\\OpenseesPy examples\\Data-2c\\DFree.out")
-    #F=open("C:\\Opensees Python\\OpenseesPy examples\\Data-2c\\RBase.out")
-    #linesd = d.readlines()
-    #linesf = F.readlines()
-    #x = [line.split()[1] for line in linesd]
-    #y = [line.split()[-1] for line in linesf]
-    #
-    #X=[float(i) for i in x]
-    #Y=[float(i) for i in y]
-    #
-    #    
-    #plt.plot(X[0:12600],Y[0:12600])
-    #plt.title('Example of Force Displacement Response for NorthRidge MS-AS Sequence')
-    #plt.xlabel('Diplacement (in)')
-    #plt.ylabel('BaseShear (kip)')
-    #plt.grid()
-    #plt.show()
-    #
-    #
-    wipe()
+    u3 = nodeDisp(3, 1)
+    print("u3 = ", u3)
+
+    
