@@ -121,10 +121,10 @@ for Time in iTime:
     linesd = d.readlines()
     linesf = F.readlines()
     x = [line.split()[1] for line in linesd]
-    y = [line.split()[-1] for line in linesf]
+    y = [line.split()[1] for line in linesf]
     
     X=[float(i) for i in x]
-    Y=[float(i) for i in y]
+    Y=[-float(i) for i in y]
     
     plt.figure(1)    
     plt.plot(X,Y)

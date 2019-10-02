@@ -10,7 +10,7 @@ from openseespy.opensees import *
 #    import os
 import math
 import numpy as np
-#    import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 from LibUnitsMUS import *
 import ManderCC
 from __main__ import *
@@ -42,7 +42,7 @@ wipe()
 # ------------------------------------------------------------------------------
 #                           GENERATE GEOMETRY
 # ------------------------------------------------------------------------------
-PCol=225*kip
+PCol=266.4573*kip
 model('basic', '-ndm', 2, '-ndf', 3)
 LCol = 8.0 * ft  # column length
 Weight = PCol  # superstructure weight
@@ -76,21 +76,21 @@ IDSP    = 4  # material ID tag -- Strain Penetration
 # Define materials for nonlinear columns
 # ------------------------------------------
 # Longitudinal steel properties
-Fy = 60.0 * ksi  # STEEL yield stress
-Fu = 1.375*Fy #Steel Ultimate Stress
-Es = 29000.0 * ksi  # modulus of steel
+Fy = 574.0 * MPa  # STEEL yield stress
+Fu = 753.3 * MPa  # Steel Ultimate Stress
+Es = 160000.0 * MPa  # modulus of steel
 Bs = 0.01  # strain-hardening ratio
 R0 = 20.0  # control the transition from elastic to plastic branches
 cR1 = 0.925  # control the transition from elastic to plastic branches
 cR2 = 0.15  # control the transition from elastic to plastic branches
-c = 4 * cm  # Column cover to reinforcing steel NA.
+c = 1.25 * inch  # Column cover to reinforcing steel NA.
 numBarsSec = 16  # number of uniformly-distributed longitudinal-reinforcement bars
-barAreaSec = 0.442 * in2  # area of longitudinal-reinforcement bars
-dbl = 0.75 * inch
+barAreaSec = 0.60 * in2  # area of longitudinal-reinforcement bars
+dbl = (7/8) * inch
  
 
 # Transverse Steel Properties
-fyt = 60.0 * ksi  # Yield Stress of Transverse Steel
+fyt = 574.0 * ksi  # Yield Stress of Transverse Steel
 Ast = 0.11 * in2  # Area of transverse steel
 dbt = 0.375 * inch  # Diameter of transverse steel
 st = 2.0 * inch  # Spacing of spiral
@@ -100,22 +100,22 @@ Rbl = Dprime * 0.5 - dbt*0.5 - dbl * 0.5  # Location of longitudinal bar
 #print('Rbl =', Rbl)
 
 # nominal concrete compressive strength
-fpc = 5.0 * ksi  # CONCRETE Compressive Strength, ksi   (+Tension, -Compression)
+fpc = 39.8 * MPa  # CONCRETE Compressive Strength, ksi   (+Tension, -Compression)
 Ec = 57.0 * ksi * math.sqrt(fpc / psi)  # Concrete Elastic Modulus
 
 # unconfined concrete
 fc1U = -fpc;  # UNCONFINED concrete (todeschini parabolic model), maximum stress
-eps1U = -0.003  # strain at maximum strength of unconfined concrete
-fc2U = 0.2 * fc1U  # ultimate stress
-eps2U = -0.01  # strain at ultimate stress
+eps1U = -0.002  # strain at maximum strength of unconfined concrete
+fc2U = 0.0 * MPa  # ultimate stress
+eps2U = -0.0064  # strain at ultimate stress
 lambdac = 0.1  # ratio between unloading slope at $eps2 and initial slope $Ec
 
 mand = ManderCC.ManderCC(fpc, Ast, fyt, Dprime, st)
 
-fc = mand[0]
-eps1 = mand[1]
-fc2 = mand[2]
-eps2 = mand[3]
+fc = -56.1 * MPa  # mand[0]
+eps1 = -0.0061    # mand[1]
+fc2 = -42.2 * MPa # mand[2]
+eps2 = -0.0247    # mand[3]
 
 # CONCRETE                  tag   f'c        ec0   f'cu        ecu
 # Core concrete (confined)
@@ -232,15 +232,15 @@ timeSeries('Linear', 1)
 pattern('Plain', 1, 1)
 load(3, 0.0, -PCol, 0.0)
 
-Tol = 1e-2 # convergence tolerance for test
+Tol = 1e-8 # convergence tolerance for test
 NstepGravity = 10
 DGravity = 1/NstepGravity
 integrator('LoadControl', DGravity) # determine the next time step for an analysis
 numberer('Plain') # renumber dof's to minimize band-width (optimization), if you want to
-system('SparseGeneral','-piv') # how to store and solve the system of equations in the analysis
+system('BandGeneral','-piv') # how to store and solve the system of equations in the analysis
 constraints('Plain') # how it handles boundary conditions
 test('NormDispIncr', Tol, 10) # determine if convergence has been achieved at the end of an iteration step
-algorithm('KrylovNewton') # use Newton's solution algorithm: updates tangent stiffness at every iteration
+algorithm('Newton') # use Newton's solution algorithm: updates tangent stiffness at every iteration
 analysis('Static') # define type of analysis static or transient
 analyze(NstepGravity) # apply gravity
 
@@ -248,89 +248,155 @@ loadConst('-time', 0.0) #maintain constant gravity loads and reset time to zero
  
 #applying Dynamic Ground motion analysis
 timeSeries('Linear', 2)
-
-
+pattern('Plain', 2, 2)
 load(3, 1, 0, 0)
-du1 = 0.07
-du2 = -0.07
+constraints('Plain') # how it handles boundary conditions
+numberer('Plain') # renumber dof's to minimize band-width (optimization), if you want to
+system('BandGeneral') # how to store and solve the system of equations in the analysis
+test('EnergyIncr', Tol, 10) # determine if convergence has been achieved at the end of an iteration step
+algorithm('Newton') # use Newton's solution algorithm: updates tangent stiffness at every iteration
 
-integrator('DisplacementControl',3,1,du1)
-analyze(5)
-integrator('DisplacementControl',3,1,du2)
-analyze(10)
-integrator('DisplacementControl',3,1,du1)
-analyze(10)
-integrator('DisplacementControl',3,1,du2)
-analyze(10)
-integrator('DisplacementControl',3,1,du1)
-analyze(15)
-integrator('DisplacementControl',3,1,du2)
-analyze(20)
-integrator('DisplacementControl',3,1,du1)
-analyze(20)
-integrator('DisplacementControl',3,1,du2)
-analyze(20)
-integrator('DisplacementControl',3,1,du1)
-analyze(20)
-integrator('DisplacementControl',3,1,du2)
-analyze(20)
-integrator('DisplacementControl',3,1,du1)
-analyze(25)
-integrator('DisplacementControl',3,1,du2)
-analyze(30)
-integrator('DisplacementControl',3,1,du1)
-analyze(30)
-integrator('DisplacementControl',3,1,du2)
-analyze(30)
-integrator('DisplacementControl',3,1,du1)
-analyze(30)
-integrator('DisplacementControl',3,1,du2)
-analyze(30)
-integrator('DisplacementControl',3,1,du1)
-analyze(35)
-integrator('DisplacementControl',3,1,du2)
-analyze(40)
-integrator('DisplacementControl',3,1,du1)
-analyze(40)
-integrator('DisplacementControl',3,1,du2)
-analyze(40)
-integrator('DisplacementControl',3,1,du1)
-analyze(40)
-integrator('DisplacementControl',3,1,du2)
-analyze(40)
-integrator('DisplacementControl',3,1,du1)
-analyze(45)
-integrator('DisplacementControl',3,1,du2)
-analyze(50)
-integrator('DisplacementControl',3,1,du1)
-analyze(50)
-integrator('DisplacementControl',3,1,du2)
-analyze(50)
-integrator('DisplacementControl',3,1,du1)
-analyze(50)
-integrator('DisplacementControl',3,1,du2)
-analyze(50)
-integrator('DisplacementControl',3,1,du1)
-analyze(55)
-integrator('DisplacementControl',3,1,du2)
-analyze(60)
-integrator('DisplacementControl',3,1,du1)
-analyze(60)
-integrator('DisplacementControl',3,1,du2)
-analyze(60)
-integrator('DisplacementControl',3,1,du1)
-analyze(60)
-integrator('DisplacementControl',3,1,du2)
-analyze(60)
-integrator('DisplacementControl',3,1,du1)
-analyze(65)
-integrator('DisplacementControl',3,1,du2)
-analyze(70)
-integrator('DisplacementControl',3,1,du1)
-analyze(70)
-integrator('DisplacementControl',3,1,du2)
-analyze(70)
-integrator('DisplacementControl',3,1,du1)
-analyze(70)
-integrator('DisplacementControl',3,1,du2)
-analyze(70)
+
+dy = 1.05 * inch
+dy1 = 0.78 * inch
+ddmax=6
+nIncres=100
+FracStr=0.3
+stDisp=0.
+pdisp=[]
+disp=[]
+
+for i in range(0,4):
+    pdisp.append((i+1)*0.25*dy1)
+    pdisp.append(-(i+1)*0.25*dy1)
+    
+    
+for i in range(2,5):
+    disp.append(i*dy/2)
+    disp.append(-i*dy/2)
+    disp.append(i*dy/2)
+    disp.append(-i*dy/2)
+    disp.append(i*dy/2)
+    disp.append(-i*dy/2)
+    
+    
+for i in range (3,ddmax+1):
+    disp.append(i*dy)
+    disp.append(-i*dy)
+    disp.append(i*dy)
+    disp.append(-i*dy)
+    disp.append(i*dy)
+    disp.append(-i*dy)    
+    
+    
+TolStatic=1e-6
+maxNumIterStatic=6
+testTypeStatic='EnergyIncr'
+algorithTypeStatic='Newton'
+fmt1='%s Pushover analysis: 3 %3i, dof %1i, Curv=%4f /%s'
+count=0
+
+Atest = {1:'NormDispIncr', 2: 'RelativeEnergyIncr', 4: 'RelativeNormUnbalance',5: 'RelativeNormDispIncr', 6: 'NormUnbalance'}
+Algorithm = {1:'KrylovNewton', 2: 'SecantNewton' , 4: 'RaphsonNewton',5: 'PeriodicNewton', 6: 'BFGS', 7: 'Broyden', 8: 'NewtonLineSearch'}
+
+for xdisp in pdisp:
+    count=count+1
+    netdisp=xdisp-stDisp
+    dD=netdisp/nIncres
+    integrator('DisplacementControl',3,1,dD)
+    analysis('Static')
+    ok=analyze(nIncres)       
+    
+    for j in Algorithm:
+        
+
+        if ok != 0:
+            if j < 4:
+                algorithm(Algorithm[j], '-initial')
+                
+            else:
+                algorithm(Algorithm[j])
+                
+            test(testTypeStatic, TolStatic, maxNumIterStatic)
+            ok = analyze(1)
+            algorithm(algorithTypeStatic)                            
+            if ok == 0:
+                break
+        else:
+            continue
+    stDisp=xdisp
+    u3 = nodeDisp(3, 1)
+    print(u3)
+    
+    
+for xdisp in disp:
+    count=count+1
+    netdisp=xdisp-stDisp
+    dD=netdisp/nIncres
+    integrator('DisplacementControl',3,1,dD)
+    analysis('Static')
+    ok=analyze(nIncres)       
+    
+    for j in Algorithm:
+        
+
+        if ok != 0:
+            if j < 4:
+                algorithm(Algorithm[j], '-initial')
+                
+            else:
+                algorithm(Algorithm[j])
+                
+            test(testTypeStatic, TolStatic, maxNumIterStatic)
+            ok = analyze(5)
+            algorithm(algorithTypeStatic)                            
+            if ok == 0:
+                break
+        else:
+            continue
+    stDisp=xdisp
+    u3 = nodeDisp(3, 1)
+    print(u3)
+
+#Force Displacement Plot
+#    
+#    
+#d=open("DFree.out")
+#F=open("RBase.out")
+#
+#
+#linesd = d.readlines()
+#linesf = F.readlines()
+#x = [line.split()[1] for line in linesd]
+#y = [line.split()[-1] for line in linesf]
+#
+#X=[float(i) for i in x]
+#Y=[float(i) for i in y]
+#
+#plt.figure(1)    
+#plt.plot(X,Y)
+#plt.title('Example for ChiChi EQ w/c=0.4', fontsize=32)
+#plt.xlabel('Diplacement (in)', fontsize=24)
+#plt.ylabel('BaseShear (kip)', fontsize=24)
+#plt.tick_params(direction='out',axis='both',labelsize=20)
+#plt.grid()
+#plt.show()
+
+# Steel Stress Strain Analysis
+
+
+SteelStressStrain=open("StressStrain.out")
+linesSteelStressStrain=SteelStressStrain.readlines()
+StlStress=[line.split()[1] for line in linesSteelStressStrain]
+StlStrain=[line.split()[2] for line in linesSteelStressStrain]
+sigmaStl=[float(i) for i in StlStress]
+epsilonStl=[float(i) for i in StlStrain]
+
+plt.figure(2)
+plt.plot(epsilonStl,sigmaStl)
+plt.title('Example of Steel Response for ChiChi EQ w/c=0.4', fontsize=32)
+plt.xlabel('strain (in/in)', fontsize=24)
+plt.ylabel('Stress (ksi)', fontsize=24)
+plt.tick_params(direction='out',axis='both',labelsize=20)
+plt.grid()
+plt.show()

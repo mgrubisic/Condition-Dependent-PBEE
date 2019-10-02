@@ -201,7 +201,7 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
     geomTransf('Linear', ColTransfTag)
     
     ZL_eleTag=1
-    element('zeroLengthSection',ZL_eleTag,1,2,SecTag2,'-orient',[0.,1.,0.],[1,0,0])
+    element('zeroLengthSection',ZL_eleTag,1,2,SecTag2,'-orient', 0., 1., 0., 1., 0.,0.)
     
     ColeleTag = 2
     
@@ -217,7 +217,7 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
     
     recorder('Node', '-file', datadir + '/DFree.out', '-time','-node', 3, '-dof', 1, 2, 3, 'disp')
     # recorder('Node', '-file', datadir + '/DBase.out', '-time', '-node', 1, '-dof', 1, 2, 3, 'disp')
-    recorder('Node', '-file', datadir + '/RBase.out', '-time', '-node', 1, '-dof', 1, 2, 3, 'reaction')
+    recorder('Node', '-file', datadir + '/RBase.out', '-time', '-node', 2, '-dof', 1, 2, 3, 'reaction')
     # recorder('Drift', '-file', datadir+'Data-2c/Drift.out','-time', '-node', 1, '-dof', 1,2,3, 'disp')
     # recorder('Element', '-file', datadir + '/FCol.out', '-time', '-ele', 1, 'globalForce')
     # recorder('Element', '-file', datadir + '/ForceColSec1.out', '-time', '-ele', 1, 'section', 1, 'force')
@@ -266,7 +266,7 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
     #applying Dynamic Ground motion analysis
     GMdirection = 1
     GMfile = outfile
-    GMfact = 1.0
+    GMfact = 0.5
     
     
     
