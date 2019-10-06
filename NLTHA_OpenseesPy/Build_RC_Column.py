@@ -271,7 +271,7 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
     
     
     Lambda = eigen('-fullGenLapack', 2) # eigenvalue mode 1
-    Omega = math.pow(Lambda[1], 0.5)
+    Omega = math.pow(Lambda[0], 0.5)
     T1 = 2*np.pi/Omega
     betaKcomm = 2 * (0.02/Omega)
     
@@ -335,13 +335,16 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
                     
                 test(Atest[i], Tol, 1000)
                 ok = analyze(Nsteps, DtAnalysis)                            
-                print(Atest[i], Algorithm[j], ok)             
+                algorithm('ModifiedNewton')
                 if ok == 0:
+                    print('Analysis succesful: ',Atest[i], ' ', Algorithm[j],' OK = ', ok)
+                    
                     break
             else:
                 continue
     
     u3 = nodeDisp(3, 1)
-    print("u3 = ", u3)
+    print("GroundMotion Done ", getTime())
+    
 
     

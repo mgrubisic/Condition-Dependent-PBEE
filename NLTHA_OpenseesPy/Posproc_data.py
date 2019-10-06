@@ -164,7 +164,7 @@ for Time in iTime:
     plt.plot(epsilonCConc,sigmaCConc)
     plt.title('Example Conf Concrete Response for ChiChi EQ w/c=0.4', fontsize=32)
     plt.xlabel('strain (in/in)', fontsize=24)
-    plt.xlim(-0.05,0)
+    plt.xlim(-0.015,0)
     plt.ylabel('Stress (ksi)', fontsize=24)
     plt.tick_params(direction='out',axis='both',labelsize=20)
     plt.grid()
@@ -233,7 +233,7 @@ dataDict={'cover_cm':covers,
           'LongitudinlSteelBuckling':LS_SteelBB}
 
 DataFrame_Out=pd.DataFrame(dataDict)
-DataFrame_Out.plot.line(x='time_yrs',y='Conf_Conc_Strain')#,s=20,c='time_yrs',colormap='viridis')
+DataFrame_Out.plot.line(x='time_yrs',y='Steel_Strain')#,s=20,c='time_yrs',colormap='viridis')
 plt.title('Confined Concrete maax Strain vs Time',fontsize=32)
 plt.xlabel('Time (yrs)',fontsize=24)
 plt.ylabel('Cnfined Concrete Strain (in/in)',fontsize=24)
