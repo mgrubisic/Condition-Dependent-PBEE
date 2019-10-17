@@ -50,15 +50,15 @@ model('basic', '-ndm', 2, '-ndf', 3)
 
 
 # define section geometry
-HCol = 260 * mm  # Column Height
-BCol = 260 * mm  # Column Base
-LCol = 820 * mm  # column length
-ACol = 0.25 * HCol * BCol  # cross-sectional area, make stiff
+HCol =  300 * mm  # Column Height
+BCol =  300 * mm  # Column Base
+LCol = 1600 * mm  # column length
+ACol = HCol * BCol  # cross-sectional area, make stiff
 IzCol = 1/12 * BCol * HCol ** 3  # Column moment of inertia
-fpc28 = 32.4*MPa  # Strength of the concrete
-ALR = 0.15        # Axial Load Ratio
+fpc28 = 20*MPa  # Strength of the concrete
+ALR = 0.22        # Axial Load Ratio
 PCol = ALR*ACol*fpc28  # Axial Load
-Weight = PCol  # superstructure weight
+Weight = PCol     # superstructure weight
 
 #PCol = Weight  # nodal dead-load weight per column
 Mass = PCol / g
@@ -85,25 +85,26 @@ IDSP    = 4  # material ID tag -- Strain Penetration
 
 CL = 0.20
 
-Fy = 375 * MPa * (1-0.021*CL) # STEEL yield stress
-Fu = 572.3 * MPa * (1-0.021*CL) # Steel Ultimate Stress
+Fy = 520.0 * MPa * (1-0.021*CL) # STEEL yield stress
+Fu = 620.0 * MPa * (1-0.021*CL) # Steel Ultimate Stress
 Es = 290000.0 * MPa  # modulus of steel
 Bs = 0.01  # strain-hardening ratio
 R0 = 20.0  # control the transition from elastic to plastic branches
 cR1 = 0.925  # control the transition from elastic to plastic branches
 cR2 = 0.15  # control the transition from elastic to plastic branches
 c = 30 * mm  # Column cover to reinforcing steel NA.
-numBarsSec = 8  # number of uniformly-distributed longitudinal-reinforcement bars
+numBarsSec = 2  # number of uniformly-distributed longitudinal-reinforcement bars Extreme Fibers
+numBarsMid= 2   # number of uniformly-distributed longitudinal-reinforcement bars Middle Portion
 barAreaSec = 200 * mm2 *(1-CL)  # area of longitudinal-reinforcement bars
 dbl = (barAreaSec*4/math.pi)**0.5
  
 
 # Transverse Steel Properties
-fyt = 375 * MPa  # Yield Stress of Transverse Steel
+fyt = 520 * MPa  # Yield Stress of Transverse Steel
 Ast = 50.3 * mm2  # Area of transverse steel
 dbt = 8 * mm  # Diameter of transverse steel
 st = 100 * mm  # Spacing of spiral
-Dprime = DCol - 2 * c - dbt*0.5  # Inner core diameter
+Hprime = DCol - 2 * c - dbt*0.5  # Inner core diameter
 # print('Dprime= ',Dprime)
 Rbl = Dprime * 0.5 - dbt*0.5 - dbl * 0.5  # Location of longitudinal bar
 # print('Rbl =', Rbl)
@@ -169,39 +170,66 @@ gamma=0.33 #Assuming unidirectional action
 Lpt=Lpc+gamma*DCol
 # FIBER SECTION properties -------------------------------------------------------------
 # Define cross-section for nonlinear columns
-# ------------------------------------------
+# --------------------------------------------------------------------------------------
+#Create Rectangular Sections
+# FIBER SECTION properties -------------------------------------------------------------
+# symmetric section
+#
+#
+#
+#             ------------------------------  --
+#             |   o         o       o    |     |
+#             |                          |     |
+#             |                          |     |
+#    y <---   |   o         +       o    |     B
+#             |                          |     |
+#             |                          |     |
+#             |   o        o        o    |     |
+#             -----------------------------  --
+#             |--------    H    --------|
+#                          |
+#                          V
+#                          z
 
-# set some paramaters Section 1
-ColSecTag = 1
-ri = 0.0
-ro = DCol / 2.0
-nfCoreR = 8
-nfCoreT = 8
-nfCoverR = 2
-nfCoverT = 8
-rc = ro - c
-theta = 360.0 / numBarsSec
+y1= HCol/2
+z1= BCol/2
 
 section('Fiber', ColSecTag,'-GJ',1e+10)
 
-# Create the concrete fibers
-patch('circ', 1, nfCoreT, nfCoreR, 0.0, 0.0, ri, rc, 0.0, 360.0)  # Define the core patch
-patch('circ', 2, nfCoverT, nfCoverR, 0.0, 0.0, rc, ro, 0.0, 360.0)  # Define Cover Patch
+# Create the concrete core fibers
+patch('rect',IDconcC,10,1 ,c-y1, c-z1, y1-c, z1-c)
 
-# Create the reinforcing fibers
-layer('circ', 3, numBarsSec, barAreaSec, 0.0, 0.0, Rbl, theta, 360.0)
+# Create the concrete cover fibers (top, bottom, left, right)
+patch('rect', IDconcU, 10, 1,  -y1, z1-c,   y1,  z1)
+patch('rect', IDconcU, 10, 1,  -y1,  -z1,   y1, c-z1)
+patch('rect', IDconcU, 2,  1,  -y1, c-z1, c-y1, z1-c)
+patch('rect', IDconcU, 2,  1, y1-c, c-z1,   y1, z1-c)
 
-#Set parameters for ZeroLength Element
 
+# Create the reinforcing fibers (left, middle, right)
+layer('straight', IDreinf, numBarsSec, As, y1-c, z1-c, y1-c, c-z1)
+layer('straight', IDreinf, 2, As,  0.0, z1-c,  0.0, c-z1)
+layer('straight', IDreinf, numBarsSec, As, c-y1, z1-c, c-y1, c-z1)
+
+# Section for bond slip
 SecTag2 = 2
 section('Fiber',SecTag2,'-GJ',1e+10)
 
-# Create the concrete fibers
-patch('circ', 1, nfCoreT, nfCoreR, 0.0, 0.0, ri, rc, 0.0, 360.0)  # Define the core patch
-patch('circ', 2, nfCoverT, nfCoverR, 0.0, 0.0, rc, ro, 0.0, 360.0)  # Define Cover Patch
 
-# Create the reinforcing fibers
-layer('circ', IDSP, numBarsSec, barAreaSec, 0.0, 0.0, Rbl, theta, 360.0)
+# Create the concrete core fibers
+patch('rect',IDconcC,10,1 ,c-y1, c-z1, y1-c, z1-c)
+
+# Create the concrete cover fibers (top, bottom, left, right)
+patch('rect', IDconcU, 10, 1,  -y1, z1-c,   y1,  z1)
+patch('rect', IDconcU, 10, 1,  -y1,  -z1,   y1, c-z1)
+patch('rect', IDconcU, 2,  1,  -y1, c-z1, c-y1, z1-c)
+patch('rect', IDconcU, 2,  1, y1-c, c-z1,   y1, z1-c)
+
+
+# Create the reinforcing fibers (left, middle, right)
+layer('straight', IDSP, numBarsSec, As, y1-c, z1-c, y1-c, c-z1)
+layer('straight', IDSP, 2, As,  0.0, z1-c,  0.0, c-z1)
+layer('straight', IDSP, numBarsSec, As, c-y1, z1-c, c-y1, c-z1)
 
 # Creating Elements
 
