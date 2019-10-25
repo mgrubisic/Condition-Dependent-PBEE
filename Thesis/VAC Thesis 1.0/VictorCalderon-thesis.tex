@@ -39,15 +39,15 @@
 %%%%%%%%%%% Hack for alphanumeric bibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \RequirePackage[
-			style=alphabetic,%numeric-comp,%authoryear-comp,%
+			style=ieee,%numeric-comp,%authoryear-comp,%
 			sorting=nyt,%ynt					
 			hyperref=true, %	
 			firstinits=true,%
-			backend=bibtex,
+			backend=biber,
 			natbib=true,
 			url=false,
 			isbn=false,
-			maxnames=2, %for et al to be used
+			%maxnames=2, %for et al to be used
 			maxalphanames=1, %to avoid printing a + for every et al in the abbreviation
 			doi=false]{biblatex}		
 			
@@ -237,7 +237,7 @@
 %%---------------------------- Content Options -------------------------------%%
 %%----------------------------------------------------------------------------%%
 %% Size of committee: 3, 4, 5, or 6 -- this number includes the chair
-\committeesize{3}
+\committeesize{5}
 
 %% Members of committee
 %%  Each of the following member commands takes an optional argument
@@ -248,10 +248,10 @@
 %%
 \chair{Dr. Mervyn Kowalsky}
 \memberI{Dr. James Nau}
-\memberII{Dr. Tasnim Hassan}
-\memberIII{Chris Cox}   % unnecessary if committeesize=3
-\memberIV{Fred Ford}    % unnecessary if committeesize=3 or 4
-\memberV{Edna Everitt}  % unnecessary if committeesize=3, 4, or 5
+\memberII{Dr. Mohammad Pour-Ghaz}
+\memberIII{Dr. Rudolf Seracino}   % unnecessary if committeesize=3
+\memberIV{Dr. Thomas Birkland}    % unnecessary if committeesize=3 or 4
+
 
 
 %% Student writing thesis, \student{First Middle}{Last}
@@ -364,7 +364,7 @@
 \pagestyle{plain}
 \newgeometry{margin=1in,lmargin=1.25in,footskip=\chapterfootskip, includehead, includefoot}
 \include{Chapter-1/Chapter-1}
-%\include{Chapter-2/Chapter-2}
+\include{Chapter-2/Chapter-2}
 %\include{Chapter-3/Chapter-3}
 %\include{Chapter-4/Chapter-4}
 %\include{Chapter-5/Chapter-5}

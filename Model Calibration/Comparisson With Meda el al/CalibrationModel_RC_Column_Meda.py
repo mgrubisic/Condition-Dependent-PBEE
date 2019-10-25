@@ -12,7 +12,7 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 from LibUnitsMUS import *
-import ManderCC
+import ManderCC_Rect
 from __main__ import *
 
 
@@ -52,7 +52,7 @@ model('basic', '-ndm', 2, '-ndf', 3)
 # define section geometry
 HCol =  300 * mm  # Column Height
 BCol =  300 * mm  # Column Base
-LCol = 1600 * mm  # column length
+LCol = 1500 * mm  # column length
 ACol = HCol * BCol  # cross-sectional area, make stiff
 IzCol = 1/12 * BCol * HCol ** 3  # Column moment of inertia
 fpc28 = 20*MPa  # Strength of the concrete
@@ -83,7 +83,7 @@ IDSP    = 4  # material ID tag -- Strain Penetration
 # ------------------------------------------
 # Longitudinal steel properties
 
-CL = 0.20
+CL = 20.0
 
 Fy = 520.0 * MPa * (1-0.021*CL) # STEEL yield stress
 Fu = 620.0 * MPa * (1-0.021*CL) # Steel Ultimate Stress
@@ -94,8 +94,8 @@ cR1 = 0.925  # control the transition from elastic to plastic branches
 cR2 = 0.15  # control the transition from elastic to plastic branches
 c = 30 * mm  # Column cover to reinforcing steel NA.
 numBarsSec = 2  # number of uniformly-distributed longitudinal-reinforcement bars Extreme Fibers
-numBarsMid= 2   # number of uniformly-distributed longitudinal-reinforcement bars Middle Portion
-barAreaSec = 200 * mm2 *(1-CL)  # area of longitudinal-reinforcement bars
+#numBarsMid= 2   # number of uniformly-distributed longitudinal-reinforcement bars Middle Portion
+barAreaSec = 200 * mm2 *(1-CL/100)  # area of longitudinal-reinforcement bars
 dbl = (barAreaSec*4/math.pi)**0.5
  
 
@@ -103,10 +103,19 @@ dbl = (barAreaSec*4/math.pi)**0.5
 fyt = 520 * MPa  # Yield Stress of Transverse Steel
 Ast = 50.3 * mm2  # Area of transverse steel
 dbt = 8 * mm  # Diameter of transverse steel
-st = 100 * mm  # Spacing of spiral
-Hprime = DCol - 2 * c - dbt*0.5  # Inner core diameter
+st = 300 * mm  # Spacing of spiral
+nbx =2
+nby =2
+bx=BCol-2*c
+by=HCol-2*c
+Ashx = nbx*Ast
+Ashy = nby*Ast
+roh_x = 2*Ashx/(st*bx)
+roh_y = 2*Ashy/(st*by)
+
+#Dprime = DCol - 2 * c - dbt*0.5  # Inner core diameter
 # print('Dprime= ',Dprime)
-Rbl = Dprime * 0.5 - dbt*0.5 - dbl * 0.5  # Location of longitudinal bar
+#Rbl = Dprime * 0.5 - dbt*0.5 - dbl * 0.5  # Location of longitudinal bar
 # print('Rbl =', Rbl)
 
 # nominal concrete compressive strength
@@ -114,17 +123,17 @@ fpc = 32.4 * MPa  # CONCRETE Compressive Strength, ksi   (+Tension, -Compression
 Ec = 57.0 * ksi * math.sqrt(fpc / psi)  # Concrete Elastic Modulus
 
 # unconfined concrete
-fc1U = -fpc;  # UNCONFINED concrete (todeschini parabolic model), maximum stress
-eps1U = -0.002  # strain at maximum strength of unconfined concrete
-fc2U = 0.0 * MPa  # ultimate stress
-eps2U = -0.0064  # strain at ultimate stress
+fc1U    = -fpc;  # UNCONFINED concrete (todeschini parabolic model), maximum stress
+eps1U   = -0.002  # strain at maximum strength of unconfined concrete
+fc2U    = 0.0 * MPa  # ultimate stress
+eps2U   = -0.0064  # strain at ultimate stress
 lambdac = 0.1  # ratio between unloading slope at $eps2 and initial slope $Ec
 
-mand = ManderCC.ManderCC(fpc, Ast, fyt, Dprime, st)
+mand = ManderCC_Rect.ManderCC_Rect(fpc, fyt, roh_x, roh_y)
 
-fc =   mand[0]
+fc   = mand[0]
 eps1 = mand[1]
-fc2 =  mand[2]
+fc2  = mand[2]
 eps2 = mand[3]
 
 # CONCRETE                  tag   f'c        ec0   f'cu        ecu
@@ -154,7 +163,7 @@ uniaxialMaterial('Bond_SP01',IDSP, Fy,SPsy,Fu,SPsu,SPb,SPR)
 
 # Writing Material data to file
 with open("mat.out", 'w') as matfile:
-    matfile.write("%s %s %s %s %s %s %s %s %s %s %s %s %s \n" %(Fy, fyt, Ast, st, Dprime, PCol, DCol, barAreaSec, fc,SPsy,SPsu,SPb,SPR))
+    matfile.write("%s %s %s %s %s %s %s %s %s %s %s %s \n" %(Fy, fyt, Ast, st, PCol, HCol, barAreaSec, fc,SPsy,SPsu,SPb,SPR))
 matfile.close
 
 #-------------------------------------------------------------------------
@@ -165,9 +174,9 @@ k=0.2*(Fu/Fy - 1)
 if k > 0.08:
     k=0.08
 Leff=LCol
-Lpc=k*Leff + 0.4*DCol
+Lpc=k*Leff + 0.4*HCol
 gamma=0.33 #Assuming unidirectional action
-Lpt=Lpc+gamma*DCol
+Lpt=Lpc+gamma*HCol
 # FIBER SECTION properties -------------------------------------------------------------
 # Define cross-section for nonlinear columns
 # --------------------------------------------------------------------------------------
@@ -193,11 +202,12 @@ Lpt=Lpc+gamma*DCol
 
 y1= HCol/2
 z1= BCol/2
+ColSecTag=1
 
-section('Fiber', ColSecTag,'-GJ',1e+10)
+section('Fiber', ColSecTag, '-GJ', 1e+10)
 
 # Create the concrete core fibers
-patch('rect',IDconcC,10,1 ,c-y1, c-z1, y1-c, z1-c)
+patch('rect', IDconcC, 10, 1 , c-y1, c-z1, y1-c, z1-c)
 
 # Create the concrete cover fibers (top, bottom, left, right)
 patch('rect', IDconcU, 10, 1,  -y1, z1-c,   y1,  z1)
@@ -207,9 +217,9 @@ patch('rect', IDconcU, 2,  1, y1-c, c-z1,   y1, z1-c)
 
 
 # Create the reinforcing fibers (left, middle, right)
-layer('straight', IDreinf, numBarsSec, As, y1-c, z1-c, y1-c, c-z1)
-layer('straight', IDreinf, 2, As,  0.0, z1-c,  0.0, c-z1)
-layer('straight', IDreinf, numBarsSec, As, c-y1, z1-c, c-y1, c-z1)
+layer('straight', IDreinf, numBarsSec, barAreaSec, y1-c, z1-c, y1-c, c-z1)
+#layer('straight', IDreinf, 2, As,  0.0, z1-c,  0.0, c-z1)
+layer('straight', IDreinf, numBarsSec, barAreaSec, c-y1, z1-c, c-y1, c-z1)
 
 # Section for bond slip
 SecTag2 = 2
@@ -227,9 +237,9 @@ patch('rect', IDconcU, 2,  1, y1-c, c-z1,   y1, z1-c)
 
 
 # Create the reinforcing fibers (left, middle, right)
-layer('straight', IDSP, numBarsSec, As, y1-c, z1-c, y1-c, c-z1)
-layer('straight', IDSP, 2, As,  0.0, z1-c,  0.0, c-z1)
-layer('straight', IDSP, numBarsSec, As, c-y1, z1-c, c-y1, c-z1)
+layer('straight', IDSP, numBarsSec, barAreaSec, y1-c, z1-c, y1-c, c-z1)
+#layer('straight', IDSP, 2, As,  0.0, z1-c,  0.0, c-z1)
+layer('straight', IDSP, numBarsSec,  barAreaSec, c-y1, z1-c, c-y1, c-z1)
 
 # Creating Elements
 
@@ -254,9 +264,9 @@ element('forceBeamColumn', ColeleTag, 2, 3, ColTransfTag, ColIntTag, '-mass', 0.
 recorder('Node', '-file','DFree.out', '-time','-node', 3, '-dof', 1, 2, 3, 'disp')
 recorder('Node', '-file','/DBase.out', '-time', '-node', 1, '-dof', 1, 2, 3, 'disp')
 recorder('Node', '-file', 'RBase.out', '-time', '-node', 2, '-dof', 1, 2, 3, 'reaction')
-recorder('Element', '-file', 'StressStrain.out', '-time','-ele', 2, 'section', '1', 'fiber', str(Rbl)+', 0.0','mat','3','stressStrain')  #Rbl,0, IDreinf
-recorder('Element', '-file', 'StressStrain2.out','-time','-ele', 2, 'section', '1', 'fiber', str(-Dprime)+', 0.0','mat','1','stressStrain')  #Rbl,0, IDreinf
-recorder('Element', '-file', 'StressStrain3.out','-time','-ele', 2, 'section', '1', 'fiber', str(-DCol)+', 0.0','mat','2','stressStrain')
+recorder('Element', '-file', 'StressStrain.out', '-time','-ele', 2, 'section', '1', 'fiber', str(y1-c)+','+str(z1-c),'mat','3','stressStrain')  #Rbl,0, IDreinf
+#recorder('Element', '-file', 'StressStrain2.out','-time','-ele', 2, 'section', '1', 'fiber', str(-Dprime)+', 0.0','mat','1','stressStrain')  #Rbl,0, IDreinf
+#recorder('Element', '-file', 'StressStrain3.out','-time','-ele', 2, 'section', '1', 'fiber', str(-DCol)+', 0.0','mat','2','stressStrain')
 # recorder('Element', '-file', datadir+'Data-2c/DCol.out','-time', '-ele', 1, 'deformations')
 
 #------------------------------------------------------------------------------ 
@@ -294,8 +304,8 @@ test('EnergyIncr', Tol, 10) # determine if convergence has been achieved at the 
 algorithm('Newton') # use Newton's solution algorithm: updates tangent stiffness at every iteration
 
 
-dy = 4.9 * mm
-dy1 = 3.6 * mm
+dy = 13.65 * mm
+dy1 = 12.4 * mm
 ddmax=10
 nIncres=100
 FracStr=0.3
