@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.22)  25 OCT 2019 15:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.22)  30 OCT 2019 17:28
 entering extended mode
 **./VictorCalderon-thesis.tex
 (VictorCalderon-thesis.tex
@@ -1144,7 +1144,13 @@ Package biblatex Warning: Missing 'hyperref' package.
 (VictorCalderon-thesis.aux (front.aux) (Chapter-1/Chapter-1.aux)
 (Chapter-2/Chapter-2.aux
 
+LaTeX Warning: Label `eq.nine' multiply defined.
+
+
 LaTeX Warning: Label `eq.ten' multiply defined.
+
+
+LaTeX Warning: Label `eq.eleven' multiply defined.
 
 ) (Appendix-A/Appendix-A.aux))
 \openout1 = `VictorCalderon-thesis.aux'.
@@ -1384,45 +1390,96 @@ Chapter 1.
 
  (Chapter-2/Chapter-2.tex
 Chapter 2.
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ™ in font cmr10!
 [3
 
 
 
-] [4]
+]
+Underfull \hbox (badness 10000) in paragraph at lines 31--33
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--36
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--60
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--63
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 64--66
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--80
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--83
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--86
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--91
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--94
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 138--140
+
+ []
+
 <Chapter-1/figs/dcvsicor.pdf, id=62, 691.24919pt x 504.64647pt>
 File: Chapter-1/figs/dcvsicor.pdf Graphic file (type pdf)
 <use Chapter-1/figs/dcvsicor.pdf>
-Package pdftex.def Info: Chapter-1/figs/dcvsicor.pdf  used on input line 122.
+Package pdftex.def Info: Chapter-1/figs/dcvsicor.pdf  used on input line 155.
 (pdftex.def)             Requested size: 316.17987pt x 230.83115pt.
- [5]
-<Chapter-1/figs/DiameterDecrease.pdf, id=66, 688.52502pt x 502.6033pt>
+[6]
+<Chapter-1/figs/DiameterDecrease.pdf, id=67, 688.52502pt x 502.6033pt>
 File: Chapter-1/figs/DiameterDecrease.pdf Graphic file (type pdf)
 <use Chapter-1/figs/DiameterDecrease.pdf>
 Package pdftex.def Info: Chapter-1/figs/DiameterDecrease.pdf  used on input lin
-e 140.
+e 173.
 (pdftex.def)             Requested size: 316.17987pt x 230.8092pt.
-<Chapter-1/figs/CorrosionLevel.pdf, id=67, 794.97pt x 614.295pt>
+<Chapter-1/figs/CorrosionLevel.pdf, id=68, 794.97pt x 614.295pt>
 File: Chapter-1/figs/CorrosionLevel.pdf Graphic file (type pdf)
 <use Chapter-1/figs/CorrosionLevel.pdf>
 Package pdftex.def Info: Chapter-1/figs/CorrosionLevel.pdf  used on input line 
-157.
+190.
 (pdftex.def)             Requested size: 316.17987pt x 244.32639pt.
- [6 <./Chapter-1/figs/dcvsicor.pdf>] [7 <./Chapter-1/figs/DiameterDecrease.pdf>
- <./Chapter-1/figs/CorrosionLevel.pdf>] [8] [9]
-<Chapter-1/figs/StrainAging_TimeDependent.pdf, id=116, 690.56824pt x 503.28438p
+ [7 <./Chapter-1/figs/dcvsicor.pdf>] [8 <./Chapter-1/figs/DiameterDecrease.pdf>
+ <./Chapter-1/figs/CorrosionLevel.pdf>] [9] [10]
+<Chapter-1/figs/StrainAging_TimeDependent.pdf, id=117, 690.56824pt x 503.28438p
 t>
 File: Chapter-1/figs/StrainAging_TimeDependent.pdf Graphic file (type pdf)
 <use Chapter-1/figs/StrainAging_TimeDependent.pdf>
 Package pdftex.def Info: Chapter-1/figs/StrainAging_TimeDependent.pdf  used on 
-input line 250.
+input line 283.
 (pdftex.def)             Requested size: 406.516pt x 296.26709pt.
- [10 <./Chapter-1/figs/StrainAging_TimeDependent.pdf>]) [11] [12
+ [11 <./Chapter-1/figs/StrainAging_TimeDependent.pdf>]) [12] [13
 
 
-] [13
+] [14
 
 
 ]
@@ -1462,18 +1519,18 @@ input line 250.
 
  (Appendix-A/Appendix-A.tex
 Appendix A.
-[14
+[15
 
 
 
 
 ]
-<Chapter-2/figs/threed.pdf, id=150, 578.16pt x 433.62pt>
+<Chapter-2/figs/threed.pdf, id=152, 578.16pt x 433.62pt>
 File: Chapter-2/figs/threed.pdf Graphic file (type pdf)
 <use Chapter-2/figs/threed.pdf>
 Package pdftex.def Info: Chapter-2/figs/threed.pdf  used on input line 9.
 (pdftex.def)             Requested size: 271.01526pt x 203.25887pt.
- [15] [16 <./Chapter-2/figs/threed.pdf>]) [17]
+ [16] [17 <./Chapter-2/figs/threed.pdf>]) [18]
 
 AED: lastpage setting LastPage
 (VictorCalderon-thesis.aux (front.aux) (Chapter-1/Chapter-1.aux)
@@ -1486,10 +1543,10 @@ Package logreq Info: Writing requests to 'VictorCalderon-thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23603 strings out of 493303
- 443700 string characters out of 3138847
- 947738 words of memory out of 3000000
- 26646 multiletter control sequences out of 15000+200000
+ 23602 strings out of 493303
+ 443690 string characters out of 3138847
+ 947138 words of memory out of 3000000
+ 26645 multiletter control sequences out of 15000+200000
  13607 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,12n,54p,1888b,1291s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1501,14 +1558,13 @@ am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/
 type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl
-10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on VictorCalderon-thesis.pdf (27 pages, 466638 bytes).
+lic/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmsl10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+sy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+
+Output written on VictorCalderon-thesis.pdf (28 pages, 452255 bytes).
 PDF statistics:
- 218 PDF objects out of 1000 (max. 8388607)
+ 213 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  38 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1975,16 +1975,12 @@
     <bcf:datasource type="file" datatype="bibtex">VictorCalderon-thesis.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">Yuan2017a</bcf:citekey>
-    <bcf:citekey order="2">Y.Liu1998a</bcf:citekey>
-    <bcf:citekey order="3">Choe2008</bcf:citekey>
-    <bcf:citekey order="4">Thoft-Christensen</bcf:citekey>
-    <bcf:citekey order="5">Vu2000</bcf:citekey>
-    <bcf:citekey order="6">Vu2000</bcf:citekey>
-    <bcf:citekey order="7">Yuan2017a</bcf:citekey>
-    <bcf:citekey order="8">Restrepo-Posada1994</bcf:citekey>
-    <bcf:citekey order="9">Momtahan2009</bcf:citekey>
-    <bcf:citekey order="10">Momtahan2009</bcf:citekey>
+    <bcf:citekey order="1">Thoft-Christensen</bcf:citekey>
+    <bcf:citekey order="2">Vu2000</bcf:citekey>
+    <bcf:citekey order="3">Yuan2017a</bcf:citekey>
+    <bcf:citekey order="4">Restrepo-Posada1994</bcf:citekey>
+    <bcf:citekey order="5">Momtahan2009</bcf:citekey>
+    <bcf:citekey order="6">Momtahan2009</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

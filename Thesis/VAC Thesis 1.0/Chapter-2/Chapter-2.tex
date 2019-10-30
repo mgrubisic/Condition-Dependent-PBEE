@@ -3,6 +3,14 @@
 In Chapter \ref{chap-one} we did some typesetting and equations; now let's 
 look at tables, figures, and matrices.
 
+\section{Cumulative Damage}
+
+Cumulative Damage in structures have been tried to be established for structures to identify the state of a structure 
+
+The best-known and most widely used of all the cumulative damage index is that of Park and Ang (1985). This consists of a simple linear combination of normalized deformation and energy absorption: 
+
+The first term here is a simple, pseudo-static displacement measure. It takes no account of cumulative damage, which is accounted for solely by the energy term. The advantages of this model are its simplicity, and the fact that it has been calibrated against a significant amount of observed seismic damage, included some instances of shear and bond failures. Park, Ang and Wen (1985) suggested D = 0.4 as a threshold value between repairable and irreparable damage, while the same authors in 1987 suggested the following more detailed classification: 
+
 \section{Corrosion}
 
 One of the main phenomenon that affect the long term behavior of structures is corrosion. 
@@ -20,33 +28,47 @@ A literature review to characterize corrosion in reinforcing steel is presented 
  
 \subsection{Time to Corrosion}
 
-\textbf{Christensen Model}
+Time to corrosion refers to the corrosion initiation at which the passivation of steel is destroyed and reinforcement starts corroding actively.
+\newline
 
-Christensen model is based on a probabilistic approach to determine the time to corrosion based on the likelihood of the phenomenon to occur at a certain time in the life of a structure. 
+\textbf{Christensen Model}
+\newline
+
+Christensen \cite{Thoft-Christensen} main goal was to generate a corrosion model that was general for all concrete elements, additionally the authors tried to generate a model that also included the appearance of cracks due to corrosion that would evetually grow and the spall the concrete. 
+
+More specifically related to reinforcing steel corrosion they developed a model based on Fick's law of diffusion to model the rate of chloride penetration into concrete as a function of concrete cover and time. 
+
 \begin{equation}
-  T_{corr}=X_I \left[\frac{d_c^2}{4k_e k_t k_c D_0 (t_0 )^n }\left[erf^{-1} \left(1-\frac{C_cr}{C_s} \right) \right]^{-2} \right]^{\frac{1}{1-n}}
-  \label{eq:one}
+	\frac{\partial C(x,t)}{\partial t} = D_c \frac{\partial C(x,t)}{\partial x^2}
+	\label{eq:one}
+\end{equation}
+
+After solving equation \ref{eq:one} the following expression results:
+\begin{equation}
+  T_{corr}=\frac{d^2}{4D_c} \left[erf^{-1}\left(\frac{C_{cr}-C_{0}}{C_1 -C_0}\right)\right]
+  \label{eq:two}
 \end{equation} 
 
-$X_I$: Model Uncertainty
+$d$: Concrete cover
 
-$d_c$: Depth of reinforcement
+$D_0$: Diffusion coefficient
 
-$k_e$ $k_t$ $k_c$: Factors that take into account test methods, curing and environment
+$C_{0}$: Equilibrium Chloride Concentration
 
-$D_0$: Diffusion
+$C_{cr}$: Critical chloride corrosion concentration
+\newline
 
-$C_s$: Water to binder ratio $C_s=A_{cs}\frac{w}{b}+\varepsilon_cs$
-
+While this model provides a means to calculate the Time for initiation of corrosion as a function of Concrete Cover and Diffusion concentration, the estimation of the Diffusion concentration depends on several factors such as environment, curing and water to cement ratio it is not a reliable method to estimate the Time to Corrosion.
+\newline
 
 \textbf{Gosh \& Padgett Model}
-
+\newline
 
 Ghosh et al calculate time to corrosion based on Thoft-Christensen model, considering in-field corrosion related studies of existing bridge components in the United States exposed to deicing salts to obtain mean values of chlorides concentration and put them in a modified version of the Thoft-Christensen Model.
 
 \begin{equation}
 T_{corr}=\frac{x^2}{4 D_c} \left[erf^{-1} \left(\frac{C_0-C_cr}{C_0} \right) \right]^{-2}
-  \label{eq.ten}
+  \label{eq.three}
 \end{equation} 
 
 $D_c$ 1.29 $frac{cm^2}{year}$ Diffusion Coefficient 
@@ -54,32 +76,35 @@ $D_c$ 1.29 $frac{cm^2}{year}$ Diffusion Coefficient
 $C_0$ 0.10 Surface Chloride Concentration
 
 $C_r$ 0.04 Critical Chloride Concentration
+\newline
 
-While this model provides mean values for the time of initiation of corrosion, it is limited to environments that are controlled by dicing salts only
+While this model provides mean values for the time of initiation of corrosion, it is limited to environments that are controlled by \textbf{dicing salts only}.
+\newline
 
-
- 
 \textbf{Life 365}
+\newline
 
 Is a software developed by a consortium of companies of the cementitious materials industries and academic institutions. This software relies on the studies summarized above, mainly using the Thoft-Christensen model, but as opposed to assuming dicing environments only, this software uses a database of chlorides concentration for different location in the USA and Canada, which gives more accurate results depending on the location and environment in which the structure is located.
 
 While this is a more robust model to obtain the initiation of corrosion since it considers the location and environment of the structure and it also has the ability to include other durability issues, it is difficult to implement in a batch run format since the program is in a closed format.
+\newline
 
 \textbf{Liu \& Weyers Model}
+\newline
 
 \begin{equation}
   T_{cr}=\frac{W_{crit}^2}{2k_p}
-  \label{eq.two}
+  \label{eq.four}
 \end{equation} 
 
 \begin{equation}
   W_{crit}=\rho_{rust} \left[ \pi \left[ \frac{C f'_t}{E_{ef}} \left( \frac{a^2+b^2}{a^2-b^2}+\nu_c \right)+d_o \right] D+ \frac{W_{st}}{\rho_{st}} \right]
-  \label{eq.three}
+  \label{eq.five}
 \end{equation} 
 
 \begin{equation}
   k_p=0.098 (\frac{1}{\alpha})\pi Di_{corr}
-  \label{eq.four}
+  \label{eq.six}
 \end{equation} 
 
 $W_{crit}$: Critical amount of corrosion needed to induce cracking.
@@ -111,12 +136,13 @@ $b=C+\frac{D+2d_o}{2}$
 \subsection{Rate of corrosion}
 
 \textbf{Vu et al. Model }
+\newline
 
 To estimate the loss of steel cross section due to corrosion a time dependent corrosion rate model was developed by \cite{Vu2000}, this model implies that corrosion diminishes with time since as corrosion accumulates with time around the steel, it precludes uncorroded steel to react with the environment. The model is shown in \eref{eq.five}.
 
 \begin{equation}
   i_{corr}=\frac{37.5(1-w/c)}{d_c}
-  \label{eq.five}
+  \label{eq.eight}
 \end{equation} 
 
 $w/c$: Water Cement ratio
@@ -135,7 +161,7 @@ From the Vu et al model the diamater degradation is calculated according to Choe
 
 \begin{equation}
   d_{corr}=d_{bi}-\frac{1.0508(1-w/c)}{d_c} (t-t_{corr})^{0.71}
-  \label{eq.six}
+  \label{eq.nine}
 \end{equation} 
 
 $d_{bi}$: Is the initial diameter of the bar
@@ -154,7 +180,7 @@ The level of corrosion is calculated as:
 
 \begin{equation}
   C=\frac{G_o-G}{g_ol_o} *100%
-  \label{eq.seven}
+  \label{eq.ten}
 \end{equation} 
 
 Then the Corrosion level is plotted as a function of time in \fref{fig:hist3}
@@ -172,7 +198,7 @@ In a study presented by Yuan et al \cite{Yuan2017a} it was shown from experiment
 
 \begin{equation}
   f_{y,C}=f_{yo}(1-0.021C)
-  \label{eq.eight}
+  \label{eq.eleven}
 \end{equation} 
 
 \[
