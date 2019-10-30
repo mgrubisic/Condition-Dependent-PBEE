@@ -5,12 +5,19 @@ look at tables, figures, and matrices.
 
 \section{Corrosion}
 
-A structure that is originally designed to meet code specifications may not have the same margin of safety once the structure has undergone significant corrosion. 
+One of the main phenomenon that affect the long term behavior of structures is corrosion. 
 
-Research on the cyclic behavior of Corroded RC Columns \cite{Yuan2017a} have shown that at high corrosion levels as high as 35\% the yield strength of the columns decreased by 28\% and the ultimate strength decreased by 30\%, also the ductility is reduced by as much as 18\%. This research was performed by fixing the percentage of corrosion and then physical tests were performed; the properties of the materials are modified using empirical equations developed from the tests. While the results appear to correlate well with the tests, this model is not time dependent.
+A literature review to characterize corrosion in reinforcing steel is presented such that corrosion can be modeled as a function of time, the corrosion process is an extensive field of research and to characterize it  the literature review on this subject is categorized as follows:
 
-There are time dependent models which first determine the time at which corrosion starts and then a time dependent function in which the diameter of the bar is simulated to reduce it’s section with time \cite{Y.Liu1998a}, \cite{Choe2008}, \cite{Thoft-Christensen}, \cite{Vu2000}.
+\begin{enumerate}
+	\item Time to Initiation of Corrosion (Tcorr)
+	\item Corrosion growth in reinforcing steel
+	\item Mechanical Properties of Corroded Reinforcing Steel (fycorr, fucorr)
+	\item Cyclic Test on Columns
+	\item Flowchart of Corrosion Model Implemented
+\end{enumerate}
 
+ 
 \subsection{Time to Corrosion}
 
 \textbf{Christensen Model}
@@ -50,16 +57,16 @@ $C_r$ 0.04 Critical Chloride Concentration
 
 While this model provides mean values for the time of initiation of corrosion, it is limited to environments that are controlled by dicing salts only
 
-\:
+
  
 \textbf{Life 365}
-\:
+
 Is a software developed by a consortium of companies of the cementitious materials industries and academic institutions. This software relies on the studies summarized above, mainly using the Thoft-Christensen model, but as opposed to assuming dicing environments only, this software uses a database of chlorides concentration for different location in the USA and Canada, which gives more accurate results depending on the location and environment in which the structure is located.
 
 While this is a more robust model to obtain the initiation of corrosion since it considers the location and environment of the structure and it also has the ability to include other durability issues, it is difficult to implement in a batch run format since the program is in a closed format.
-\:
+
 \textbf{Liu \& Weyers Model}
-\:
+
 \begin{equation}
   T_{cr}=\frac{W_{crit}^2}{2k_p}
   \label{eq.two}
@@ -102,9 +109,9 @@ $a=\frac{D+2d_o}{2}$
 $b=C+\frac{D+2d_o}{2}$
 
 \subsection{Rate of corrosion}
-\:
+
 \textbf{Vu et al. Model }
-\:
+
 To estimate the loss of steel cross section due to corrosion a time dependent corrosion rate model was developed by \cite{Vu2000}, this model implies that corrosion diminishes with time since as corrosion accumulates with time around the steel, it precludes uncorroded steel to react with the environment. The model is shown in \eref{eq.five}.
 
 \begin{equation}
