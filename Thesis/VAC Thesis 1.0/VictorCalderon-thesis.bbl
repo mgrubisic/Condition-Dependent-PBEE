@@ -1,0 +1,332 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nyt/global//global/global}
+  \entry{Mehta2014}{book}{}
+    \name{author}{2}{}{%
+      {{hash=MPK}{%
+         family={Mehta},
+         familyi={M\bibinitperiod},
+         given={P.\bibnamedelima Kumar},
+         giveni={P\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+      {{hash=MPJM}{%
+         family={Monteiro},
+         familyi={M\bibinitperiod},
+         given={Paulo J.\bibnamedelima M.},
+         giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim
+  M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {McGraw Hill}%
+    }
+    \strng{namehash}{MPKMPJM1}
+    \strng{fullhash}{MPKMPJM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{MM14}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{edition}{4}
+    \field{title}{{Concrete: Microstructure, Properties, and Materials}}
+    \field{year}{2014}
+  \endentry
+
+  \entry{Momtahan2009}{article}{}
+    \name{author}{3}{}{%
+      {{hash=MA}{%
+         family={Momtahan},
+         familyi={M\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=DRP}{%
+         family={Dhakal},
+         familyi={D\bibinitperiod},
+         given={R.\bibnamedelima P.},
+         giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=RA}{%
+         family={Rieder},
+         familyi={R\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MA+1}
+    \strng{fullhash}{MADRPRA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Mom09}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{issn}{11749857}
+    \field{number}{3}
+    \field{pages}{179\bibrangedash 186}
+    \field{title}{{Effects of strain-ageing on New Zealand reinforcing steel
+  bars}}
+    \field{volume}{42}
+    \verb{file}
+    \verb :C$\backslash$:/Users/vccal/AppData/Local/Mendeley Ltd./Mendeley Desk
+    \verb top/Downloaded/Momtahan, Dhakal, Rieder - 2009 - Effects of strain-ag
+    \verb eing on New Zealand reinforcing steel bars(2).pdf:pdf
+    \endverb
+    \field{journaltitle}{Bulletin of the New Zealand Society for Earthquake
+  Engineering}
+    \field{year}{2009}
+  \endentry
+
+  \entry{Restrepo-Posada1994}{article}{}
+    \name{author}{4}{}{%
+      {{hash=RPJ}{%
+         family={Restrepo-Posada},
+         familyi={R\bibinitperiod-P\bibinitperiod},
+         given={J.I.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=DLL}{%
+         family={Dodd},
+         familyi={D\bibinitperiod},
+         given={L\bibnamedelima L},
+         giveni={L\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=PR}{%
+         family={Park},
+         familyi={P\bibinitperiod},
+         given={R},
+         giveni={R},
+      }}%
+      {{hash=CN}{%
+         family={Cooke},
+         familyi={C\bibinitperiod},
+         given={N},
+         giveni={N},
+      }}%
+    }
+    \strng{namehash}{RPJ+1}
+    \strng{fullhash}{RPJDLLPRCN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{RP94}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{abstract}{%
+    A reasonable understanding of the cyclic behavior of reinforcing steel is
+  required to accurately estimate the performance of reinforced concrete
+  members subjected to cyclic deformations beyond the elastic range such as
+  those expected from large earthquakes. Although the cyclic behavior of
+  reinforcing steel has been extensively studied, very little is known about
+  the effects that factors such as the bar deformations, strain rate, and
+  strain aging have on the cyclic behavior. The effects of strain aging on the
+  cyclic behavior of reinforcing steel can be very relevant when considering
+  postearthquake retrofitting of reinforced concrete structures. A series of
+  cyclic uniaxial tests were conducted at the University of Canterbury on the
+  two commercially available grades of New Zealand reinforcing steel, where the
+  effects of cyclic loading, bar deformations, strain rate, and strain aging on
+  the stress-strain behavior of reinforcing steel were investigated. The
+  emphasis of the tests was to observe the material behavior, and hence
+  buckling was restricted. The present paper describes the test setup and
+  discusses the results of the investigation.%
+    }
+    \field{number}{11}
+    \field{pages}{31783196}
+    \field{title}{{VARIABLES AFFECTING CYCLIC BEHAVIOR OF REINFORCING STEEL}}
+    \verb{url}
+    \verb https://ascelibrary.org/doi/pdf/10.1061/(ASCE)0733-9445(1994)120{\%}3
+    \verb A11(3178)
+    \endverb
+    \field{volume}{120}
+    \verb{file}
+    \verb :C$\backslash$:/Users/vccal/AppData/Local/Mendeley Ltd./Mendeley Desk
+    \verb top/Downloaded/I Restrepo-Posada et al. - Unknown - VARIABLES AFFECTI
+    \verb NG CYCLIC BEHAVIOR OF REINFORCING STEEL.pdf:pdf
+    \endverb
+    \field{journaltitle}{Journal of Structural Engineering}
+    \field{year}{1994}
+  \endentry
+
+  \entry{Thoft-Christensen}{article}{}
+    \name{author}{1}{}{%
+      {{hash=TCP}{%
+         family={Thoft-Christensen},
+         familyi={T\bibinitperiod-C\bibinitperiod},
+         given={Palle},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TCP1}
+    \strng{fullhash}{TCP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{TC}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{title}{{Corrosion and Cracking of Reinforced Concrete}}
+    \verb{url}
+    \verb https://ascelibrary.org/doi/pdf/10.1061/40707{\%}28240{\%}294
+    \endverb
+    \verb{file}
+    \verb :C$\backslash$:/Users/vacalder/AppData/Local/Mendeley Ltd./Mendeley D
+    \verb esktop/Downloaded/Thoft-Christensen - Unknown - Corrosion and Crackin
+    \verb g of Reinforced Concrete.pdf:pdf
+    \endverb
+  \endentry
+
+  \entry{Vu2000}{article}{}
+    \name{author}{2}{}{%
+      {{hash=VKAT}{%
+         family={Vu},
+         familyi={V\bibinitperiod},
+         given={Kim Anh\bibnamedelima T.},
+         giveni={K\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim
+  T\bibinitperiod},
+      }}%
+      {{hash=SMG}{%
+         family={Stewart},
+         familyi={S\bibinitperiod},
+         given={Mark\bibnamedelima G.},
+         giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{VKATSMG1}
+    \strng{fullhash}{VKATSMG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{VS00}
+    \field{sortinit}{V}
+    \field{sortinithash}{V}
+    \field{abstract}{%
+    A structural deterioration reliability (probabilistic) model has been used
+  herein to calculate probabilities of structural failure. New reinforced
+  concrete corrosion initiation, corrosion rate and time-variant load models
+  are proposed. Three durability design specifications are considered in a
+  lifetime reliability analysis of a RC slab bridge. Time-variant increases in
+  loads are considered also. It was found that the application of de-icing
+  salts causes significant long-term deterioration and reduction in structural
+  safety for poor durability design specifications. A reduced cover or
+  increased water-cement ratio increases failure probabilities. When compared
+  to the case of “no deterioration”, it was observed also that the
+  probability of failure only marginally increased for good durability design
+  specifications. The approaches described herein are relevant to other
+  physical infrastructure also.%
+    }
+    \verb{doi}
+    \verb 10.1016/S0167-4730(00)00018-7
+    \endverb
+    \field{issn}{0167-4730}
+    \field{number}{4}
+    \field{pages}{313\bibrangedash 333}
+    \field{title}{{Structural reliability of concrete bridges including
+  improved chloride-induced corrosion models}}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0167473000000187
+    \endverb
+    \field{volume}{22}
+    \verb{file}
+    \verb :C$\backslash$:/Users/vacalder/AppData/Local/Mendeley Ltd./Mendeley D
+    \verb esktop/Downloaded/Vu, Stewart - 2000 - Structural reliability of conc
+    \verb rete bridges including improved chloride-induced corrosion models.pdf
+    \verb :pdf
+    \endverb
+    \field{journaltitle}{Structural Safety}
+    \field{year}{2000}
+  \endentry
+
+  \entry{Yuan2017a}{article}{}
+    \name{author}{4}{}{%
+      {{hash=YZ}{%
+         family={Yuan},
+         familyi={Y\bibinitperiod},
+         given={Zhijie},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=FC}{%
+         family={Fang},
+         familyi={F\bibinitperiod},
+         given={Congqi},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=PM}{%
+         family={Parsaeimaram},
+         familyi={P\bibinitperiod},
+         given={Mohammad},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=YS}{%
+         family={Yang},
+         familyi={Y\bibinitperiod},
+         given={Shuai},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \keyw{Author keywords,Axial repeated loads,Concrete bridge
+  piers,Corrosion,Seismic performance}
+    \strng{namehash}{YZ+1}
+    \strng{fullhash}{YZFCPMYS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Yua17}
+    \field{sortinit}{Y}
+    \field{sortinithash}{Y}
+    \field{abstract}{%
+    Corrosion damage is one of the main problems affecting the durability of
+  concrete structures. Several corroded reinforced concrete (RC) railway
+  bridges are located in regions of high seismic risk. Corroded bridge piers
+  are often subjected to dynamic axial loads, such as the vertical pounding
+  that occurs during earthquakes or due to railway trains. Repeated axial
+  loading was used to simulate this vertical pounding effect. Therefore, the
+  seismic performance of corroded RC structures under repeated axial and
+  horizontal cyclic loading is an urgent issue. To investigate the influences
+  of steel corrosion and repeated axial loading on the seismic performance of a
+  column pier, eight RC column speci-mens were experimentally investigated. The
+  results indicated that corrosion significantly influences the yield strength
+  and load bearing capacity of a column. The load bearing capacities of the
+  corroded specimens decreased by 18.27{\%} compared with noncorroded specimens
+  when the longitudinal loss of steel mass was 7.16{\%}. Repeated axial loading
+  did not significantly influence the mechanical properties of the cor-roded RC
+  piers. Cyclic tests were performed to validate a finite-element model that
+  was used to assess the effects of corrosion level on the seis-mic performance
+  of columns. The level of steel corrosion ranged from 0 to 28{\%}. According
+  to the finite-element analysis, the yield strength (35{\%}) and ultimate
+  displacement (34{\%}) decreased with increasing corrosion.%
+    }
+    \verb{doi}
+    \verb 10.1061/(ASCE)BE.1943-5592.0001043
+    \endverb
+    \field{number}{7}
+    \field{title}{{Cyclic Behavior of Corroded Reinforced Concrete Bridge
+  Piers}}
+    \verb{url}
+    \verb https://ascelibrary.org/doi/pdf/10.1061/{\%}28ASCE{\%}29BE.1943-5592.
+    \verb 0001043
+    \endverb
+    \field{volume}{22}
+    \verb{file}
+    \verb :C$\backslash$:/Users/vacalder/AppData/Local/Mendeley Ltd./Mendeley D
+    \verb esktop/Downloaded/Yuan et al. - Unknown - Cyclic Behavior of Corroded
+    \verb  Reinforced Concrete Bridge Piers.pdf:pdf
+    \endverb
+    \field{journaltitle}{Journal of Bridge Engineering}
+    \field{year}{2017}
+  \endentry
+\enddatalist
+\endinput

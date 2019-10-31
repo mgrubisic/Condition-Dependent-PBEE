@@ -39,17 +39,17 @@
 %%%%%%%%%%% Hack for alphanumeric bibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \RequirePackage[
-			style=ieee,%numeric-comp,%authoryear-comp,%
+			style=alphabetic,%numeric-comp,%authoryear-comp,%
 			sorting=nyt,%ynt					
 			hyperref=true, %	
-			firstinits=true,%
-			backend=biber,
+			giveninits=true,%
+			backend=bibtex,
 			natbib=true,
 			url=false,
 			isbn=false,
-			%maxnames=2, %for et al to be used
+			maxnames=2, %for et al to be used
 			maxalphanames=1, %to avoid printing a + for every et al in the abbreviation
-			doi=false]{biblatex}		
+			doi=false]{biblatex}			
 			
 
 %needed to do et al after two names
