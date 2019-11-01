@@ -1,57 +1,57 @@
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{LIST OF TABLES}{vi}
+\contentsline {chapter}{LIST OF TABLES}{vi}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{LIST OF FIGURES}{vii}
+\contentsline {chapter}{LIST OF FIGURES}{vii}% 
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {1}INTRODUCTION}{1}
+\contentsline {chapter}{\numberline {1}INTRODUCTION}{1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Properties that change with time}{2}
+\contentsline {section}{\numberline {1.1}Properties that change with time}{2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}LITERATURE REVIEW}{3}
+\contentsline {chapter}{\numberline {2}LITERATURE REVIEW}{3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Cumulative Damage}{3}
+\contentsline {section}{\numberline {2.1}Cumulative Damage}{3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Corrosion}{3}
+\contentsline {section}{\numberline {2.2}Corrosion}{3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.1}Time to Corrosion}{4}
+\contentsline {subsection}{\numberline {2.2.1}Time to Corrosion}{4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}Rate of corrosion}{7}
+\contentsline {subsection}{\numberline {2.2.2}Rate of corrosion}{7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.3}Corrosion modified properties of reinforcing steel bars}{8}
+\contentsline {subsection}{\numberline {2.2.3}Corrosion modified properties of reinforcing steel bars}{8}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.4}Corrosion modified properties of reinforcing steel bars}{10}
+\contentsline {subsection}{\numberline {2.2.4}Corrosion modified properties of reinforcing steel bars}{10}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Steel Strain Aging}{10}
+\contentsline {section}{\numberline {2.3}Steel Strain Aging}{10}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.1}Metallurgical Process}{10}
+\contentsline {subsection}{\numberline {2.3.1}Metallurgical Process}{10}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.2}Strain aging effects in structures}{11}
+\contentsline {subsection}{\numberline {2.3.2}Strain aging effects in structures}{11}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Concrete Strength}{13}
+\contentsline {section}{\numberline {2.4}Concrete Strength}{13}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Welding and Fatigue in Steel Structures}{13}
+\contentsline {section}{\numberline {2.5}Welding and Fatigue in Steel Structures}{13}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}Repair Effects}{13}
+\contentsline {section}{\numberline {2.6}Repair Effects}{13}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.7}Multiple Seismic Events}{13}
+\contentsline {section}{\numberline {2.7}Multiple Seismic Events}{13}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.7.1}Main Shock Series}{13}
+\contentsline {subsection}{\numberline {2.7.1}Main Shock Series}{13}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.7.2}Main Shock - After Shock Series}{13}
+\contentsline {subsection}{\numberline {2.7.2}Main Shock - After Shock Series}{13}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.7.3}Main Shock - After Shock Series - Repair Series}{13}
+\contentsline {subsection}{\numberline {2.7.3}Main Shock - After Shock Series - Repair Series}{13}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{{\uppercase {Bibliography}}}{14}
+\contentsline {chapter}{{\uppercase {Bibliography}}}{14}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{APPENDIX}{15}
+\contentsline {chapter}{APPENDIX}{15}% 
 \defcounter {refsection}{0}\relax 
  \renewcommand {\cftchappresnum }{Appendix } \renewcommand {\cftchapnumwidth }{\appendixwidth } \renewcommand {\cftchapfont }{\cftsecfont } \setlength {\cftbeforechapskip }{\cftbeforesecskip } \setlength {\cftchapindent }{\cftsecindent } \renewcommand {\cftchappagefont }{\cftchapfont } \setlength {\cftsecindent }{\cftsubsecindent } \addtolength {\cftsubsecindent }{\cftsecnumwidth } \setcounter {tocdepth}{\c@ncsu@appendixtocdepth } 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}LOREM IPSUM}{16}
+\contentsline {chapter}{\numberline {A}LOREM IPSUM}{16}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}A First Section}{16}
+\contentsline {section}{\numberline {A.1}A First Section}{16}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {A.1.0.0.1}Filler Text}{16}
+\contentsline {paragraph}{\numberline {A.1.0.0.1}Filler Text}{16}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}A Second Section}{19}
+\contentsline {section}{\numberline {A.2}A Second Section}{19}% 

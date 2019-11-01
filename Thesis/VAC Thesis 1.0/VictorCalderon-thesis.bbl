@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 2.9 $
+% $ biblatex bbl format version 3.1 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -40,7 +40,7 @@
     \strng{fullhash}{MPKMPJM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelalpha}{MM14}
+    \field{labelalpha}{Meh14}
     \field{sortinit}{M}
     \field{sortinithash}{M}
     \field{edition}{4}
@@ -96,7 +96,7 @@
     \name{author}{4}{}{%
       {{hash=RPJ}{%
          family={Restrepo-Posada},
-         familyi={R\bibinitperiod-P\bibinitperiod},
+         familyi={R\bibinithyphendelim P\bibinitperiod},
          given={J.I.},
          giveni={J\bibinitperiod},
       }}%
@@ -165,7 +165,7 @@
     \name{author}{1}{}{%
       {{hash=TCP}{%
          family={Thoft-Christensen},
-         familyi={T\bibinitperiod-C\bibinitperiod},
+         familyi={T\bibinithyphendelim C\bibinitperiod},
          given={Palle},
          giveni={P\bibinitperiod},
       }}%
@@ -211,7 +211,7 @@
     \strng{fullhash}{VKATSMG1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelalpha}{VS00}
+    \field{labelalpha}{Vu00}
     \field{sortinit}{V}
     \field{sortinithash}{V}
     \field{abstract}{%
