@@ -17,6 +17,214 @@
 \endgroup
 
 \datalist[entry]{nyt/global//global/global}
+  \entry{Ghosh2010}{article}{}
+    \name{author}{2}{}{%
+      {{hash=GJ}{%
+         family={Ghosh},
+         familyi={G\bibinitperiod},
+         given={Jayadipta},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=PJE}{%
+         family={Padgett},
+         familyi={P\bibinitperiod},
+         given={Jamie\bibnamedelima E},
+         giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+    }
+    \keyw{Aging Author keywords: Bridges,CE Database subject headings:
+  Bridges,Corrosion,Deterioration,Fragility,Probability,Seismic,Seismic
+  effects}
+    \strng{namehash}{GJPJE1}
+    \strng{fullhash}{GJPJE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{abstract}{%
+    This paper presents the formulation of a time-dependent seismic fragility
+  format for bridges, as well as new insights into the potential effects of
+  aging and deterioration on seismic vulnerability traditionally neglected in
+  fragility modeling, including joint impacts of multiple component
+  deterioration not investigated to date. The study evaluates the impact of
+  lifetime exposure to chlorides from deicing salts on the seismic performance
+  of multispan continuous highway bridges, considering corrosion of reinforced
+  concrete columns and steel bridge bearings. The components' degradation and
+  their influence on seismic response are illustrated through three-dimensional
+  nonlinear dynamic analysis. A full probabilistic analysis accounting for
+  variation in bridge, ground motion, and corrosion parameters is conducted to
+  develop time-dependent seismic fragility curves. These fragility curves
+  indicate the evolving potential for component and system damage under seismic
+  loading considering time-dependent corrosion-induced deterioration. The
+  results indicate that while corrosion may actually decrease the seismic
+  vulnerability of some components, most critical components suffer an increase
+  in vulnerability. Quadratic models depicting the change in lognormal seismic
+  fragility parameters are proposed to capture the time-dependent effect of
+  aging on the fragility of the bridge system. Overall, the seismic
+  vulnerability significantly increases throughout the lifetime of the
+  representative bridge geometry, with a 32{\%} shift in the median value of
+  complete damage fragility near the end of the bridge's life.%
+    }
+    \verb{doi}
+    \verb 10.1061/ASCEST.1943-541X.0000260
+    \endverb
+    \field{number}{12}
+    \field{pages}{1497\bibrangedash 1511}
+    \field{title}{{Aging Considerations in the Development of Time-Dependent
+  Seismic Fragility Curves}}
+    \verb{url}
+    \verb https://ascelibrary.org/doi/pdf/10.1061/{\%}28ASCE{\%}29ST.1943-541X.
+    \verb 0000260
+    \endverb
+    \field{volume}{136}
+    \verb{file}
+    \verb :C$\backslash$:/Users/user/AppData/Local/Mendeley Ltd./Mendeley Deskt
+    \verb op/Downloaded/Ghosh et al. - Unknown - Aging Considerations in the De
+    \verb velopment of Time-Dependent Seismic Fragility Curves(2).pdf:pdf
+    \endverb
+    \field{journaltitle}{Journal of Structural Engineering}
+    \field{year}{2010}
+  \endentry
+
+  \entry{Ma2012}{article}{}
+    \name{author}{3}{}{%
+      {{hash=MY}{%
+         family={Ma},
+         familyi={M\bibinitperiod},
+         given={Ying},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=CY}{%
+         family={Che},
+         familyi={C\bibinitperiod},
+         given={Yi},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=GJ}{%
+         family={Gong},
+         familyi={G\bibinitperiod},
+         given={Jinxin},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \keyw{Axial load,Circular column,Corrosion,Cyclic loading,Ductility,Energy
+  dissipation,Reinforced concrete,Seismic behavior}
+    \strng{namehash}{MYCYGJ1}
+    \strng{fullhash}{MYCYGJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{abstract}{%
+    This paper presents the results of an investigation on degradation of
+  seismic performance of reinforced concrete (RC) columns damaged by
+  reinforcement corrosion. A total of 13 reinforced concrete circular columns
+  were tested under combined cyclic lateral displacement excursions and
+  constant axial load after being subjected to accelerated corrosion tests. The
+  controlled variables in the test were corrosion level and axial load ratio.
+  The steel corrosion loss ratios ranged from 0{\%} to 15.1{\%}, and the axial
+  load ratios varied from 0.15 to 0.9. Based on the test results, degradation
+  models for loading capacity, stiffness, ductility and energy dissipation
+  capacity of columns were proposed. Test results show that higher corrosion
+  levels and higher axial loads result in less stable hysteretic loops with
+  more severe strength and stiffness degradations and worse ductility, and that
+  the energy dissipation of corroded specimens at the same displacement
+  excursions is approximately the same as that of control specimens, regardless
+  of the corrosion level, when the rebar corrosion loss ratio is less than
+  14{\%}.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.conbuildmat.2011.11.002
+    \endverb
+    \field{pages}{548\bibrangedash 556}
+    \field{title}{{Behavior of corrosion damaged circular reinforced concrete
+  columns under cyclic loading}}
+    \verb{url}
+    \verb https://pdf.sciencedirectassets.com/271475/1-s2.0-S0950061811X00132/1
+    \verb -s2.0-S0950061811006313/main.pdf?x-amz-security-token=AgoJb3JpZ2luX2V
+    \verb jEJD{\%}2F{\%}2F{\%}2F{\%}2F{\%}2F{\%}2F{\%}2F{\%}2F{\%}2F{\%}2FwEaCX
+    \verb VzLWVhc3QtMSJHMEUCIQDERzAP4Up1ifdXOFDFMyDRvPXzCVj9hRcobazopK7O0QIgXPF
+    \verb 6nPfpHuzh
+    \endverb
+    \field{volume}{29}
+    \verb{file}
+    \verb :C$\backslash$:/Users/vacalder/AppData/Local/Mendeley Ltd./Mendeley D
+    \verb esktop/Downloaded/Ma, Che, Gong - 2012 - Behavior of corrosion damage
+    \verb d circular reinforced concrete columns under cyclic loading.pdf:pdf
+    \endverb
+    \field{journaltitle}{Construction and Building Materials}
+    \field{year}{2012}
+  \endentry
+
+  \entry{Meda2014}{article}{}
+    \name{author}{4}{}{%
+      {{hash=MA}{%
+         family={Meda},
+         familyi={M\bibinitperiod},
+         given={Alberto},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=MS}{%
+         family={Mostosi},
+         familyi={M\bibinitperiod},
+         given={Serena},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=RZ}{%
+         family={Rinaldi},
+         familyi={R\bibinitperiod},
+         given={Zila},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=RP}{%
+         family={Riva},
+         familyi={R\bibinitperiod},
+         given={Paolo},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \keyw{Bare bars,Cyclic tests,Embedded bars,RC columns,Reinforcement
+  corrosion}
+    \strng{namehash}{MAMSRZ+1}
+    \strng{fullhash}{MAMSRZRP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{abstract}{%
+    Corrosion of reinforcement is one of the leading causes of the
+  deterioration in reinforced concrete structures. RC structures damaged by
+  reinforcement corrosion can exhibit not only reduction of the bearing
+  capacity but also an alteration of the collapse mechanism with a reduction of
+  the structural ductility. In order to study the problem, full scale
+  experimental tests on column specimens have been performed under cyclic
+  loads. Preliminary tests for the calibration of the corrosion process have
+  been carried out both on bare and embedded bars. The results of the cyclic
+  experimental tests show how the reinforce ment corrosion can lead to a
+  reduction of the structural ductility, such that it could become a critical
+  aspect particularly for buildings in seismic regions%
+    }
+    \verb{doi}
+    \verb 10.1016/j.engstruct.2014.06.043
+    \endverb
+    \field{issn}{01410296}
+    \field{pages}{112\bibrangedash 123}
+    \field{title}{{Experimental evaluation of the corrosion influence on the
+  cyclic behaviour of RC columns}}
+    \verb{url}
+    \verb https://linkinghub.elsevier.com/retrieve/pii/S014102961400399X
+    \endverb
+    \field{volume}{76}
+    \verb{file}
+    \verb :C$\backslash$:/Users/vacalder/AppData/Local/Mendeley Ltd./Mendeley D
+    \verb esktop/Downloaded/Meda et al. - 2014 - Experimental evaluation of the
+    \verb  corrosion influence on the cyclic behaviour of RC columns.pdf:pdf
+    \endverb
+    \field{journaltitle}{Engineering Structures}
+    \field{year}{2014}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
   \entry{Mehta2014}{book}{}
     \name{author}{2}{}{%
       {{hash=MPK}{%
@@ -40,7 +248,6 @@
     \strng{fullhash}{MPKMPJM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelalpha}{MM14}
     \field{sortinit}{M}
     \field{sortinithash}{M}
     \field{edition}{4}
@@ -69,11 +276,10 @@
          giveni={A\bibinitperiod},
       }}%
     }
-    \strng{namehash}{MA+1}
+    \strng{namehash}{MADRPRA1}
     \strng{fullhash}{MADRPRA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelalpha}{Mom09}
     \field{sortinit}{M}
     \field{sortinithash}{M}
     \field{issn}{11749857}
@@ -119,11 +325,10 @@
          giveni={N},
       }}%
     }
-    \strng{namehash}{RPJ+1}
+    \strng{namehash}{RPJDLLPR+1}
     \strng{fullhash}{RPJDLLPRCN1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelalpha}{RP94}
     \field{sortinit}{R}
     \field{sortinithash}{R}
     \field{abstract}{%
@@ -145,8 +350,8 @@
   discusses the results of the investigation.%
     }
     \field{number}{11}
-    \field{pages}{31783196}
-    \field{title}{{VARIABLES AFFECTING CYCLIC BEHAVIOR OF REINFORCING STEEL}}
+    \field{pages}{3178\bibrangedash 3196}
+    \field{title}{{Variables Affecting Cyclic Behavior of Reinforcing Steel}}
     \verb{url}
     \verb https://ascelibrary.org/doi/pdf/10.1061/(ASCE)0733-9445(1994)120{\%}3
     \verb A11(3178)
@@ -174,7 +379,6 @@
     \strng{fullhash}{TCP1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelalpha}{TC}
     \field{sortinit}{T}
     \field{sortinithash}{T}
     \field{title}{{Corrosion and Cracking of Reinforced Concrete}}
@@ -211,7 +415,6 @@
     \strng{fullhash}{VKATSMG1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelalpha}{VS00}
     \field{sortinit}{V}
     \field{sortinithash}{V}
     \field{abstract}{%
@@ -251,6 +454,86 @@
     \field{year}{2000}
   \endentry
 
+  \entry{Yang2016}{article}{}
+    \name{author}{5}{}{%
+      {{hash=YSY}{%
+         family={Yang},
+         familyi={Y\bibinitperiod},
+         given={Shu-Yan},
+         giveni={S\bibinitperiod-Y\bibinitperiod},
+      }}%
+      {{hash=SXB}{%
+         family={Song},
+         familyi={S\bibinitperiod},
+         given={Xiao-Bing},
+         giveni={X\bibinitperiod-B\bibinitperiod},
+      }}%
+      {{hash=JHX}{%
+         family={Jia},
+         familyi={J\bibinitperiod},
+         given={Hong-Xue},
+         giveni={H\bibinitperiod-X\bibinitperiod},
+      }}%
+      {{hash=CX}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Xi},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=LXL}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Xi-La},
+         giveni={X\bibinitperiod-L\bibinitperiod},
+      }}%
+    }
+    \keyw{Circular stiffness,Corroded RC column,Ductility,Energy
+  absorption,Experiment Flexural strength,Hysteretic behavior}
+    \strng{namehash}{YSYSXBJHX+1}
+    \strng{fullhash}{YSYSXBJHXCXLXL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Y}
+    \field{sortinithash}{Y}
+    \field{abstract}{%
+    The reinforced concrete (RC) columns infiltrated by chloride ion in marine
+  environment are much vulner- able under seismic loading. In this paper, the
+  hysteretic behaviors of corroded RC columns were studied, which were
+  considered as the condition of tide region or splash zone. Experiments were
+  designed for five groups of corroded RC columns with different maximum
+  amounts of corrosion of rebar under cyclic lat- eral loads combined with a
+  constant vertical load. The traditional soaking method was replaced by a new
+  wrapping method in order to obtain the desired amount of corrosion of rebar
+  that was similar with the environment condition. The results showed that the
+  flexural strength, the circular stiffness, the ductility, and the energy
+  absorption of corroded RC column degraded with the increase of the maximum
+  amount of corrosion of rebar. The maximum amount of corrosion of 13.25{\%}
+  and the dilation crack width of 1.2 mm were two important critical
+  parameters.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.conbuildmat.2016.06.002
+    \endverb
+    \field{issn}{09500618}
+    \field{pages}{319\bibrangedash 327}
+    \field{title}{{Experimental research on hysteretic behaviors of corroded
+  reinforced concrete columns with different maximum amounts of corrosion of
+  rebar}}
+    \verb{url}
+    \verb http://linkinghub.elsevier.com/retrieve/pii/S0950061816309291
+    \endverb
+    \field{volume}{121}
+    \verb{file}
+    \verb :C$\backslash$:/Users/vacalder/AppData/Local/Mendeley Ltd./Mendeley D
+    \verb esktop/Downloaded/Yang et al. - 2016 - Experimental research on hyste
+    \verb retic behaviors of corroded reinforced concrete columns with differen
+    \verb t maximum amount.pdf:pdf
+    \endverb
+    \field{journaltitle}{Construction and Building Materials}
+    \field{year}{2016}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
   \entry{Yuan2017a}{article}{}
     \name{author}{4}{}{%
       {{hash=YZ}{%
@@ -280,11 +563,10 @@
     }
     \keyw{Author keywords,Axial repeated loads,Concrete bridge
   piers,Corrosion,Seismic performance}
-    \strng{namehash}{YZ+1}
+    \strng{namehash}{YZFCPM+1}
     \strng{fullhash}{YZFCPMYS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelalpha}{Yua17}
     \field{sortinit}{Y}
     \field{sortinithash}{Y}
     \field{abstract}{%

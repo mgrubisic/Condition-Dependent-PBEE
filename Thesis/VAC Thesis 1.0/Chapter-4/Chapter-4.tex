@@ -91,11 +91,11 @@ T_{corr}=\frac{x^2}{4 D_c} \left[erf^{-1} \left(\frac{C_0-C_cr}{C_0} \right) \ri
   \label{eq.three}
 \end{equation} 
 
-$D_c$ 1.29 $frac{cm^2}{year}$ Diffusion Coefficient 
+$D_c: $ Diffusion Coefficient a recommended value of $1.29 \frac{cm^2}{year}$ is given in their study \citep{Ghosh2010}
 
-$C_0$ 0.10 Surface Chloride Concentration
-
-$C_r$ 0.04 Critical Chloride Concentration
+$C_0:$ Surface Chloride Concentration, recommended $(0.10)$
+ 
+$C_r:$ Critical Chloride Concentration, recommended $(0.04)$
 \newline
 
 While this model provides mean values for the time of initiation of corrosion, it is limited to environments that are controlled by \textbf{dicing salts only}.
@@ -104,21 +104,24 @@ While this model provides mean values for the time of initiation of corrosion, i
 \textbf{Life 365}
 \newline
 
-Is a software developed by a consortium of companies of the cementitious materials industries and academic institutions. This software relies on the studies summarized above, mainly using the Thoft-Christensen model, but as opposed to assuming dicing environments only, this software uses a database of chlorides concentration for different location in the USA and Canada, which gives more accurate results depending on the location and environment in which the structure is located.
+Is a software developed by a consortium of companies of the cementitious materials industries and academic institutions. This software relies on the studies summarized above, mainly using the Thoft-Christensen model, but as opposed to assuming dicing environments only, this software uses a database of chlorides concentration for different location in the USA and Canada, which gives more accurate results depending on the location and environment in which the structure is located..
 
-While this is a more robust model to obtain the initiation of corrosion since it considers the location and environment of the structure and it also has the ability to include other durability issues, it is difficult to implement in a batch run format since the program is in a closed format.
+While this is a more robust model to obtain the initiation of corrosion since it considers the location and environment of the structure and it also has the ability to include other durability issues, it is difficult to implement in a batch run format since the program is closed.
 \newline
 
 \textbf{Liu \& Weyers Model}
 \newline
 
+This model tries to calculate the time to initiation of corrosion by calculating the amount of corroding products that are needed to fill the voids in the concrete cover that will eventually generate cracking in this area and therefore initiate the accelerated corrosion of the reinforcing steel this is characterized through the following set of equations:
+
+
 \begin{equation}
-  T_{cr}=\frac{W_{crit}^2}{2k_p}
+  W_{crit}=\rho_{rust} \left[ \pi \left[ \frac{C f'_t}{E_{ef}} \left( \frac{a^2+b^2}{a^2-b^2}+\nu_c \right)+d_o \right] D+ \frac{W_{st}}{\rho_{st}} \right]
   \label{eq.four}
 \end{equation} 
 
 \begin{equation}
-  W_{crit}=\rho_{rust} \left[ \pi \left[ \frac{C f'_t}{E_{ef}} \left( \frac{a^2+b^2}{a^2-b^2}+\nu_c \right)+d_o \right] D+ \frac{W_{st}}{\rho_{st}} \right]
+  T_{cr}=\frac{W_{crit}^2}{2k_p}
   \label{eq.five}
 \end{equation} 
 
@@ -153,12 +156,14 @@ $a=\frac{D+2d_o}{2}$
 
 $b=C+\frac{D+2d_o}{2}$
 
+This model however is limited to corrosion on concrete slabs, since a series of experiments were developed to generate these equations. This model howver was able to predict the time to corrosion with great accuracy.
+
 \subsection{Rate of corrosion}
 
 \textbf{Vu et al. Model }
 \newline
 
-To estimate the loss of steel cross section due to corrosion a time dependent corrosion rate model was developed by \cite{Vu2000}, this model implies that corrosion diminishes with time since as corrosion accumulates with time around the steel, it precludes uncorroded steel to react with the environment. The model is shown in \eref{eq.five}.
+To estimate the loss of steel cross section due to corrosion a time dependent corrosion rate model was developed by \cite{Vu2000}, this model implies that corrosion diminishes with time. As corrosion accumulates with time around the steel, it precludes the uncorroded steel to react with the environment. The model is shown in \eref{eq.eight}.
 
 \begin{equation}
   i_{corr}=\frac{37.5(1-w/c)}{d_c}
@@ -177,7 +182,7 @@ In \fref{fig:hist1} the behavior of this model for different values of $w/c$ rat
 \label{fig:hist1}
 \end{figure}
 
-From the Vu et al model the diamater degradation is calculated according to Choe et al as:
+From the Vu et al model the diameter degradation is calculated according to Choe et al as:
 
 \begin{equation}
   d_{corr}=d_{bi}-\frac{1.0508(1-w/c)}{d_c} (t-t_{corr})^{0.71}
@@ -213,6 +218,7 @@ Then the Corrosion level is plotted as a function of time in \fref{fig:hist3}
 \end{figure}
 
 \subsection{Corrosion modified properties of reinforcing steel bars}
+
 
 In a study presented by Yuan et al \cite{Yuan2017a} it was shown from experimental results that the mechanical properties of steel for different levels of corrosion could be modified for analysis as follows:
 
@@ -258,25 +264,17 @@ With this information, the corrosion level is calculated as:
 	CL=\frac{d_{i}-d(t)}{d_{i}}
 \end{equation}
 
-\subsection{Corrosion modified properties of reinforcing steel bars}
-\:
-\textbf{Yuan et al. 2017}
-\:
-Yuan et al performed full-scale tests on columns with corroded longitudinal reinforcement, with which they proposed the following equation to characterize the effects of corrosion in reinforcing steel.
+\subsection{Physical test on corroded RC Structures}
 
-\begin{equation}
-	f_{y}(t)=f_{y0}(1+0.021CL)
-\end{equation}
+%Figures Need to be Added. Also improved wording
 
-While the equation showed, agreement with the test results that they performed it has not been corroborated by other researchers. In the current consensus, the model used is the one proposed by Du et al.
+Recent studies \cite{Ma2012}, \cite{Meda2014} and \citep{Yang2016} have been developed to assess the force-displacement relationships in cantilever RC Columns. These columns were subjected to Quasi-Static Loading Protocol, the concrete columns were subjected to accelerated corrosion to obtain different Corrosion Levels ($CL$), the range of $CL$ for these studies correspond to $CL=0\%\-20\%$. In these studies the accelerated corrosion was performed via an electrochemical process directly applied to the reinforcing steel as shown in Figure.
 
+The resulting force displacement of these experiments is shown in Figure as it can be seen there is a reduction not only on the strength of the system but also on the displacement capacity. 
 
-\textbf{Du et al. 2005}
+As stated in the previous section the mechanical properties of steel are affected by corrosion, in the previous studies \cite{Meda2014} the authors performed tension tests on corroded reinforcing steel, how ever these studies dis not use the proper methods since as it's known reinforcing steel generates a protective film due to the alkaline environment of the concrete, these tests did not consider it and accelerated corrosion using NaCl while the chloride attack in concrete is , therefore the results might not be representative of what actually occurs in corroded RC columns, therefore an experimental campaign is proposed that would shed a light into the properties of corroded reinforcing steel inside concrete.
 
-Du et al investigated the effect of corrosion on the mechanical properties of steel using corrosion levels of 5%, 10%, 15% and 20%. Another variable that was researched was the type of rebar (smooth or ribbed), diameter of the rebar.
-\begin{equation}
-	f_{y}(t)=f_{y0}(1+0.021CL)
-\end{equation}
+\subsection{Proposed Experimental campaign}
 
 \section{Steel Strain Aging}
 
@@ -329,7 +327,6 @@ For $2\varepsilon_y$
 
 It is proposed to limit the increase in yield strength to the one obtained at 50 days. These equations are plotted in \fref{fig:hist4}
 
-\section{Experimental campaign}
 
 \section{Multiple Seismic Events}
 

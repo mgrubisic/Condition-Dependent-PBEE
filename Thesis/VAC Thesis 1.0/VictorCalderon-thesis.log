@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.22)  1 NOV 2019 14:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.22)  1 NOV 2019 17:00
 entering extended mode
 **./VictorCalderon-thesis.tex
 (VictorCalderon-thesis.tex
@@ -522,7 +522,7 @@ Package biblatex Info: ... file 'blx-dm.def' found.
 File: blx-dm.def 2018/03/04 v3.11 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
-Package biblatex Info: ... file 'alphabetic.dbx' not found.
+Package biblatex Info: ... file 'ieee.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \c@afterword=\count169
@@ -641,12 +641,23 @@ Package biblatex Info: ... file 'blx-natbib.def' found.
 (C:\Users\vacalder\AppData\Roaming\MiKTeX\2.9\tex\latex\biblatex\blx-natbib.def
 File: blx-natbib.def 2018/03/04 v3.11 biblatex compatibility (PK/MW)
 )
-Package biblatex Info: Trying to load bibliography style 'alphabetic'...
-Package biblatex Info: ... file 'alphabetic.bbx' found.
+Package biblatex Info: Trying to load bibliography style 'ieee'...
+Package biblatex Info: ... file 'ieee.bbx' found.
 
-(C:\Users\vacalder\AppData\Roaming\MiKTeX\2.9\tex\latex\biblatex\bbx\alphabetic
-.bbx
-File: alphabetic.bbx 2018/03/04 v3.11 biblatex bibliography style (PK/MW)
+(C:\Users\vacalder\AppData\Roaming\MiKTeX\2.9\tex\latex\biblatex-ieee\ieee.bbx
+File: ieee.bbx 2019/06/19 v1.3a biblatex bibliography style
+Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.bbx' found.
+
+(C:\Users\vacalder\AppData\Roaming\MiKTeX\2.9\tex\latex\biblatex\bbx\numeric-co
+mp.bbx
+File: numeric-comp.bbx 2018/03/04 v3.11 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+(C:\Users\vacalder\AppData\Roaming\MiKTeX\2.9\tex\latex\biblatex\bbx\numeric.bb
+x
+File: numeric.bbx 2018/03/04 v3.11 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
 
@@ -655,23 +666,34 @@ bx
 File: standard.bbx 2018/03/04 v3.11 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count310
 \c@bbx:relatedtotal=\count311
-))
-Package biblatex Info: Trying to load citation style 'alphabetic'...
-Package biblatex Info: ... file 'alphabetic.cbx' found.
+))))
+Package biblatex Info: Trying to load citation style 'ieee'...
+Package biblatex Info: ... file 'ieee.cbx' found.
 
-(C:\Users\vacalder\AppData\Roaming\MiKTeX\2.9\tex\latex\biblatex\cbx\alphabetic
-.cbx
-File: alphabetic.cbx 2018/03/04 v3.11 biblatex citation style (PK/MW)
+(C:\Users\vacalder\AppData\Roaming\MiKTeX\2.9\tex\latex\biblatex-ieee\ieee.cbx
+File: ieee.cbx 2019/06/19 v1.3a biblatex citation style
+Package biblatex Info: Trying to load citation style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.cbx' found.
+
+(C:\Users\vacalder\AppData\Roaming\MiKTeX\2.9\tex\latex\biblatex\cbx\numeric-co
+mp.cbx
+File: numeric-comp.cbx 2018/03/04 v3.11 biblatex citation style (PK/MW)
+\c@cbx@tempcnta=\count312
+\c@cbx@tempcntb=\count313
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
 Package biblatex Info: Redefining '\footcitetext'.
 Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
 Package biblatex Info: Redefining '\textcite'.
 Package biblatex Info: Redefining '\textcites'.
 Package biblatex Info: Redefining '\cites'.
 Package biblatex Info: Redefining '\parencites'.
 Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\cites'.
 )
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
@@ -734,7 +756,7 @@ LaTeX Info: Redefining \textslswitch on input line 196.
 (C:\Users\vacalder\AppData\Roaming\MiKTeX\2.9\tex\latex\frankenstein\slemph.cfg
 File: slemph.cfg 
 ))
-\c@tm@util=\count312
+\c@tm@util=\count314
 
 (C:\Users\vacalder\AppData\Roaming\MiKTeX\2.9\tex\latex\frankenstein\abbrevs.cf
 g
@@ -753,20 +775,20 @@ Package: nicefrac 1998/08/04 v0.9b Nice fractions
 ))
 (C:\Users\vacalder\AppData\Roaming\MiKTeX\2.9\tex\latex\easylist\easylist.sty
 Package: easylist 2014/01/11 v.1.4 Numbered items with a single command.
-\el@CounterTotal=\count313
-\el@Scratch=\count314
-\el@ControlCounter=\count315
-\el@CounterLevel=\count316
-\c@List1=\count317
-\c@List2=\count318
-\c@List3=\count319
-\c@List4=\count320
-\c@List5=\count321
-\c@List6=\count322
-\c@List7=\count323
-\c@List8=\count324
-\c@List9=\count325
-\c@List10=\count326
+\el@CounterTotal=\count315
+\el@Scratch=\count316
+\el@ControlCounter=\count317
+\el@CounterLevel=\count318
+\c@List1=\count319
+\c@List2=\count320
+\c@List3=\count321
+\c@List4=\count322
+\c@List5=\count323
+\c@List6=\count324
+\c@List7=\count325
+\c@List8=\count326
+\c@List9=\count327
+\c@List10=\count328
 \el@ProgressiveDimension=\dimen148
 \el@CounterBox=\box31
 \el@ControlBox=\box32
@@ -786,7 +808,7 @@ Package: colortbl 2018/05/02 v1.0c Color table columns (DPC)
 \everycr=\toks29
 \minrowclearance=\skip135
 )
-\rownum=\count327
+\rownum=\count329
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
@@ -867,10 +889,10 @@ filtered.code.tex
 \pgf@yc=\dimen165
 \w@pgf@writea=\write5
 \r@pgf@reada=\read3
-\c@pgf@counta=\count328
-\c@pgf@countb=\count329
-\c@pgf@countc=\count330
-\c@pgf@countd=\count331
+\c@pgf@counta=\count330
+\c@pgf@countb=\count331
+\c@pgf@countc=\count332
+\c@pgf@countd=\count333
 \t@pgf@toka=\toks35
 \t@pgf@tokb=\toks36
 \t@pgf@tokc=\toks37
@@ -892,8 +914,8 @@ File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 (C:\Users\vacalder\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsy
 ssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count332
-\pgfsyssoftpath@bigbuffer@items=\count333
+\pgfsyssoftpath@smallbuffer@items=\count334
+\pgfsyssoftpath@bigbuffer@items=\count335
 )
 (C:\Users\vacalder\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsy
 sprotocol.code.tex
@@ -912,7 +934,7 @@ code.tex)
 (C:\Users\vacalder\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathparse
 r.code.tex
 \pgfmath@dimen=\dimen166
-\pgfmath@count=\count334
+\pgfmath@count=\count336
 \pgfmath@box=\box35
 \pgfmath@toks=\toks38
 \pgfmath@stack@operand=\toks39
@@ -938,7 +960,7 @@ ions.misc.code.tex)
 ions.integerarithmetics.code.tex)))
 (C:\Users\vacalder\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfloat
 .code.tex
-\c@pgfmathroundto@lastzeros=\count335
+\c@pgfmathroundto@lastzeros=\count337
 ))
 (C:\Users\vacalder\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcor
 epoints.code.tex
@@ -976,7 +998,7 @@ File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 \pgfpic=\box36
 \pgf@hbox=\box37
 \pgf@layerbox@main=\box38
-\pgf@picture@serial@count=\count336
+\pgf@picture@serial@count=\count338
 )
 (C:\Users\vacalder\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcor
 egraphicstate.code.tex
@@ -1011,7 +1033,7 @@ File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
 eshade.code.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
 \pgf@max=\dimen190
-\pgf@sys@shading@range@num=\count337
+\pgf@sys@shading@range@num=\count339
 )
 (C:\Users\vacalder\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcor
 eimage.code.tex
@@ -1080,7 +1102,7 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 (C:\Users\vacalder\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibr
 aryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count338
+\pgf@plot@mark@count=\count340
 \pgfplotmarksize=\dimen195
 )
 \tikz@lastx=\dimen196
@@ -1093,19 +1115,19 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \tikz@figbox@bg=\box42
 \tikz@tempbox=\box43
 \tikz@tempbox@bg=\box44
-\tikztreelevel=\count339
-\tikznumberofchildren=\count340
-\tikznumberofcurrentchild=\count341
-\tikz@fig@count=\count342
+\tikztreelevel=\count341
+\tikznumberofchildren=\count342
+\tikznumberofcurrentchild=\count343
+\tikz@fig@count=\count344
 
 (C:\Users\vacalder\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmodule
 matrix.code.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count343
-\pgfmatrixcurrentcolumn=\count344
-\pgf@matrix@numberofcolumns=\count345
+\pgfmatrixcurrentrow=\count345
+\pgfmatrixcurrentcolumn=\count346
+\pgf@matrix@numberofcolumns=\count347
 )
-\tikz@expandcount=\count346
+\tikz@expandcount=\count348
 
 (C:\Users\vacalder\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tik
 z\libraries\tikzlibrarytopaths.code.tex
@@ -1122,8 +1144,8 @@ File: english.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
 Package biblatex Warning: Missing 'hyperref' package.
 (biblatex)                Setting 'hyperref=false'.
 
-\@quotelevel=\count347
-\@quotereset=\count348
+\@quotelevel=\count349
+\@quotereset=\count350
 (VictorCalderon-thesis.aux (front.aux) (Chapter-1/Chapter-1.aux)
 (Chapter-2/Chapter-2.aux) (Chapter-3/Chapter-3.aux) (Chapter-4/Chapter-4.aux)
 (Chapter-5/Chapter-5.aux) (Appendix-A/Appendix-A.aux))
@@ -1152,16 +1174,16 @@ LaTeX Font Info:    ... okay on input line 352.
 
 (C:\Users\vacalder\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count349
+\scratchcounter=\count351
 \scratchdimen=\dimen258
 \scratchbox=\box45
-\nofMPsegments=\count350
-\nofMParguments=\count351
+\nofMPsegments=\count352
+\nofMParguments=\count353
 \everyMPshowfont=\toks43
-\MPscratchCnt=\count352
+\MPscratchCnt=\count354
 \MPscratchDim=\dimen259
-\MPnumerator=\count353
-\makeMPintoPDFobject=\count354
+\MPnumerator=\count355
+\makeMPintoPDFobject=\count356
 \everyMPtoPDFconversion=\toks44
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1241,7 +1263,7 @@ LaTeX Info: Redefining \selectfont on input line 126.
 \RaggedRightParindent=\skip153
 \JustifyingParindent=\skip154
 )
-\c@ncsu@appendixtocdepth=\count355
+\c@ncsu@appendixtocdepth=\count357
 Package biblatex Info: No input encoding detected.
 (biblatex)             Assuming 'ascii'.
 Package biblatex Info: Automatic encoding selection.
@@ -1253,14 +1275,24 @@ Package biblatex Info: Data encoding 'ascii' specified.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'VictorCalderon-thesis.bbl' found.
- (VictorCalderon-thesis.bbl)
+ (VictorCalderon-thesis.bbl
+
+Package biblatex Warning: BibTeX reported the following issues
+(biblatex)                with 'Meda2014':
+(biblatex)                - Invalid format of field 'month'.
+
+
+Package biblatex Warning: BibTeX reported the following issues
+(biblatex)                with 'Yang2016':
+(biblatex)                - Invalid format of field 'month'.
+
+)
 Package biblatex Info: Reference section=0 on input line 352.
 Package biblatex Info: Reference segment=0 on input line 352.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
 (lastpage)             ! on input line 352.
-
-ABD: EveryShipout initializing macros
+ ABD: EveryShipout initializing macros
 \openout2 = `front.aux'.
 
  (front.tex
@@ -1449,57 +1481,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--114
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 158--160
+Underfull \hbox (badness 10000) in paragraph at lines 163--165
 
  []
 
-<Chapter-1/figs/dcvsicor.pdf, id=137, 691.24919pt x 504.64647pt>
+[14]
+<Chapter-1/figs/dcvsicor.pdf, id=142, 691.24919pt x 504.64647pt>
 File: Chapter-1/figs/dcvsicor.pdf Graphic file (type pdf)
 <use Chapter-1/figs/dcvsicor.pdf>
-Package pdftex.def Info: Chapter-1/figs/dcvsicor.pdf  used on input line 175.
+Package pdftex.def Info: Chapter-1/figs/dcvsicor.pdf  used on input line 180.
 (pdftex.def)             Requested size: 316.17987pt x 230.83115pt.
-<Chapter-1/figs/DiameterDecrease.pdf, id=138, 688.52502pt x 502.6033pt>
+<Chapter-1/figs/DiameterDecrease.pdf, id=143, 688.52502pt x 502.6033pt>
 File: Chapter-1/figs/DiameterDecrease.pdf Graphic file (type pdf)
 <use Chapter-1/figs/DiameterDecrease.pdf>
 Package pdftex.def Info: Chapter-1/figs/DiameterDecrease.pdf  used on input lin
-e 193.
+e 198.
 (pdftex.def)             Requested size: 316.17987pt x 230.8092pt.
-[14]
-<Chapter-1/figs/CorrosionLevel.pdf, id=143, 794.97pt x 614.295pt>
+<Chapter-1/figs/CorrosionLevel.pdf, id=144, 794.97pt x 614.295pt>
 File: Chapter-1/figs/CorrosionLevel.pdf Graphic file (type pdf)
 <use Chapter-1/figs/CorrosionLevel.pdf>
 Package pdftex.def Info: Chapter-1/figs/CorrosionLevel.pdf  used on input line 
-210.
+215.
 (pdftex.def)             Requested size: 316.17987pt x 244.32639pt.
  [15 <./Chapter-1/figs/dcvsicor.pdf>] [16 <./Chapter-1/figs/DiameterDecrease.pd
 f> <./Chapter-1/figs/CorrosionLevel.pdf>] [17] [18]
-<Chapter-1/figs/StrainAging_TimeDependent.pdf, id=192, 690.56824pt x 503.28438p
+<Chapter-1/figs/StrainAging_TimeDependent.pdf, id=193, 690.56824pt x 503.28438p
 t>
 File: Chapter-1/figs/StrainAging_TimeDependent.pdf Graphic file (type pdf)
 <use Chapter-1/figs/StrainAging_TimeDependent.pdf>
 Package pdftex.def Info: Chapter-1/figs/StrainAging_TimeDependent.pdf  used on 
-input line 303.
+input line 301.
 (pdftex.def)             Requested size: 406.516pt x 296.26709pt.
- [19 <./Chapter-1/figs/StrainAging_TimeDependent.pdf>]) [20]
+ [19] [20 <./Chapter-1/figs/StrainAging_TimeDependent.pdf>]) [21]
 \openout2 = `Chapter-5/Chapter-5.aux'.
 
  (Chapter-5/Chapter-5.tex
 Chapter 5.
-[21
+[22
 
 
 
-] [22]) [23]
-Overfull \hbox (20.19017pt too wide) in paragraph at lines 410--410
-\OT1/cmr/m/n/10.95 RE-IN-FORC-ING STEEL''. \OT1/cmr/m/sl/10.95 Jour-nal of Stru
-c-tural En-gi-neer-ing \OT1/cmr/bx/n/10.95 120\OT1/cmr/m/n/10.95 .11 (1994), p.
- 31783196. 
- []
-
-[24
+] [23]) [24] [25
 
 
-] [25
+] [26
 
 
 ]
@@ -1539,18 +1564,18 @@ c-tural En-gi-neer-ing \OT1/cmr/bx/n/10.95 120\OT1/cmr/m/n/10.95 .11 (1994), p.
 
  (Appendix-A/Appendix-A.tex
 Appendix A.
-[26
+[27
 
 
 
 
 ]
-<Chapter-2/figs/threed.pdf, id=236, 578.16pt x 433.62pt>
+<Chapter-2/figs/threed.pdf, id=240, 578.16pt x 433.62pt>
 File: Chapter-2/figs/threed.pdf Graphic file (type pdf)
 <use Chapter-2/figs/threed.pdf>
 Package pdftex.def Info: Chapter-2/figs/threed.pdf  used on input line 9.
 (pdftex.def)             Requested size: 271.01526pt x 203.25887pt.
- [27] [28 <./Chapter-2/figs/threed.pdf>]) [29]
+ [28] [29 <./Chapter-2/figs/threed.pdf>]) [30]
 
 AED: lastpage setting LastPage
 (VictorCalderon-thesis.aux (front.aux) (Chapter-1/Chapter-1.aux)
@@ -1561,13 +1586,13 @@ Package logreq Info: Writing requests to 'VictorCalderon-thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23609 strings out of 493303
- 443934 string characters out of 3138847
- 781699 words of memory out of 3000000
- 26629 multiletter control sequences out of 15000+200000
+ 23711 strings out of 493303
+ 446683 string characters out of 3138847
+ 789599 words of memory out of 3000000
+ 26722 multiletter control sequences out of 15000+200000
  13607 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,12n,54p,1888b,1583s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,12n,58p,1888b,1594s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\vacalder\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi6
 00\tcrm1095.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx
 10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
@@ -1576,13 +1601,13 @@ am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/
 type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmsl10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-sy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-
-Output written on VictorCalderon-thesis.pdf (37 pages, 671489 bytes).
+lic/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl
+10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on VictorCalderon-thesis.pdf (38 pages, 681219 bytes).
 PDF statistics:
- 300 PDF objects out of 1000 (max. 8388607)
+ 307 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  48 words of extra memory for PDF output out of 10000 (max. 10000000)
 
