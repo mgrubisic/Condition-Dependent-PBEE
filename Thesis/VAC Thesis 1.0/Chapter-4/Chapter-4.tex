@@ -1,5 +1,16 @@
 \chapter{Methodology}
 
+A methodology that incorporates the different sources of cumulative damage in RC structures is proposed, the main elements that might induce damage in a structure are:
+
+\begin{itemize}
+	\item Corrosion
+	\item Strain aging
+	\item Low-cycle fatigue
+	\item Concrete Strength Aging
+\end{itemize}
+
+This effects generally affect the mechanical behavior of the material, which are nor considered when designing a structure. In the following paragraph the different models available are studied and later incorporated into the analysis methodology.
+
 \section{Corrosion}
 
 One of the main phenomenon that affect the long term behavior of RC structures is corrosion of the reinforcing steel. Two types of corrosion are possible:
@@ -45,9 +56,7 @@ Time to corrosion refers to the corrosion initiation at which the passivation of
 \textbf{Christensen Model}
 \newline
 
-Christensen \cite{Thoft-Christensen} main goal was to generate a corrosion model that was general for all concrete elements, additionally the authors tried to generate a model that also included the appearance of cracks due to corrosion that would evetually grow and the spall the concrete. 
-
-More specifically related to reinforcing steel corrosion they developed a model based on Fick's law of diffusion to model the rate of chloride penetration into concrete as a function of concrete cover and time. 
+Christensen \cite{Thoft-Christensen} main goal was to generate a corrosion model that was general for all concrete elements, additionally the authors tried to generate a model that also included the appearance of cracks due to corrosion that would evetually grow and the spall the concrete. More specifically related to reinforcing steel corrosion they developed a model based on Fick's law of diffusion to model the rate of chloride penetration into concrete as a function of concrete cover and time. 
 
 \begin{equation}
 	\frac{\partial C(x,t)}{\partial t} = D_c \frac{\partial C(x,t)}{\partial x^2}
@@ -75,7 +84,7 @@ While this model provides a means to calculate the Time for initiation of corros
 \textbf{Gosh \& Padgett Model}
 \newline
 
-Ghosh et al calculate time to corrosion based on Thoft-Christensen model, considering in-field corrosion related studies of existing bridge components in the United States exposed to deicing salts to obtain mean values of chlorides concentration and put them in a modified version of the Thoft-Christensen Model.
+Gosh et al calculate time to corrosion based on Thoft-Christensen model, considering in-field corrosion related studies of existing bridge components in the United States exposed to deicing salts to obtain mean values of chlorides concentration and put them in a modified version of the Thoft-Christensen Model.
 
 \begin{equation}
 T_{corr}=\frac{x^2}{4 D_c} \left[erf^{-1} \left(\frac{C_0-C_cr}{C_0} \right) \right]^{-2}

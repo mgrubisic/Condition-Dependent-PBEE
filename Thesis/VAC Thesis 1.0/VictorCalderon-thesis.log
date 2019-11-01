@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.22)  1 NOV 2019 13:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.22)  1 NOV 2019 14:17
 entering extended mode
 **./VictorCalderon-thesis.tex
 (VictorCalderon-thesis.tex
@@ -1384,102 +1384,103 @@ Package pdftex.def Info: Chapter-2/figs/color.pdf  used on input line 27.
 
  (Chapter-4/Chapter-4.tex
 Chapter 4.
-
-
-pdfTeX warning: pdflatex (file ./Chapter-2/figs/Corrosion_Process.pdf): PDF inc
-lusion: found PDF version <1.6>, but at most version <1.5> allowed
-<Chapter-2/figs/Corrosion_Process.pdf, id=115, 923.07861pt x 591.79094pt>
-File: Chapter-2/figs/Corrosion_Process.pdf Graphic file (type pdf)
-<use Chapter-2/figs/Corrosion_Process.pdf>
-Package pdftex.def Info: Chapter-2/figs/Corrosion_Process.pdf  used on input li
-ne 23.
-(pdftex.def)             Requested size: 406.516pt x 260.6236pt.
 [10
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 42--44
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--47
-
- []
-
+pdfTeX warning: pdflatex (file ./Chapter-2/figs/Corrosion_Process.pdf): PDF inc
+lusion: found PDF version <1.6>, but at most version <1.5> allowed
+<Chapter-2/figs/Corrosion_Process.pdf, id=118, 923.07861pt x 591.79094pt>
+File: Chapter-2/figs/Corrosion_Process.pdf Graphic file (type pdf)
+<use Chapter-2/figs/Corrosion_Process.pdf>
+Package pdftex.def Info: Chapter-2/figs/Corrosion_Process.pdf  used on input li
+ne 34.
+(pdftex.def)             Requested size: 406.516pt x 260.6236pt.
 [11 <./Chapter-2/figs/Corrosion_Process.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 69--71
+Underfull \hbox (badness 10000) in paragraph at lines 53--55
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--74
+Underfull \hbox (badness 10000) in paragraph at lines 56--58
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--77
+Underfull \hbox (badness 10000) in paragraph at lines 78--80
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--83
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--86
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 89--91
+Underfull \hbox (badness 10000) in paragraph at lines 98--100
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--94
+Underfull \hbox (badness 10000) in paragraph at lines 101--103
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--97
+Underfull \hbox (badness 10000) in paragraph at lines 104--106
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--102
+Underfull \hbox (badness 10000) in paragraph at lines 109--111
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--105
+Underfull \hbox (badness 10000) in paragraph at lines 112--114
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 149--151
+Underfull \hbox (badness 10000) in paragraph at lines 158--160
 
  []
 
-<Chapter-1/figs/dcvsicor.pdf, id=138, 691.24919pt x 504.64647pt>
+<Chapter-1/figs/dcvsicor.pdf, id=137, 691.24919pt x 504.64647pt>
 File: Chapter-1/figs/dcvsicor.pdf Graphic file (type pdf)
 <use Chapter-1/figs/dcvsicor.pdf>
-Package pdftex.def Info: Chapter-1/figs/dcvsicor.pdf  used on input line 166.
+Package pdftex.def Info: Chapter-1/figs/dcvsicor.pdf  used on input line 175.
 (pdftex.def)             Requested size: 316.17987pt x 230.83115pt.
-<Chapter-1/figs/DiameterDecrease.pdf, id=139, 688.52502pt x 502.6033pt>
+<Chapter-1/figs/DiameterDecrease.pdf, id=138, 688.52502pt x 502.6033pt>
 File: Chapter-1/figs/DiameterDecrease.pdf Graphic file (type pdf)
 <use Chapter-1/figs/DiameterDecrease.pdf>
 Package pdftex.def Info: Chapter-1/figs/DiameterDecrease.pdf  used on input lin
-e 184.
+e 193.
 (pdftex.def)             Requested size: 316.17987pt x 230.8092pt.
-<Chapter-1/figs/CorrosionLevel.pdf, id=140, 794.97pt x 614.295pt>
+[14]
+<Chapter-1/figs/CorrosionLevel.pdf, id=143, 794.97pt x 614.295pt>
 File: Chapter-1/figs/CorrosionLevel.pdf Graphic file (type pdf)
 <use Chapter-1/figs/CorrosionLevel.pdf>
 Package pdftex.def Info: Chapter-1/figs/CorrosionLevel.pdf  used on input line 
-201.
+210.
 (pdftex.def)             Requested size: 316.17987pt x 244.32639pt.
-[14] [15 <./Chapter-1/figs/dcvsicor.pdf> <./Chapter-1/figs/DiameterDecrease.pdf
->] [16 <./Chapter-1/figs/CorrosionLevel.pdf>] [17]
-<Chapter-1/figs/StrainAging_TimeDependent.pdf, id=189, 690.56824pt x 503.28438p
+ [15 <./Chapter-1/figs/dcvsicor.pdf>] [16 <./Chapter-1/figs/DiameterDecrease.pd
+f> <./Chapter-1/figs/CorrosionLevel.pdf>] [17] [18]
+<Chapter-1/figs/StrainAging_TimeDependent.pdf, id=192, 690.56824pt x 503.28438p
 t>
 File: Chapter-1/figs/StrainAging_TimeDependent.pdf Graphic file (type pdf)
 <use Chapter-1/figs/StrainAging_TimeDependent.pdf>
 Package pdftex.def Info: Chapter-1/figs/StrainAging_TimeDependent.pdf  used on 
-input line 294.
+input line 303.
 (pdftex.def)             Requested size: 406.516pt x 296.26709pt.
- [18] [19 <./Chapter-1/figs/StrainAging_TimeDependent.pdf>]) [20]
+ [19 <./Chapter-1/figs/StrainAging_TimeDependent.pdf>]) [20]
 \openout2 = `Chapter-5/Chapter-5.aux'.
 
  (Chapter-5/Chapter-5.tex
@@ -1579,7 +1580,7 @@ lic/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/cm/cmsl10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
 sy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
 
-Output written on VictorCalderon-thesis.pdf (37 pages, 670607 bytes).
+Output written on VictorCalderon-thesis.pdf (37 pages, 671489 bytes).
 PDF statistics:
  300 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
