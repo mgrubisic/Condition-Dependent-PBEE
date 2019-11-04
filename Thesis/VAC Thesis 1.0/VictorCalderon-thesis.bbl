@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 2.9 $
+% $ biblatex bbl format version 3.1 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -17,6 +17,75 @@
 \endgroup
 
 \datalist[entry]{nyt/global//global/global}
+  \entry{Ghods2009}{article}{}
+    \name{author}{4}{}{%
+      {{hash=GP}{%
+         family={Ghods},
+         familyi={G\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=IOB}{%
+         family={Isgor},
+         familyi={I\bibinitperiod},
+         given={O.\bibnamedelima B.},
+         giveni={O\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=MG}{%
+         family={McRae},
+         familyi={M\bibinitperiod},
+         given={G.},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=MT}{%
+         family={Miller},
+         familyi={M\bibinitperiod},
+         given={T.},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \keyw{Anodic polarization,Concrete,Corrosion,EIS,Passive film,Pore
+  solution,Sulfate}
+    \strng{namehash}{GPIOBMG+1}
+    \strng{fullhash}{GPIOBMGMT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{abstract}{%
+    The effect of concrete pore solution composition on the protective
+  properties of the oxide films that form on black reinforcing steel has been
+  experimentally investigated using anodic polarization and electrochemical
+  impedance spectroscopy (EIS). The tests were conducted on oxide films grown
+  in saturated calcium hydroxide solutions that included different
+  representative amounts of NaOH, KOH, and Ca(SO4), which are compounds that
+  are commonly observed in most ordinary portland cement concrete types. The
+  results of both anodic polarization and EIS tests show that pore solution
+  composition has an effect on the protective properties of the passive oxide
+  films and, in particular, sulfate ions (SO4)2 - have been shown to have a
+  negative influence on the film quality. {\textcopyright} 2008 Elsevier Ltd.
+  All rights reserved.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.cemconcomp.2008.10.003
+    \endverb
+    \field{issn}{09589465}
+    \field{number}{1}
+    \field{pages}{2\bibrangedash 11}
+    \field{title}{{The effect of concrete pore solution composition on the
+  quality of passive oxide films on black steel reinforcement}}
+    \field{volume}{31}
+    \verb{file}
+    \verb :C$\backslash$:/Users/user/AppData/Local/Mendeley Ltd./Mendeley Deskt
+    \verb op/Downloaded/Ghods et al. - 2009 - The effect of concrete pore solut
+    \verb ion composition on the quality of passive oxide films on black steel
+    \verb reinforce(2).pdf:pdf
+    \endverb
+    \field{journaltitle}{Cement and Concrete Composites}
+    \field{year}{2009}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
   \entry{Ghosh2010}{article}{}
     \name{author}{2}{}{%
       {{hash=GJ}{%
@@ -302,7 +371,7 @@
     \name{author}{4}{}{%
       {{hash=RPJ}{%
          family={Restrepo-Posada},
-         familyi={R\bibinitperiod-P\bibinitperiod},
+         familyi={R\bibinithyphendelim P\bibinitperiod},
          given={J.I.},
          giveni={J\bibinitperiod},
       }}%
@@ -370,7 +439,7 @@
     \name{author}{1}{}{%
       {{hash=TCP}{%
          family={Thoft-Christensen},
-         familyi={T\bibinitperiod-C\bibinitperiod},
+         familyi={T\bibinithyphendelim C\bibinitperiod},
          given={Palle},
          giveni={P\bibinitperiod},
       }}%
@@ -460,19 +529,19 @@
          family={Yang},
          familyi={Y\bibinitperiod},
          given={Shu-Yan},
-         giveni={S\bibinitperiod-Y\bibinitperiod},
+         giveni={S\bibinithyphendelim Y\bibinitperiod},
       }}%
       {{hash=SXB}{%
          family={Song},
          familyi={S\bibinitperiod},
          given={Xiao-Bing},
-         giveni={X\bibinitperiod-B\bibinitperiod},
+         giveni={X\bibinithyphendelim B\bibinitperiod},
       }}%
       {{hash=JHX}{%
          family={Jia},
          familyi={J\bibinitperiod},
          given={Hong-Xue},
-         giveni={H\bibinitperiod-X\bibinitperiod},
+         giveni={H\bibinithyphendelim X\bibinitperiod},
       }}%
       {{hash=CX}{%
          family={Chen},
@@ -484,7 +553,7 @@
          family={Liu},
          familyi={L\bibinitperiod},
          given={Xi-La},
-         giveni={X\bibinitperiod-L\bibinitperiod},
+         giveni={X\bibinithyphendelim L\bibinitperiod},
       }}%
     }
     \keyw{Circular stiffness,Corroded RC column,Ductility,Energy
