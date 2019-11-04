@@ -31,7 +31,7 @@ The corrosion process under chloride attack type of corrosion consists in first 
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.9\textwidth]{Chapter-2/figs/Corrosion_Process}
+\includegraphics[width=0.9\textwidth]{Chapter-4/figs/Corrosion_Process}
 \caption{Corrosion Process in Reinforcing Steel Bar \cite{Mehta2014}}
 \label{fig:corr1}
 \end{figure}
@@ -177,7 +177,7 @@ In \fref{fig:hist1} the behavior of this model for different values of $w/c$ rat
 %
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.7\textwidth]{Chapter-1/figs/dcvsicor}
+\includegraphics[width=0.9\textwidth]{Chapter-4/figs/dcvsicor}
 \caption{Concrete cover depth vs rate of corrosion}
 \label{fig:hist1}
 \end{figure}
@@ -195,7 +195,7 @@ The diameter is plotted in \fref{fig:hist2}.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.7\textwidth]{Chapter-1/figs/DiameterDecrease}
+\includegraphics[width=0.9\textwidth]{Chapter-4/figs/DiameterDecrease}
 \caption{Diameter decrease due to corrosion}
 \label{fig:hist2}
 \end{figure}
@@ -212,7 +212,7 @@ Then the Corrosion level is plotted as a function of time in \fref{fig:hist3}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.7\textwidth]{Chapter-1/figs/CorrosionLevel}
+\includegraphics[width=0.9\textwidth]{Chapter-4/figs/CorrosionLevel}
 \caption{Corrosion Level vs Time (years)}
 \label{fig:hist3}
 \end{figure}
@@ -272,7 +272,7 @@ Recent studies \cite{Ma2012}, \cite{Meda2014} and \cite{Yang2016} have been deve
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.7\textwidth]{Chapter-4/figs/Meda_Corrosion}
+	\includegraphics[width=0.9\textwidth]{Chapter-4/figs/Meda_Corrosion}
 	\caption{Corrosion Process for RC Column \cite{Meda2014}}
 	\label{fig:Meda_RC_CorrosionProc}
 \end{figure}
@@ -281,7 +281,7 @@ The resulting force displacement of these experiments is shown in \fref{fig:Meda
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.7\textwidth]{Chapter-4/figs/Meda_F-D_01}
+	\includegraphics[width=0.9\textwidth]{Chapter-4/figs/Meda_F-D_01}
 	\caption{Corrosion Process for RC Column \cite{Meda2014}}
 	\label{fig:Meda_FD}
 \end{figure}
@@ -290,16 +290,16 @@ As stated in the previous section the mechanical properties of steel are affecte
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.7\textwidth]{Chapter-4/figs/Meda_StressStrain}
+	\includegraphics[width=0.9\textwidth]{Chapter-4/figs/Meda_StressStrain}
 	\caption{Corroded Rebars Stress-Strain Curves \cite{Meda2014}}
 	\label{fig:Meda_FD}
 \end{figure}
 
-These studies did not considered the generation of the protective film due to the alkaline environment of the concrete, additionally the accelerated corrosion process used a 3% NaCl concentration solution while the chloride attack in concrete usually has a 0.4% concentration of the same Chloride. Therefore the results obtaiined from these studies might not accurately represent the actual conditions of corroded RC columns, thus an experimental campaign is proposed that would shed a light into the properties of corroded reinforcing steel inside concrete and is discussed in the following subsection.
+These studies did not considered the generation of the protective film due to the alkaline environment of the concrete, this film can modify mechanical properties of corroded steel. Additionally the accelerated corrosion process used a 3\% NaCl concentration solution while the chloride attack in concrete usually has a 0.4\% concentration of the same Chloride. Therefore the results obtained from these studies might not accurately represent the actual conditions of corroded RC columns, thus an experimental campaign is proposed that would shed a light into the properties of corroded reinforcing steel inside concrete and is discussed in the following subsection.
 
 \subsection{Proposed Experimental campaign}
 
-The proposed experimental tests consists in:
+As explained in the previous section the steel inside concrete generates a protective film and after chloride attack reaches the surface of the steel, this protective film starts to be eliminated. This same process will be simulated through the following steps.
 \begin{enumerate}
 	\item Passivation of reinforcing steel
 	\item Accelerated corrosion  of Reinforcing Steel
@@ -309,7 +309,34 @@ The proposed experimental tests consists in:
 
 \textbf{Passivation of reinforcing steel}
 
-Methods to generate the passive film on reinforcing steel are available in the literature \cite{Ghods2009}
+Methods to generate the passive film on reinforcing steel are available in the literature \cite{Ghods2009}. According to this study it is possible to generate the passivation process in the same way as it occurs to reinforcing steel inside the concrete. A porous solution will be generated with the following concentrations:
+
+\begin{itemize}
+	\item $Ca(OH)_2$ Saturated
+	\item $Na(OH)$ 4.00 g/l
+	\item $K(OH)$ 11.22 g/l
+	\item $Ca(SO)_4 + 2H_2O$ 13.77 g/l
+\end{itemize}
+
+The rebars will be placed in a container with the pore solution for a minimum of 8 days, the potential in the rebars will be measured until it reaches a value of . A figure of this process is shown in Figure . The ends of the Bars will be protected according to the standard ASTM G109-07. 
+
+\textbf{Accelerated corrosion  of Reinforcing Steel}
+
+The accelerated corrosion will be done by using a galvanic cell. The solution will consist of a chloride that matches with that found inside the concrete. The rebars will be subjected to a current of . This current is sustained for a period of time according to Faraday's Law until the desired level of corrosion is reached:
+
+For the different rebar sizes and Corrosion levels the current and the Time of Application is shown in Table 
+
+\textbf{Tension Tests}
+
+Tension tests will be performed according to ASTM A715. The main objective of this tests is to evaluate differences in the Stress-Strain behavior of corroded Reinforcing Steel. This will help in determining any reduction in the ductility of steel for this condition.
+
+\textbf{Buckled Bar Tension (BBT) Test}
+
+One of the limit states that control Performance Based Design is Buckling of Reinforcing steel, recent tests have been developed to determine the behavior of buckling of reinforced steel (cite Leo and Robyn here). However those tests and those limit states have been developed for rebars in pristine condition, it is therefore necessary to check if available expressions to determine this limit state hold for corroded steel.
+
+The Buckled Bar Tension Test consists in:
+
+\textbf{Test Matrix}
 
 \section{Steel Strain Aging}
 
@@ -333,7 +360,7 @@ Momtahan et al was able to correlate the increase in yield strength as a functio
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.9\textwidth]{Chapter-1/figs/StrainAging_TimeDependent}
+\includegraphics[width=0.9\textwidth]{Chapter-4/figs/StrainAging_TimeDependent}
 \caption{Strain Aging effect on Yield Strength vs Time (days)}
 \label{fig:hist4}
 \end{figure}
