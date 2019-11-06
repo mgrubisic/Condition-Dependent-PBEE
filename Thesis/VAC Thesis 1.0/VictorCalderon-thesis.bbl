@@ -17,7 +17,7 @@
 \endgroup
 
 \datalist[entry]{nyt/global//global/global}
-  \entry{Ghods2009}{article}{}
+  \entry{Ghods2010}{article}{}
     \name{author}{4}{}{%
       {{hash=GP}{%
          family={Ghods},
@@ -31,58 +31,58 @@
          given={O.\bibnamedelima B.},
          giveni={O\bibinitperiod\bibinitdelim B\bibinitperiod},
       }}%
-      {{hash=MG}{%
+      {{hash=MGA}{%
          family={McRae},
          familyi={M\bibinitperiod},
-         given={G.},
-         giveni={G\bibinitperiod},
+         given={G.\bibnamedelima A.},
+         giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod},
       }}%
-      {{hash=MT}{%
-         family={Miller},
-         familyi={M\bibinitperiod},
-         given={T.},
-         giveni={T\bibinitperiod},
+      {{hash=GGP}{%
+         family={Gu},
+         familyi={G\bibinitperiod},
+         given={G.\bibnamedelima P.},
+         giveni={G\bibinitperiod\bibinitdelim P\bibinitperiod},
       }}%
     }
-    \keyw{Anodic polarization,Concrete,Corrosion,EIS,Passive film,Pore
-  solution,Sulfate}
-    \strng{namehash}{GPIOBMG+1}
-    \strng{fullhash}{GPIOBMGMT1}
+    \keyw{A. Concrete,A. Steel reinforced concrete,B. EIS,B. Polarization,C.
+  Passive films,C. Pitting corrosion}
+    \strng{namehash}{GPIOBMGA+1}
+    \strng{fullhash}{GPIOBMGAGGP1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{sortinit}{G}
     \field{sortinithash}{G}
     \field{abstract}{%
-    The effect of concrete pore solution composition on the protective
-  properties of the oxide films that form on black reinforcing steel has been
-  experimentally investigated using anodic polarization and electrochemical
-  impedance spectroscopy (EIS). The tests were conducted on oxide films grown
-  in saturated calcium hydroxide solutions that included different
-  representative amounts of NaOH, KOH, and Ca(SO4), which are compounds that
-  are commonly observed in most ordinary portland cement concrete types. The
-  results of both anodic polarization and EIS tests show that pore solution
-  composition has an effect on the protective properties of the passive oxide
-  films and, in particular, sulfate ions (SO4)2 - have been shown to have a
-  negative influence on the film quality. {\textcopyright} 2008 Elsevier Ltd.
-  All rights reserved.%
+    Electrochemical measurements of chloride thresholds are reported in
+  simulated concrete pore solution for as-received and surface-modified rebar
+  in an experimental apparatus designed to simulate service conditions. Surface
+  modification led to higher chloride thresholds and reduced variability. The
+  variability in thresholds for as-received rebar was represented by a
+  log-normal distribution; therefore, simple averages of chloride thresholds,
+  without reference to underlying distribution, might not provide reliable
+  indicators of depassivation. The relative constancy of electrochemical
+  measurements below thresholds, and the dependence of the thresholds on
+  surface conditions, suggests that rebar depassivation is likely caused by
+  local critical chemical conditions at the steel surface. {\textcopyright}
+  2010 Elsevier Ltd. All rights reserved.%
     }
     \verb{doi}
-    \verb 10.1016/j.cemconcomp.2008.10.003
+    \verb 10.1016/j.corsci.2010.02.016
     \endverb
-    \field{issn}{09589465}
-    \field{number}{1}
-    \field{pages}{2\bibrangedash 11}
-    \field{title}{{The effect of concrete pore solution composition on the
-  quality of passive oxide films on black steel reinforcement}}
-    \field{volume}{31}
+    \field{issn}{0010938X}
+    \field{number}{5}
+    \field{pages}{1649\bibrangedash 1659}
+    \field{title}{{Electrochemical investigation of chloride-induced
+  depassivation of black steel rebar under simulated service conditions}}
+    \field{volume}{52}
     \verb{file}
     \verb :C$\backslash$:/Users/user/AppData/Local/Mendeley Ltd./Mendeley Deskt
-    \verb op/Downloaded/Ghods et al. - 2009 - The effect of concrete pore solut
-    \verb ion composition on the quality of passive oxide films on black steel
-    \verb reinforce(2).pdf:pdf
+    \verb op/Downloaded/Ghods et al. - 2010 - Electrochemical investigation of
+    \verb chloride-induced depassivation of black steel rebar under simulated s
+    \verb ervice condi.pdf:pdf
     \endverb
-    \field{journaltitle}{Cement and Concrete Composites}
-    \field{year}{2009}
+    \field{journaltitle}{Corrosion Science}
+    \field{year}{2010}
     \warn{\item Invalid format of field 'month'}
   \endentry
 

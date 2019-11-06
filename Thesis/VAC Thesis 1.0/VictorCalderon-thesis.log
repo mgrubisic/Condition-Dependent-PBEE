@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.22)  4 NOV 2019 16:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.22)  5 NOV 2019 20:51
 entering extended mode
 **./VictorCalderon-thesis.tex
 (VictorCalderon-thesis.tex
@@ -1147,11 +1147,8 @@ Package biblatex Warning: Missing 'hyperref' package.
 \@quotelevel=\count349
 \@quotereset=\count350
 (VictorCalderon-thesis.aux (front.aux) (Chapter-1/Chapter-1.aux)
-(Chapter-2/Chapter-2.aux) (Chapter-3/Chapter-3.aux) (Chapter-4/Chapter-4.aux
-
-LaTeX Warning: Label `fig:Meda_FD' multiply defined.
-
-) (Chapter-5/Chapter-5.aux) (Appendix-A/Appendix-A.aux))
+(Chapter-2/Chapter-2.aux) (Chapter-3/Chapter-3.aux) (Chapter-4/Chapter-4.aux)
+(Chapter-5/Chapter-5.aux) (Appendix-A/Appendix-A.aux))
 \openout1 = `VictorCalderon-thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 352.
@@ -1256,7 +1253,7 @@ Package biblatex Info: ... file 'VictorCalderon-thesis.bbl' found.
 (VictorCalderon-thesis.bbl
 
 Package biblatex Warning: BibTeX reported the following issues
-(biblatex)                with 'Ghods2009':
+(biblatex)                with 'Ghods2010':
 (biblatex)                - Invalid format of field 'month'.
 
 
@@ -1498,12 +1495,8 @@ File: Chapter-4/figs/Meda_F-D_01.png Graphic file (type png)
 Package pdftex.def Info: Chapter-4/figs/Meda_F-D_01.png  used on input line 284
 .
 (pdftex.def)             Requested size: 406.516pt x 259.74174pt.
-
-
-LaTeX Warning: Reference `' on page 18 undefined on input line 289.
-
-[18] [19 <./Chapter-4/figs/Meda_Corrosion.png> <./Chapter-4/figs/Meda_F-D_01.pn
-g>]
+ [18] [19 <./Chapter-4/figs/Meda_Corrosion.png> <./Chapter-4/figs/Meda_F-D_01.p
+ng>]
 <Chapter-4/figs/Meda_StressStrain.png, id=196, 256.5585pt x 168.63pt>
 File: Chapter-4/figs/Meda_StressStrain.png Graphic file (type png)
 <use Chapter-4/figs/Meda_StressStrain.png>
@@ -1587,20 +1580,14 @@ AED: lastpage setting LastPage
 (VictorCalderon-thesis.aux (front.aux) (Chapter-1/Chapter-1.aux)
 (Chapter-2/Chapter-2.aux) (Chapter-3/Chapter-3.aux) (Chapter-4/Chapter-4.aux)
 (Chapter-5/Chapter-5.aux) (Appendix-A/Appendix-A.aux))
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package logreq Info: Writing requests to 'VictorCalderon-thesis.run.xml'.
 \openout1 = `VictorCalderon-thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
  23669 strings out of 493303
- 445974 string characters out of 3138847
- 790971 words of memory out of 3000000
+ 446026 string characters out of 3138847
+ 790989 words of memory out of 3000000
  26677 multiletter control sequences out of 15000+200000
  13607 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1617,7 +1604,7 @@ lic/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl
 10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
 C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on VictorCalderon-thesis.pdf (42 pages, 1495963 bytes).
+Output written on VictorCalderon-thesis.pdf (42 pages, 1495202 bytes).
 PDF statistics:
  320 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

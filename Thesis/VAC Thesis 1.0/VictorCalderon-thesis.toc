@@ -44,7 +44,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2.1}Metallurgical Process}{22}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}Strain aging effects in structures}{23}
+\contentsline {subsection}{\numberline {4.2.2}Strain aging effects in structures}{22}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.3}Multiple Seismic Events}{25}
 \defcounter {refsection}{0}\relax 
