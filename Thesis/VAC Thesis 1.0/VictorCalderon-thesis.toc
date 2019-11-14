@@ -34,54 +34,56 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.1.2}Rate of corrosion}{14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.3}Corrosion modified properties of reinforcing steel bars}{17}
+\contentsline {subsection}{\numberline {4.1.3}Corrosion modified properties of reinforcing steel bars}{18}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.1.4}Physical test on corroded RC Structures}{18}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.5}Proposed Experimental campaign}{21}
+\contentsline {subsection}{\numberline {4.1.5}Proposed Experimental campaign}{20}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Steel Strain Aging}{24}
+\contentsline {subsection}{\numberline {4.1.6}Incorporating Corrosion into NLTHA}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.1}Metallurgical Process}{24}
+\contentsline {section}{\numberline {4.2}Steel Strain Aging}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}Strain aging effects in structures}{25}
+\contentsline {subsection}{\numberline {4.2.1}Metallurgical Process}{25}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Multiple Seismic Events}{27}
+\contentsline {subsection}{\numberline {4.2.2}Strain aging effects in structures}{26}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}Main Shock Series}{27}
+\contentsline {section}{\numberline {4.3}Multiple Seismic Events}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.2}Main Shock - After Shock Series}{27}
+\contentsline {subsection}{\numberline {4.3.1}Main Shock Series}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Future Topics}{27}
+\contentsline {subsection}{\numberline {4.3.2}Main Shock - After Shock Series}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Analytical Model and Preliminary Results}{28}
+\contentsline {section}{\numberline {4.4}Future Topics}{28}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}SDOF Model}{28}
+\contentsline {chapter}{\numberline {5}Analytical Model and Preliminary Results}{29}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Model Calibration}{28}
+\contentsline {section}{\numberline {5.1}SDOF Model}{29}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Comparison with existing physical Tests}{29}
+\contentsline {section}{\numberline {5.2}Model Calibration}{29}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}Earthquake selection}{29}
+\contentsline {section}{\numberline {5.3}Comparison with existing physical Tests}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.5}Results from NLTHA}{29}
+\contentsline {section}{\numberline {5.4}Earthquake selection}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.5.1}Effect on global response}{29}
+\contentsline {section}{\numberline {5.5}Results from NLTHA}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.5.2}Effect on local response}{30}
+\contentsline {subsection}{\numberline {5.5.1}Effect on global response}{30}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.5.3}Preliminary results}{30}
+\contentsline {subsection}{\numberline {5.5.2}Effect on local response}{31}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{{\uppercase {Bibliography}}}{31}
+\contentsline {subsection}{\numberline {5.5.3}Preliminary results}{31}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{APPENDIX}{32}
+\contentsline {chapter}{{\uppercase {Bibliography}}}{32}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{APPENDIX}{33}
 \defcounter {refsection}{0}\relax 
  \renewcommand {\cftchappresnum }{Appendix } \renewcommand {\cftchapnumwidth }{\appendixwidth } \renewcommand {\cftchapfont }{\cftsecfont } \setlength {\cftbeforechapskip }{\cftbeforesecskip } \setlength {\cftchapindent }{\cftsecindent } \renewcommand {\cftchappagefont }{\cftchapfont } \setlength {\cftsecindent }{\cftsubsecindent } \addtolength {\cftsubsecindent }{\cftsecnumwidth } \setcounter {tocdepth}{\c@ncsu@appendixtocdepth } 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}LOREM IPSUM}{33}
+\contentsline {chapter}{\numberline {A}LOREM IPSUM}{34}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}A First Section}{33}
+\contentsline {section}{\numberline {A.1}A First Section}{34}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {A.1.0.0.1}Filler Text}{33}
+\contentsline {paragraph}{\numberline {A.1.0.0.1}Filler Text}{34}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}A Second Section}{36}
+\contentsline {section}{\numberline {A.2}A Second Section}{37}

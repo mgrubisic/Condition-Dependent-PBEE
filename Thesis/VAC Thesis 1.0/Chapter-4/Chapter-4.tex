@@ -9,7 +9,7 @@ A methodology that incorporates the different sources of cumulative damage in RC
 	\item Concrete Strength Aging
 \end{itemize}
 
-This effects generally affect the mechanical behavior of the material, which are nor considered when designing a structure. In the following paragraph the different models available are studied and later incorporated into the analysis methodology.
+These effects generally affect the mechanical behavior of the materials, which are not considered when designing a structure. In the following paragraphs the different models available are studied and later incorporated into the analysis methodology.
 
 \section{Corrosion}
 
@@ -19,9 +19,9 @@ One of the main phenomenon that affect the long term behavior of RC structures i
 		\item Chloride attack
 \end{itemize}
 
-The main source of corrosion in most RC structures is Chloride Attack and is the one that is assumed in the present study.
+The main source of corrosion in most RC structures is Chloride Attack and it is the one that is assumed in the present study.
 
-Corrosion of steel in concrete is an electrochemical process \cite{Mehta2014} this corrosion mat be generated in two ways:
+Corrosion of steel in concrete is an electrochemical process \cite{Mehta2014} this corrosion may be generated in two ways:
 \begin{itemize}
 	\item Composition cells may be formed when to dissimilar metals are embedded in concrete or when significant variations exist in the surface characteristics of steel
 	\item In the vicinity of steel concentration cells may be formed due to differences in the concentration of dissolved ions, such as alkalies and \textbf{chlorides}.
@@ -37,7 +37,7 @@ The corrosion process under chloride attack type of corrosion consists in first 
 \end{figure}
 
 
-A literature review to characterize corrosion in reinforcing steel is presented such that corrosion can be modeled as a function of time, the corrosion process is an extensive field of research and to characterize it, therefore the different components of this subject are categorized as follows:
+A literature review to characterize corrosion in reinforcing steel is presented to model corrosion can be modeled, the corrosion process is an extensive field of research and to accurately incorporate it into the analysis it is necessary to incorporate the following components:
 
 \begin{enumerate}
 	\item Time to Initiation of Corrosion (Tcorr)
@@ -78,7 +78,7 @@ $C_{0}$: Equilibrium Chloride Concentration
 $C_{cr}$: Critical chloride corrosion concentration
 \newline
 
-While this model provides a means to calculate the Time for initiation of corrosion as a function of Concrete Cover and Diffusion concentration, the estimation of the Diffusion concentration depends on several factors such as environment, curing and water to cement ratio it is not a reliable method to estimate the Time to Corrosion.
+This model provides a means to calculate the Time for initiation of corrosion as a function of Concrete Cover and Diffusion concentration, the estimation of the Diffusion concentration depends on several factors such as environment, curing and water to cement ratio, however, it is not a reliable method to estimate the Time to Corrosion.
 \newline
 
 \textbf{Gosh \& Padgett Model}
@@ -106,7 +106,7 @@ While this model provides mean values for the time of initiation of corrosion, i
 
 Is a software developed by a consortium of companies of the cementitious materials industries and academic institutions. This software relies on the studies summarized above, mainly using the Thoft-Christensen model, but as opposed to assuming dicing environments only, this software uses a database of chlorides concentration for different location in the USA and Canada, which gives more accurate results depending on the location and environment in which the structure is located..
 
-While this is a more robust model to obtain the initiation of corrosion since it considers the location and environment of the structure and it also has the ability to include other durability issues, it is difficult to implement in a batch run format since the program is closed.
+While this is a more robust model to obtain the initiation of corrosion since it considers the location and environment of the structure and it also has the ability to include other durability issues, it is difficult to implement in a batch run mode since the program is in a closed format.
 \newline
 
 \textbf{Liu \& Weyers Model}
@@ -156,7 +156,7 @@ $a=\frac{D+2d_o}{2}$
 
 $b=C+\frac{D+2d_o}{2}$
 
-This model however is limited to corrosion on concrete slabs, since a series of experiments were developed to generate these equations. This model howver was able to predict the time to corrosion with great accuracy.
+This model however is limited to corrosion on concrete slabs, since a series of experiments were developed to generate these equations, however, it is able predict the time to corrosion with great accuracy.
 
 \subsection{Rate of corrosion}
 
@@ -295,7 +295,7 @@ As stated in the previous section the mechanical properties of steel are affecte
 	\label{fig:Meda_RebarTest}
 \end{figure}
 
-These studies did not considered the generation of the protective film due to the alkaline environment of the concrete, this film can modify mechanical properties of corroded steel. Additionally the accelerated corrosion process used a 3\% $NaCl$ concentration solution while the chloride attack in concrete usually has a 1.0\% - 1.5\% concentration of the same Chloride. Therefore the results obtained from these studies might not accurately represent the actual conditions of corroded RC columns, thus an experimental campaign is proposed that would shed a light into the properties of corroded reinforcing steel inside concrete and is discussed in the following subsection.
+While these studies provided an insight into how corroded RC Columns behave under cyclic loading, they did not considered the generation of the protective film due to the alkaline environment of the concrete, this film can modify mechanical properties of corroded steel. Additionally the accelerated corrosion process used a 3\% $NaCl$ concentration solution while the chloride attack in concrete usually has a 1.0\% - 1.5\% concentration of the same Chloride. Therefore the results obtained from these studies might not accurately represent the actual conditions of corroded RC columns, thus an experimental campaign is proposed that would shed a light into the properties of corroded reinforcing steel inside concrete and is discussed in the following subsection.
 
 \subsection{Proposed Experimental campaign}
 
@@ -312,10 +312,10 @@ As explained in the previous section the steel inside concrete generates a prote
 Methods to generate the passive film on reinforcing steel are available in the literature \cite{Ghods2010}. According to this study it is possible to generate the passivation process in the same way as it occurs to reinforcing steel inside the concrete. A porous solution will be generated with the following concentrations:
 
 \begin{itemize}
-	\item $Ca(OH)_2$ Saturated
-	\item $Na(OH)$ 4.00 g/l
-	\item $K(OH)$ 11.22 g/l
-	\item $Ca(SO)_4 + 2H_2O$ 13.77 g/l
+	\item Saturated Calcium Hydroxide $Ca(OH)_2$
+	\item Sodium Hydroxide $Na(OH)$ 4.00 g/l
+	\item Potassium Hydroxide $(OH)$ 11.22 g/l
+	\item Calcium Sulfate Dihydrate $Ca(SO)_4 + 2H_2O$ 13.77 g/l
 \end{itemize}
 
 The rebars will be placed in a container with the pore solution for a minimum of 8 days. Annodic Polarization Tests will be measured on the rebars to determine the passive current density. A figure of this process is shown in \fref{fig:RebarPassivation}. Additionally The ends of the rebars will be protected to prevent corrosion in these zones of the specimens, the protection at the ends is based from the standard ASTM G109-07 with some alterations. Figures \fref{fig:RebarSpecimenGeomtry} and \fref{fig:RebarEndsProtection} show the specimen geometry and the preparation of the ends of the rebars.
@@ -388,7 +388,7 @@ The Buckled Bar Tension Test consists in:
 
 \textbf{Test Matrix}
 
-
+\subsection{Incorporating Corrosion into NLTHA}
 
 \section{Steel Strain Aging}
 
