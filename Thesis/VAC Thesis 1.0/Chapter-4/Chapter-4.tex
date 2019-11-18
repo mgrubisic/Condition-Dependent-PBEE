@@ -382,13 +382,74 @@ Tension tests will be performed according to ASTM A706. The main objective of th
 
 \textbf{Buckled Bar Tension (BBT) Test}
 
-One of the limit states that control Performance Based Design is Buckling of Reinforcing steel, recent tests have been developed to determine the behavior of buckling of reinforced steel (cite Leo and Robyn here). However those tests and those limit states have been developed for rebars in pristine condition, it is therefore necessary to check if available expressions to determine this limit state hold for corroded steel.
+One of the limit states that control Performance Based Design is Buckling of Reinforcing steel, recent tests have been developed to determine the critical bending strain of buckling of reinforced steel \cite{Barcley2019}. The premise of the BBT Test is a material test to simulate bending and tension strain demands on a buckled bar.However those results have been developed for rebars in pristine condition, it is therefore necessary to check if available expressions to determine this limit state hold for corroded steel.
 
 The Buckled Bar Tension Test consists in:
 
-\textbf{Test Matrix}
+\begin{enumerate}
+	\item Compress a rebar specimen up to a certain level of compression strain such that the rebar will show buckling
+	\item The rebar is then pulled untill rupture
+	\item process is repeated for different levels of compression strains 
+\end{enumerate}
 
-\subsection{Incorporating Corrosion into NLTHA}
+
+This test is proposed for different levels of corrosion such that any changes on the behavior are studied and incorporated into the analysis a sequence of the test procedure is shown in \fref{fig:BBTseq}. A proposed test matrix is shown in Table \ref{tab:Test Matrix}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Chapter-4/figs/BBT_Sequence}
+	\caption{BBT Test sequence}
+	\label{fig:BBTseq}
+\end{figure}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[]
+	\caption{Corroded Rebar Test Matrix}
+	\label{tab:Test Matrix}
+	\centering	
+	\begin{tabular}{|c|c|c|c|}
+	\hline
+	\multicolumn{4}{|c|}{\cellcolor[HTML]{CC0000}{\color[HTML]{FFFFFF} Corroded BBT Test Matrix}}                                               \\ \hline
+	\multicolumn{1}{|l|}{Test}     & \multicolumn{1}{l|}{Diameter of Bar} & \multicolumn{1}{l|}{CL (\%)} & \multicolumn{1}{l|}{Number of Tests} \\ \hline
+	                               &                                      & 0                            & 3                                    \\ \cline{3-4} 
+	                               &                                      & 5                            & 3                                    \\ \cline{3-4} 
+	                               &                                      & 10                           & 3                                    \\ \cline{3-4} 
+	                               &                                      & 15                           & 3                                    \\ \cline{3-4} 
+	                               &                                      & 20                           & 3                                    \\ \cline{3-4} 
+	\multirow{-6}{*}{Tension Test} & \multirow{-6}{*}{\#6}                & 25                           & 3                                    \\ \hline
+	                               &                                      & 0                            & 6                                    \\ \cline{3-4} 
+	                               &                                      & 5                            & 6                                    \\ \cline{3-4} 
+	                               &                                      & 10                           & 6                                    \\ \cline{3-4} 
+	                               &                                      & 15                           & 6                                    \\ \cline{3-4} 
+	                               &                                      & 20                           & 6                                    \\ \cline{3-4} 
+	\multirow{-6}{*}{BBT Test}     & \multirow{-6}{*}{\#6}                & 25                           & 6                                    \\ \hline
+	\end{tabular}
+\end{table}
+
+
+\subsection{Modeling of corrosion for Structural Analysis}
+
+The previous elements of corrosion explained in the previous sections are incorporated into the structural analysis mainly at the material level. The application can be outlined as follows:
+\begin{enumerate}
+	\item First the time for initiation of corrosion is calculated according to the Gosh and Padgett Model \cite{Ghosh2010}
+	\item Then the rate of corrosion is calculated according to the Vu et al model \cite{Vu2000}
+	\item Following this the size of the rebar is reduced and the corrosion level is calculated
+	\item Finally the mechanical properties of the reinforcing steel are modified with the corresponding corrosion level.
+\end{enumerate}
+
+This modeling can be better seen in \fref{fig:CorrModel}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Chapter-4/figs/Corrosion_Modeling}
+	\caption{Corrosion Modeling for Structural Analysis}
+	\label{fig:CorrModel}
+\end{figure}
+
+This is later incorporated into the Nonlinear Structural Analysis Framework using the package OpenSees \cite{McKenna2010}, the framework of this analysis is explained in \cite{Chapter-5}.
 
 \section{Steel Strain Aging}
 
@@ -444,9 +505,84 @@ It is proposed to limit the increase in yield strength to the one obtained at 50
 
 \section{Multiple Seismic Events}
 
-\subsection{Main Shock Series}
+The evaluation of multiple seismic events is a topic that has been scarcely studied, however their effects have been felt in numerous earthquake sequences such as El Salvador, North Ridge, Chi-Chi among others. The main thought is that after a series of earthquake the structures accumulate damage and would eventually fail, this has been attempted as it was shown in \cite{Chapter-1}. 
 
-\subsection{Main Shock - After Shock Series}
+For this study it has been determined that not all damage in structures are dependent on multiple events but rather their condition when an event occours as is the case for corrosion. Other damage related phenomenons such as Strain Aging depend on the loading history and are therefore dependent on the history of extreme loading events. It is therefore proposed to study corrosion on a discrete modeling of Main Shocks each independent of the other and to study the effect on Strain Aging by using a sequence of Main Shocks.
+
+\subsection{Earthquake Selection}
+
+For this study the NGA2 West Database of earthquake records provided by the Pacific Earthquake and Engineering Research Insitute (PEER) \cite{Ancheta2014} is used. This database consists of 599 different Earthquake events that characterize theground motions on the west coast of the contiguous United States. The data was filteres to according to the following criteria:
+
+\begin{itemize}
+	\item Earthquake sequence
+	\item Moment Magnitude $M_w \geqslant 5$
+	\item $PGA>0.04$
+	\item $PGV>1$ cm/s
+	\item $Vs_{30}>100m/s$ \& $Vs_{30}<1000$ m/s
+	\item Lowest usable frequency is less than 1Hz
+	\item $R_{rup}<60km$
+\end{itemize}
+
+From this data the major earthquakes found are the following, the earthquakes can be sumarized in \fref{fig:MS_Selection} which show this earthquakes as moment magnitude {Mw} vs rupture distance ($R_{rup}$).
+
+\begin{itemize}
+	\item Chi-chi
+	\item Managua
+	\item Livermore
+	\item Northridge
+	\item Duzce 
+	\item Mammoth lake
+\end{itemize}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Chapter-4/figs/MainShock_Selection}
+	\caption{Mainshock selection from PEER NGA West2 Database}
+	\label{fig:MS_Selection}
+\end{figure}
+
+\subsection{Discrete Modeling of Main Shock Series}
+The discrete modeling of mainshocks consists in using individual earthquakes that accour at different times thorughout the life of the structures which correlate to a Corrosion Level (CL), this can be done for each of the main shocks selected after which the follogin data is obtained and later analyzed:
+
+\begin{itemize}
+	\item Maximum axial strain in Confined Concrete, Cover and Reinforcing steel 
+Strains
+	\item Obtain the probability of exceeding a given limit state $P(\varepsilon >\varepsilon_{LS},IM)$
+	\item The earthquakes are characterized according to an intensity measure
+
+\end{itemize}
+
+
+\subsection{Multiple Main Shock Series}
+
+To simulate the life of a structure a Mainshowck series consisting of 3 Mainshocks for a the life of a structure is considered, three phases are considered:
+\begin{enumerate}
+
+	\item at time $t=0$ the structure has pristine conditions
+	\item Mainshock 1 occours
+	\item Mainshock 2 occours
+	\item Mainshock 3 occours
+\end{enumerate}
+
+This is shown graphically in \fref{fig:MSSequence}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.9\textwidth]{Chapter-4/figs/MainShock_Sequence}
+	\caption{Mainshock sequence example}
+	\label{fig:MSSequence}
+\end{figure}
+
+
+Then from the analysis the same results can be recorded
+
+\begin{itemize}
+	\item Maximum axial strain in Confined Concrete, Cover and Reinforcing steel 
+Strains
+	\item Obtain the probability of exceeding a given limit state $P(\varepsilon\varepsilon_{LS},IM)$
+	\item The earthquakes are characterized according to an intensity measure
+
+\end{itemize}
 
 \section{Future Topics}
 
@@ -455,4 +591,5 @@ It is proposed to limit the increase in yield strength to the one obtained at 50
 	\item Welding and Fatigue in Steel Structures
 	\item Repair Effects
 	\item Main Shock - After Shock Series - Repair Series
+	\item Degree of damage effect on confined structures behavior
 \end{itemize}

@@ -17,6 +17,153 @@
 \endgroup
 
 \datalist[entry]{nyt/global//global/global}
+  \entry{Ancheta2014}{article}{}
+    \name{author}{12}{}{%
+      {{hash=ATD}{%
+         family={Ancheta},
+         familyi={A\bibinitperiod},
+         given={Timothy\bibnamedelima D},
+         giveni={T\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=DRB}{%
+         family={Darragh},
+         familyi={D\bibinitperiod},
+         given={Robert\bibnamedelima B},
+         giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=SJP}{%
+         family={Stewart},
+         familyi={S\bibinitperiod},
+         given={Jonathan\bibnamedelima P},
+         giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=SE}{%
+         family={Seyhan},
+         familyi={S\bibinitperiod},
+         given={Emel},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=SWJ}{%
+         family={Silva},
+         familyi={S\bibinitperiod},
+         given={Walter\bibnamedelima J},
+         giveni={W\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=SB}{%
+         family={{S-J Chiou}},
+         familyi={S\bibinitperiod},
+         given={Brian},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=WKE}{%
+         family={Wooddell},
+         familyi={W\bibinitperiod},
+         given={Katie\bibnamedelima E},
+         giveni={K\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=GRW}{%
+         family={Graves},
+         familyi={G\bibinitperiod},
+         given={Robert\bibnamedelima W},
+         giveni={R\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=KAR}{%
+         family={Kottke},
+         familyi={K\bibinitperiod},
+         given={Albert\bibnamedelima R},
+         giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=BDM}{%
+         family={Boore},
+         familyi={B\bibinitperiod},
+         given={David\bibnamedelima M},
+         giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=KT}{%
+         family={Kishida},
+         familyi={K\bibinitperiod},
+         given={Tadahiro},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=DJL}{%
+         family={Donahue},
+         familyi={D\bibinitperiod},
+         given={Jennifer\bibnamedelima L},
+         giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ATDDRBSJP+1}
+    \strng{fullhash}{ATDDRBSJPSESWJSBWKEGRWKARBDMKTDJL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{abstract}{%
+    The NGA-West2 project database expands on its predecessor to include
+  worldwide ground motion data recorded from shallow crustal earthquakes in
+  active tectonic regimes post-2000 and a set of small-to-moderate-magnitude
+  earthquakes in California between 1998 and 2011. The database includes 21,336
+  (mostly) three-component records from 599 events. The parameter space covered
+  by the database is M 3.0 to M 7.9, closest distance of 0.05 to 1,533 km, and
+  site time-averaged shear-wave velocity in the top 30 m of V S30 ¼ 94 m∕s
+  to 2;100 m∕s (although data becomes sparse for distances {\textgreater}400
+  km and V S30 {\textgreater} 1;200 m∕s or {\textless}150 m∕s). The
+  database includes uniformly processed time series and response spectral
+  ordinates for 111 periods ranging from 0.01 s to 20 s at 11 damping ratios.
+  Ground motions and metadata for source, path, and site conditions were
+  subject to quality checks by ground motion prediction equation developers and
+  topical working groups.%
+    }
+    \verb{doi}
+    \verb 10.1193/070913EQS197M
+    \endverb
+    \field{title}{{NGA-West2 Database}}
+    \verb{url}
+    \verb http://peer.berkeley.edu/ngawest2/databases/.
+    \endverb
+    \verb{file}
+    \verb ::
+    \endverb
+    \field{year}{2014}
+  \endentry
+
+  \entry{Barcley2019}{article}{}
+    \name{author}{2}{}{%
+      {{hash=BL}{%
+         family={Barcley},
+         familyi={B\bibinitperiod},
+         given={Leo},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=KM}{%
+         family={Kowalsky},
+         familyi={K\bibinitperiod},
+         given={Mervyn},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BLKM1}
+    \strng{fullhash}{BLKM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.14359/51715583
+    \endverb
+    \field{issn}{0889-325X}
+    \field{number}{3}
+    \field{title}{{Critical Bending Strain of Reinforcing Steel and Buckled Bar
+  Tension Test}}
+    \field{volume}{116}
+    \verb{file}
+    \verb :Q$\backslash$:/My Drive/PhD Program/Research/Thesis/Lit Review/Corro
+    \verb sion/18-217.pdf:pdf
+    \endverb
+    \field{journaltitle}{ACI Materials Journal}
+    \field{year}{2019}
+  \endentry
+
   \entry{Ghods2010}{article}{}
     \name{author}{4}{}{%
       {{hash=GP}{%
@@ -223,6 +370,78 @@
     \endverb
     \field{journaltitle}{Construction and Building Materials}
     \field{year}{2012}
+  \endentry
+
+  \entry{McKenna2010}{article}{}
+    \name{author}{3}{}{%
+      {{hash=MF}{%
+         family={McKenna},
+         familyi={M\bibinitperiod},
+         given={Frank},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=SMH}{%
+         family={Scott},
+         familyi={S\bibinitperiod},
+         given={Michael\bibnamedelima H.},
+         giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=FGL}{%
+         family={Fenves},
+         familyi={F\bibinitperiod},
+         given={Gregory\bibnamedelima L.},
+         giveni={G\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \keyw{Computer programming,Computer software,Finite element
+  method,Nonlinear analysis}
+    \strng{namehash}{MFSMHFGL1}
+    \strng{fullhash}{MFSMHFGL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{abstract}{%
+    Object composition offers significant advantages over class inheritance to
+  develop a flexible software architecture for finite-element analysis. Using
+  this approach, separate classes encapsulate fundamental finite-element
+  algorithms and interoperate to form and solve the governing nonlinear
+  equations. Communication between objects in the analysis composition is
+  established using software design patterns. Root-finding algorithms, time
+  integration methods, constraint handlers, linear equation solvers, and degree
+  of freedom numberers are implemented as interchangeable components using the
+  Strategy pattern. The Bridge and Factory Method patterns allow objects of the
+  finite-element model to vary independently from objects that implement the
+  numerical solution procedures. The Adapter and Iterator patterns permit
+  equations to be assembled entirely through abstract interfaces that do not
+  expose either the storage of objects in the analysis model or the
+  computational details of the time integration method. Sequence diagrams
+  document the interoperability of the analysis classes for solving nonlinear
+  finite-element equations, demonstrating that object composition with design
+  patterns provides a general approach to developing and refactoring nonlinear
+  finite-element software. {\textcopyright} 2010 ASCE.%
+    }
+    \verb{doi}
+    \verb 10.1061/(ASCE)CP.1943-5487.0000002
+    \endverb
+    \field{issn}{08873801}
+    \field{number}{1}
+    \field{pages}{95\bibrangedash 107}
+    \field{title}{{Nonlinear finite-element analysis software architecture
+  using object composition}}
+    \verb{url}
+    \verb http://ascelibrary.org/doi/10.1061/{\%}28ASCE{\%}29CP.1943-5487.00000
+    \verb 02
+    \endverb
+    \field{volume}{24}
+    \verb{file}
+    \verb :C$\backslash$:/Users/vacalder/AppData/Local/Mendeley Ltd./Mendeley D
+    \verb esktop/Downloaded/McKenna, Scott, Fenves - 2010 - Nonlinear Finite-El
+    \verb ement Analysis Software Architecture Using Object Composition.pdf:pdf
+    \endverb
+    \field{journaltitle}{Journal of Computing in Civil Engineering}
+    \field{year}{2010}
+    \warn{\item Invalid format of field 'month'}
   \endentry
 
   \entry{Meda2014}{article}{}
