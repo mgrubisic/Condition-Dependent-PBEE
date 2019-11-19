@@ -164,6 +164,110 @@
     \field{year}{2019}
   \endentry
 
+  \entry{Calabrese2010}{article}{}
+    \name{author}{3}{}{%
+      {{hash=CA}{%
+         family={Calabrese},
+         familyi={C\bibinitperiod},
+         given={Armando},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=AJP}{%
+         family={Almeida},
+         familyi={A\bibinitperiod},
+         given={João\bibnamedelima Pacheco},
+         giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=PR}{%
+         family={Pinho},
+         familyi={P\bibinitperiod},
+         given={Rui},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Taylor & Francis}%
+    }
+    \strng{namehash}{CAAJPPR1}
+    \strng{fullhash}{CAAJPPR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{abstract}{%
+    The sustained development of computational power continues to promote the
+  use of distributed inelasticity fiber frame models. The current article
+  presents a comprehensive application and discussion of state-of-the-art
+  formulations for the nonlinear material response of reinforced concrete
+  structures. The broad character of the study is imparted by the joint
+  analysis of the effects of the type of formulation (displacement based versus
+  force based), sectional constitutive behavior (hardening versus softening
+  response), and numerical integration parameters (such as quadrature method,
+  mesh definition, or number of integration points). Global and local responses
+  are assessed, along with a critical review of existing regularization
+  techniques. An experimentally tested cantilever is used to conduct the study
+  and illustrate the previous features. The example shows that the convergence
+  of displacement-based meshes under objective response can be much slower than
+  what preceding studies indicate, unlike their force-based counterpart.
+  Additionally, the physical interpretation of the local response under
+  softening behavior supports the proposal of a novel regularization scheme for
+  displacement-based elements, validated through comparison against
+  experimental results.%
+    }
+    \verb{doi}
+    \verb 10.1080/13632461003651869
+    \endverb
+    \field{number}{sup1}
+    \field{pages}{38\bibrangedash 68}
+    \field{title}{Numerical Issues in Distributed Inelasticity Modeling of RC
+  Frame Elements for Seismic Analysis}
+    \verb{url}
+    \verb https://doi.org/10.1080/13632461003651869
+    \endverb
+    \field{volume}{14}
+    \field{journaltitle}{Journal of Earthquake Engineering}
+    \field{year}{2010}
+  \endentry
+
+  \entry{Filippou1983}{report}{}
+    \name{author}{3}{}{%
+      {{hash=FFC}{%
+         family={Filippou},
+         familyi={F\bibinitperiod},
+         given={Filip\bibnamedelima C.},
+         giveni={F\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=PE}{%
+         family={Popov},
+         familyi={P\bibinitperiod},
+         given={E.P.},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=BV}{%
+         family={Bertero},
+         familyi={B\bibinitperiod},
+         given={V.V.},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FFCPEBV1}
+    \strng{fullhash}{FFCPEBV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{number}{August}
+    \field{pages}{212}
+    \field{title}{{Effects of bond deteroriation on hysteretic behavior of
+  renforce concrete coint}}
+    \verb{file}
+    \verb :Q$\backslash$:/My Drive/PhD Program/Research/Thesis/Lit Review/NonLi
+    \verb near Analysis/PB84192020.pdf:pdf
+    \endverb
+    \field{type}{techreport}
+    \field{year}{1983}
+  \endentry
+
   \entry{Ghods2010}{article}{}
     \name{author}{4}{}{%
       {{hash=GP}{%
@@ -302,6 +406,66 @@
     \field{year}{2010}
   \endentry
 
+  \entry{Goodnight2013}{article}{}
+    \name{author}{3}{}{%
+      {{hash=GJC}{%
+         family={Goodnight},
+         familyi={G\bibinitperiod},
+         given={Jason\bibnamedelima C.},
+         giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=KMJ}{%
+         family={Kowalsky},
+         familyi={K\bibinitperiod},
+         given={Mervyn\bibnamedelima J.},
+         giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=NJM}{%
+         family={Nau},
+         familyi={N\bibinitperiod},
+         given={James\bibnamedelima M.},
+         giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GJCKMJNJM1}
+    \strng{fullhash}{GJCKMJNJM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{abstract}{%
+    In this paper, the importance of displacement history and its effects on
+  performance limit states, the relationship between strain and displacement,
+  and the spread of plasticity in RC structures is explored. An experimental
+  study is underway to assess the performance of 30 circular, well-confined,
+  bridge columns with varying lateral displacement history, transverse
+  reinforcement detailing, axial load, aspect ratio, and longitudinal steel
+  content. Eight of these columns, with similar geometry and detailing, were
+  subjected to various unidirectional displacement histories including
+  standardized laboratory reversed cyclic loading and re-creations of the
+  displacement responses obtained from a nonlinear time-history analysis of
+  multiple earthquakes with distinct characteristics. Longitudinal reinforcing
+  bars were instrumented to obtain strain hysteresis, vertical strain profiles,
+  cross section curvatures, curvature distributions, and fixed-end rotations
+  attributable to strain penetration. Results have shown that the limit state
+  of reinforcement bar buckling was influenced by load history, but the
+  relationship between strain and displacement along the envelope curve was
+  not. The main impact of load history on bar buckling is its influence on
+  accumulated strains within the longitudinal reinforcement and transverse
+  steel.%
+    }
+    \verb{doi}
+    \verb 10.1061/(ASCE)BE.1943-5592.0000495
+    \endverb
+    \field{number}{12}
+    \field{pages}{1383\bibrangedash 1396}
+    \field{title}{Effect of Load History on Performance Limit States of
+  Circular Bridge Columns}
+    \field{volume}{18}
+    \field{journaltitle}{Journal of Bridge Engineering}
+    \field{year}{2013}
+  \endentry
+
   \entry{Ma2012}{article}{}
     \name{author}{3}{}{%
       {{hash=MY}{%
@@ -370,6 +534,60 @@
     \endverb
     \field{journaltitle}{Construction and Building Materials}
     \field{year}{2012}
+  \endentry
+
+  \entry{Mander1988}{article}{}
+    \name{author}{3}{}{%
+      {{hash=MJB}{%
+         family={Mander},
+         familyi={M\bibinitperiod},
+         given={J.\bibnamedelima B.},
+         giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=PMJN}{%
+         family={Priestley},
+         familyi={P\bibinitperiod},
+         given={M.\bibnamedelima J.\bibnamedelima N.},
+         giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim
+  N\bibinitperiod},
+      }}%
+      {{hash=PR}{%
+         family={Park},
+         familyi={P\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MJBPMJNPR1}
+    \strng{fullhash}{MJBPMJNPR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{abstract}{%
+    A stress‐strain model is developed for concrete subjected to uniaxial
+  compressive loading and confined by transverse reinforcement. The concrete
+  section may contain any general type of confining steel: either spiral or
+  circular hoops; or rectangular hoops with or without supplementary cross
+  ties. These cross ties can have either equal or unequal confining stresses
+  along each of the transverse axes. A single equation is used for the
+  stress‐strain equation. The model allows for cyclic loading and includes
+  the effect of strain rate. The influence of various types of confinement is
+  taken into account by defining an effective lateral confining stress, which
+  is dependent on the configuration of the transverse and longitudinal
+  reinforcement. An energy balance approach is used to predict the longitudinal
+  compressive strain in the concrete corresponding to first fracture of the
+  transverse reinforcement by equating the strain energy capacity of the
+  transverse reinforcement to the strain energy stored in the concrete as a
+  result of the confinement.%
+    }
+    \field{number}{8}
+    \field{pages}{1804\bibrangedash 1826}
+    \field{title}{Theoretical Stress\&\#x2010;Strain Model for Confined
+  Concrete}
+    \field{volume}{114}
+    \field{journaltitle}{Journal of Structural Engineering}
+    \field{year}{1988}
   \endentry
 
   \entry{McKenna2010}{article}{}
@@ -654,6 +872,68 @@
     \field{year}{1994}
   \endentry
 
+  \entry{Scott}{article}{}
+    \name{author}{2}{}{%
+      {{hash=SMH}{%
+         family={Scott},
+         familyi={S\bibinitperiod},
+         given={Michael\bibnamedelima H},
+         giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=FGL}{%
+         family={Fenves},
+         familyi={F\bibinitperiod},
+         given={Gregory\bibnamedelima L},
+         giveni={G\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \keyw{Beam columns,CE Database subject headings: Beam columns,Earthquake
+  engineering,Finite elements,Nonlinear analysis,Plastic hinges,Simulation
+  models,Simulation models. Introduction}
+    \strng{namehash}{SMHFGL1}
+    \strng{fullhash}{SMHFGL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{abstract}{%
+    A new plastic hinge integration method overcomes the problems with
+  nonobjective response caused by strain-softening behavior in force-based
+  beam-column finite elements. The integration method uses the common concept
+  of a plastic hinge length in a numerically consistent manner. The method,
+  derived from the Gauss-Radau quadrature rule, integrates deformations over
+  specified plastic hinge lengths at the ends of the beam-column element, and
+  it has the desirable property that it reduces to the exact solution for
+  linear problems. Numerical examples show the effect of plastic hinge
+  integration on the response of force-based beam-column elements for both
+  strain-hardening and strain-softening section behavior in the plastic hinge
+  regions. The incorporation of a plastic hinge length in the element
+  integration method ensures objective element and section response, which is
+  important for strain-softening behavior in reinforced concrete structures.
+  Plastic rotations are defined in a consistent manner and clearly related to
+  deformations in the plastic hinges.%
+    }
+    \verb{doi}
+    \verb 10.1061/ASCE0733-94452006132:2244
+    \endverb
+    \field{number}{2}
+    \field{pages}{244\bibrangedash 252}
+    \field{title}{{Plastic Hinge Integration Methods for Force-Based
+  Beam-Column Elements}}
+    \verb{url}
+    \verb https://ascelibrary.org/doi/pdf/10.1061/{\%}28ASCE{\%}290733-9445{\%}
+    \verb 282006{\%}29132{\%}3A2{\%}28244{\%}29
+    \endverb
+    \field{volume}{132}
+    \verb{file}
+    \verb :C$\backslash$:/Users/vacalder/AppData/Local/Mendeley Ltd./Mendeley D
+    \verb esktop/Downloaded/Scott, Fenves - Unknown - Plastic Hinge Integration
+    \verb  Methods for Force-Based Beam-Column Elements(2).pdf:pdf
+    \endverb
+    \field{journaltitle}{Journal of Structural Engineering}
+    \field{year}{2006}
+  \endentry
+
   \entry{Thoft-Christensen}{article}{}
     \name{author}{1}{}{%
       {{hash=TCP}{%
@@ -897,6 +1177,71 @@
     \endverb
     \field{journaltitle}{Journal of Bridge Engineering}
     \field{year}{2017}
+  \endentry
+
+  \entry{Zhao2007}{article}{}
+    \name{author}{2}{}{%
+      {{hash=ZJ}{%
+         family={Zhao},
+         familyi={Z\bibinitperiod},
+         given={Jian},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SS}{%
+         family={Sritharan},
+         familyi={S\bibinitperiod},
+         given={Sri},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \keyw{Bond,Column,Reinforced concrete,Strain,Wall}
+    \strng{namehash}{ZJSS1}
+    \strng{fullhash}{ZJSS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \field{abstract}{%
+    In flexural concrete members, strain penetration occurs along longitudinal
+  reinforcing bars that are fully anchored into connecting concrete members,
+  causing bar slips along a partial anchoring length and thus end rotations to
+  the flexural members at the connection intersections. Ignoring the strain
+  penetration in linear and nonlinear analyses. of concrete structures will
+  underestimate the deflections and member elongation, and overestimate the
+  stiffness, hysteretic energy dissipation capacities, strains, and section
+  curvature. Focusing on the member end rotation due to strain penetration
+  along reinforcing bars fully anchored in footings and bridge joints, this
+  paper introduces a hysteretic model for the reinforcing bar stress versus
+  slip response that can be integrated into fiber-based analysis of concrete
+  structures using a zero-length section element. The ability of the proposed
+  hysteretic model to capture the strain penetration effects is demonstrated by
+  simulating the measured global and local responses of two concrete columns
+  and a bridge T-joint system. Unless the strain penetration effects are
+  satisfactorily modeled, it is shown that the analysis of concrete structures
+  will appreciably underestimate the local response parameters that are used to
+  quantify structural damage.%
+    }
+    \verb{doi}
+    \verb 10.14359/18525
+    \endverb
+    \verb{eprint}
+    \verb arXiv:1011.1669v3
+    \endverb
+    \field{isbn}{0889-3241}
+    \field{issn}{08893241}
+    \field{number}{2}
+    \field{pages}{133\bibrangedash 141}
+    \field{title}{{Modeling of strain penetration effects in fiber-based
+  analysis of reinforced concrete structures}}
+    \field{volume}{104}
+    \verb{file}
+    \verb :C$\backslash$:/Users/vacalder/AppData/Local/Mendeley Ltd./Mendeley D
+    \verb esktop/Downloaded/Neuenhofer, Filippou - Unknown - EVALUATION OF NONL
+    \verb INEAR FRAME FINITE-ELEMENT MODELS.pdf:pdf
+    \endverb
+    \field{journaltitle}{ACI Structural Journal}
+    \field{eprinttype}{arXiv}
+    \field{year}{2007}
   \endentry
 \enddatalist
 \endinput

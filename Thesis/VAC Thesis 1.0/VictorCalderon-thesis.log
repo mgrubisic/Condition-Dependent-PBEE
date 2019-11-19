@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.22)  18 NOV 2019 12:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.22)  19 NOV 2019 17:03
 entering extended mode
 **./VictorCalderon-thesis.tex
 (VictorCalderon-thesis.tex
@@ -1628,25 +1628,50 @@ ine 571.
 
  (Chapter-5/Chapter-5.tex
 Chapter 5.
-
-LaTeX Warning: Reference `' on page 31 undefined on input line 6.
-
 [31
 
 
 
 ]
-<Chapter-5/figs/AnalysisFramework_01.pdf, id=321, 1107.85231pt x 470.6383pt>
+
+pdfTeX warning: pdflatex (file ./Chapter-5/figs/StructuralModel_01.pdf): PDF in
+clusion: found PDF version <1.6>, but at most version <1.5> allowed
+<Chapter-5/figs/StructuralModel_01.pdf, id=321, 794.97pt x 614.295pt>
+File: Chapter-5/figs/StructuralModel_01.pdf Graphic file (type pdf)
+<use Chapter-5/figs/StructuralModel_01.pdf>
+Package pdftex.def Info: Chapter-5/figs/StructuralModel_01.pdf  used on input l
+ine 20.
+(pdftex.def)             Requested size: 451.68752pt x 349.03635pt.
+<Chapter-5/figs/fbc_PlasticHinge.png, id=322, 1346.78156pt x 472.01344pt>
+File: Chapter-5/figs/fbc_PlasticHinge.png Graphic file (type png)
+<use Chapter-5/figs/fbc_PlasticHinge.png>
+Package pdftex.def Info: Chapter-5/figs/fbc_PlasticHinge.png  used on input lin
+e 27.
+(pdftex.def)             Requested size: 406.516pt x 142.4766pt.
+[32 <./Chapter-5/figs/StructuralModel_01.pdf>]
+
+pdfTeX warning: pdflatex (file ./Chapter-5/figs/StructuralModel_Section.pdf): P
+DF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<Chapter-5/figs/StructuralModel_Section.pdf, id=349, 792.92636pt x 382.74092pt>
+
+File: Chapter-5/figs/StructuralModel_Section.pdf Graphic file (type pdf)
+<use Chapter-5/figs/StructuralModel_Section.pdf>
+Package pdftex.def Info: Chapter-5/figs/StructuralModel_Section.pdf  used on in
+put line 36.
+(pdftex.def)             Requested size: 316.17987pt x 152.62059pt.
+[33 <./Chapter-5/figs/fbc_PlasticHinge.png> <./Chapter-5/figs/StructuralModel_S
+ection.pdf, page is rotated 180 degrees>] [34]
+<Chapter-5/figs/AnalysisFramework_01.pdf, id=413, 1107.85231pt x 470.6383pt>
 File: Chapter-5/figs/AnalysisFramework_01.pdf Graphic file (type pdf)
 <use Chapter-5/figs/AnalysisFramework_01.pdf>
 Package pdftex.def Info: Chapter-5/figs/AnalysisFramework_01.pdf  used on input
- line 24.
+ line 67.
 (pdftex.def)             Requested size: 406.516pt x 172.69717pt.
- [32 <./Chapter-5/figs/AnalysisFramework_01.pdf, page is rotated 90 degrees>] [
-33]) [34] [35
+ [35 <./Chapter-5/figs/AnalysisFramework_01.pdf, page is rotated 90 degrees>]) 
+[36] [37
 
 
-] [36] [37
+] [38] [39
 
 
 ]
@@ -1684,20 +1709,21 @@ Package pdftex.def Info: Chapter-5/figs/AnalysisFramework_01.pdf  used on input
 
 \openout2 = `Appendix-A/Appendix-A.aux'.
 
- (Appendix-A/Appendix-A.tex
+
+(Appendix-A/Appendix-A.tex
 Appendix A.
-[38
+[40
 
 
 
 
 ]
-<Chapter-2/figs/threed.pdf, id=358, 578.16pt x 433.62pt>
+<Chapter-2/figs/threed.pdf, id=448, 578.16pt x 433.62pt>
 File: Chapter-2/figs/threed.pdf Graphic file (type pdf)
 <use Chapter-2/figs/threed.pdf>
 Package pdftex.def Info: Chapter-2/figs/threed.pdf  used on input line 9.
 (pdftex.def)             Requested size: 271.01526pt x 203.25887pt.
- [39] [40 <./Chapter-2/figs/threed.pdf>]) [41]
+ [41] [42 <./Chapter-2/figs/threed.pdf>]) [43]
 
 AED: lastpage setting LastPage
 (VictorCalderon-thesis.aux (front.aux) (Chapter-1/Chapter-1.aux)
@@ -1716,11 +1742,11 @@ Package logreq Info: Writing requests to 'VictorCalderon-thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24075 strings out of 493303
- 452449 string characters out of 3138847
- 800579 words of memory out of 3000000
- 27052 multiletter control sequences out of 15000+200000
- 14842 words of font info for 53 fonts, out of 3000000 for 9000
+ 24123 strings out of 493303
+ 454149 string characters out of 3138847
+ 810376 words of memory out of 3000000
+ 27091 multiletter control sequences out of 15000+200000
+ 15010 words of font info for 54 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,12n,58p,1888b,1592s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\vacalder\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi6
@@ -1735,10 +1761,11 @@ lic/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl
 10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
 C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on VictorCalderon-thesis.pdf (49 pages, 2338970 bytes).
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on VictorCalderon-thesis.pdf (51 pages, 2782602 bytes).
 PDF statistics:
- 428 PDF objects out of 1000 (max. 8388607)
+ 521 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 108 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 123 words of extra memory for PDF output out of 10000 (max. 10000000)
 
