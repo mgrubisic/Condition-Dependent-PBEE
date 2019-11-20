@@ -3,17 +3,29 @@ In this chapter first a framework for the analysis that is performed is presente
 
 \section{Analytical Model}
 
-\subsection{Column}
-This study focuses on the behavior of a Single Degree of Freedom Reinforce Concrete Column. The column is modeled as a cantilever structure as shown in \fref{fig:Structural_Model} This structure is modeled in OpenSees \cite{McKenna2010} using the $forceBeamColumn$ element \cite{Scott}. The forceBeamColumn element is used with two-point Gauss-Radau integration applied in the hinge regions and two-point Gauss integration applied on the element interior for a total of six integration points \cite{Scott}. The force based formulation requires only a single element to accurately represent the full nonlinear deformation of the member and the integration scheme selected prevents the loss of objectivity during softening response while also providing integration points at the member ends \cite{Calabrese2010},\cite{Scott}. The element requires the length of plasticity be defined at each end of the member, for which the tension based rectangular plastic hinge length is calculated using the following expresion\cite{Goodnight2013}:
+\subsection{Cantilever Column}
+This study focuses on the behavior of a Single Degree of Freedom System representing a Cantilever Reinforced Concrete Column. The column is modeled as shown in \fref{fig:Structural_Model} This structure is modeled in OpenSeesPy \cite{McKenna2010}\cite{Zhu2018} using the $forceBeamColumn$ element \cite{Scott}. The forceBeamColumn element is used with two-point Gauss-Radau integration applied in the hinge regions and two-point Gauss integration applied on the element interior for a total of six integration points \cite{Scott}. The force based formulation requires only a single element to accurately represent the full nonlinear deformation of the member and the integration scheme selected prevents the loss of objectivity during softening response while also providing integration points at the member ends \cite{Calabrese2010},\cite{Scott}. The element requires the length of plasticity be defined at each end of the member, for which the tension based rectangular plastic hinge length is calculated using the following expressions \cite{Goodnight2013}:
 
 \begin{equation}
-    k=0.2*(Fu/Fy - 1) \leqslant 0.08
     L_{pc}=k*L_{eff} + 0.4D
-    \gamma=0.33 for Single Bending
+    \label{eq:LP_Comp}
+\end{equation}
+\begin{equation}
+	k=0.2*(Fu/Fy - 1) \leqslant 0.08
+	\label{eq:K_Lp}
+\end{equation}
+\begin{equation}
     L_{pt}=L_{pc}+\gamma*D
+    \label{eq:LP_Tension}
 \end{equation}
 
-Furthermore, the two-point Gauss-Radau integration is applied such that the end node integrations are weighted equal to the specified plastic hinge length, as illustrated in \fref{fig:Fiber_PlasticHinge}. Therefore, strains recorded at the end sections represent accurate values even in the case where deformation localizes to the ends from strain softening behavior. For the case of the cantilever column considered in this dissertation, only one hinge length is defined, and the opposite end is given an arbitrary unit length. 
+For Single Bending
+\begin{equation}
+    \gamma=0.33
+    \label{eq:Gamma_LPt}
+\end{equation}
+
+The two-point Gauss-Radau integration is applied such that each end node integration is weighted equal to the specified plastic hinge length, as illustrated in \fref{fig:Fiber_PlasticHinge}. Therefore, strains recorded at the end sections represent accurate values even in the case where deformation localizes to the ends from strain softening behavior. For the case of the cantilever column considered, only one plastic hinge length is defined, and the opposite end is given an arbitrary unit length. 
 
 \begin{figure}[htbp]
 	\centering
@@ -29,7 +41,7 @@ Furthermore, the two-point Gauss-Radau integration is applied such that the end 
 	\label{fig:Fiber_PlasticHinge}
 \end{figure}
 
-The section of the beam is shown in \fref{fig:ColumnSection} Two different sections are defined for use at the integration points within the element. Both sections are discretized with concrete and steel material fibers representing the geometry of the section. Concrete fibers are modeled using the $Concrete01$ material, modified for confined material strength based on the Mander confined concrete model \cite{Mander1988}. The $Steel02$ material, based on the Giuffre-Menegotto-Pinto model \cite{Filippou1983}, is used for the longitudinal reinforcement with recommended parameters ($b = 0.01, R0 = 20, cR1 = 0.925, cR2 = 0.15$). 
+The section of the column is shown in \fref{fig:ColumnSection}, the section is discretized with concrete and steel material fibers. Concrete fibers are modeled using the $Concrete01$ material, modified for confined material strength based on the Mander confined concrete model \cite{Mander1988}. The $Steel02$ material, based on the Giuffre-Menegotto-Pinto model \cite{Filippou1983} and it is used for the longitudinal reinforcement with recommended parameters ($b = 0.01, R0 = 20, cR1 = 0.925, cR2 = 0.15$). 
 
 \begin{figure}[htbp]
 	\centering
@@ -39,10 +51,31 @@ The section of the beam is shown in \fref{fig:ColumnSection} Two different secti
 \end{figure}
 
 \subsection{Strain Penetration Component}
-The strain penetration is model accoording to $Bond_SP1$ material model \cite{Zhao2007}
 
+The strain penetration is necessary to be considered to take into account the additional deformation due to anchorage of the reinforcement into the foundation, since the strains of tension in the reinforcement will drop to zero at a depth equal to the true development length of the rebar \cite{Priestley2007}. Experimental studies have generally reported that this end rotation contributes up to 35\% to the lateral deformation of flexural members\cite{Zhao2007} and it is therefore important to incorporate into the analytical model. A way to capture this effect is by using a zero-length section element implemented in nonlinear fiber-based analysis of concrete structures, this is available in the material library of OpenSeesPy as $Bond SP1$ \cite{Zhao2007} this is material model used for the steel fibers of the zero-length section element. 
+
+The required parameters for this model are:
+\begin{itemize}
+	\item $F_{y}$ Yield strength of the reinforcement steel
+	\item $S_{y}$ Rebar slip at member interface under yield stress (see \eref{eq.Rebar_Slip})
+	\item $F_{u}$ Ultimate strength of the reinforcement steel
+	\item $S_{u}$ Rebar slip at the loaded end at the bar fracture strength a value of $35 S_{y}$ is recommended \cite{Zhao2007}
+	\item $b$ Initial hardening ratio in the monotonic slip vs. bar stress response $b=0.45$ is recommended \cite{Zhao2007}
+	\item $R$ Pinching factor for the cyclic slip vs. bar response $R=1.01$ is recommended \cite{Zhao2007}
+	\item $d_b$ Rebar diameter
+	\item $f'c$ Concrete compressive strength of the adjoining connection member
+	\item $\alpha$ Parameter used in the local bond-slip relation and can be taken as $\alpha=0.4$ in accordance with CEB-FIP Model Code 90 
+\end{itemize}
+
+Bar slip is calculated as:
+\begin{equation}
+	S_{y}(in)=0.1\left(\frac{d_{b}F_{y}}{4000\sqrt{f'_{c}}}\left(2\alpha+1\right)\right)^{\frac{1}{\alpha}}+0.013 (in)
+	\label{eq.Rebar_Slip}
+\end{equation}
+\subsection{Design Limit States}
+\lipsum[1]
 \section{Comparison with existing physical Tests}
-\subsection{pristine Condition Columns}
+\subsection{Pristine Condition Columns}
 \lipsum[2]
 
 \subsection{Accelerated Corrosion Columns}
@@ -50,7 +83,7 @@ The strain penetration is model accoording to $Bond_SP1$ material model \cite{Zh
 
 \section{Analytical Framework}
 
-An overall analytical framework is stablished such that several analysis can be performed. From this analysis it is possible to determine the effects of damage in the performance of structures. The proposed analytical framework consists in:
+An overall analytical framework is established such that several analysis can be performed. From this analysis it is possible to determine the effects of damage in the performance of structures. The proposed analytical framework consists in:
 
 \begin{enumerate}
 	\item Geometrical Properties of the SDOF column 
@@ -60,7 +93,7 @@ An overall analytical framework is stablished such that several analysis can be 
 	\item Results are obtained and evaluated
 \end{enumerate}
 
-This procedure has been sumarized in the form of a flow chart presented in \fref{fig:NLTHA_Framework}
+This procedure has been summarized in the form of a flow chart presented in \fref{fig:NLTHA_Framework}
 
 \begin{figure}[htbp]
 	\centering
