@@ -73,7 +73,31 @@ Bar slip is calculated as:
 	\label{eq.Rebar_Slip}
 \end{equation}
 \subsection{Design Limit States}
-In Performance Based Design (PBD)philosophy different performance levels are defined such that design is controlled such that it is not exceeded for a given demand. 
+Design limit states are defined on the basis of strains in the material since they can more accurately represent the different performance level of a structure. Structure limit states are defined for tension strains in the rebars or compression strains in the concrete core. The values recommended in typical performance based design of reinforced concrete bridge columns are shown in \ref{tab:DesignLimitStates}. The serviceability limit states correspond to the compression strain at which concrete cover begins to crush and the peak tension strain which results in residual crack widths of approximately 1 mm. These limits are generally accepted as nominal limit states for RC members. The compression limit state for damage control is defined by the expresion shown in \ref{eq:ec_DamageControl} and it refers to the compression strain in the confined concrete at which fracture of the transverse reinforcement confining the core occurs \cite{Priestley2007}. This equation is obtain via a strain-energy balance between that absorbed by the confined core concrete and the capacity of the confining steel. The tension damage control limit state is defined by the strain at the onset of buckling which can be expressed according to \ref{eq:es_DamageControl}, this equation demonstrated accurate predictions of the onset of bar buckling on physical tests in SDOF Concrete Column \cite{Goodnight2016}.
+
+\begin{equation}
+    \varepsilon_{c,spiral yield}=0.009-0.3\frac{A_{st}}{A_{g}} +3.9\frac{f_{yhe}}{E_{s}}
+    \label{eq:ec_DamageControl}
+\end{equation}
+
+\begin{equation}
+    \varepsilon_{s,BB}=0.03+700\rho_{s}  \frac{f_{yhe}}{E_{s}} -0.1\frac{P}{f'_{c}A_{g}}
+    \label{eq:es_DamageControl}
+\end{equation}
+
+
+\begin{table}[htbp]
+	\caption{Design Limit States}
+	\label{tab:DesignLimitStates}
+	\centering	
+		\begin{tabular}{|l|c|c|}
+		\hline
+		\cellcolor[HTML]{CC0000}{\color[HTML]{FFFFFF}Limit State} & \cellcolor[HTML]{CC0000}{\color[HTML]{FFFFFF}Concrete Limit State $\varepsilon_{c} (in/in)$} & \cellcolor[HTML]{CC0000}{\color[HTML]{FFFFFF}Reinforcing Steel Limit State $\varepsilon_{s} (in/in)$}\\  \hline	
+		Serviciability       & 0.004                           & 0.015  \\  \hline	
+		Damage Control       & Eq. \ref{eq:ec_DamageControl}   & Eq. \ref{eq:es_DamageControl}\\  \hline
+		\end{tabular}
+\end{table}
+ 
 \section{Comparison with existing physical Tests}
 \subsection{Pristine Condition Columns}
 \lipsum[2]
@@ -106,9 +130,9 @@ This procedure has been summarized in the form of a flow chart presented in \fre
 \lipsum[4]
 \section{Results from NLTHA}
 \lipsum[5]
-\subsection{Effect on global response}
+\subsection{Effect on structure response}
 \lipsum[6]
-\subsection{Effect on local response}
+\subsection{Effect on material response}
 \lipsum[7]
 \subsection{Preliminary results}
 \lipsum[8]

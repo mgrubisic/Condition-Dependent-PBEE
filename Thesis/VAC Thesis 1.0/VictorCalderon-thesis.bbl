@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.1 $
+% $ biblatex bbl format version 2.9 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -227,6 +227,39 @@
     \field{volume}{14}
     \field{journaltitle}{Journal of Earthquake Engineering}
     \field{year}{2010}
+  \endentry
+
+  \entry{CEB1993}{book}{}
+    \name{author}{1}{}{%
+      {{hash=C}{%
+         family={{Comit{\'{e}} Euro-Intenational du Bet{\'{o}}n}},
+         familyi={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{C1}
+    \strng{fullhash}{C1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{abstract}{%
+    This design code for concrete structures is the result of a complete
+  revision to the former Model Code 1978, which was produced jointly by CEB and
+  FIP. The 1978 Model Code has had a considerable impact on the national design
+  codes in many countries. In particular, it has been used extensively for the
+  harmonisation of national design codes and as basic reference for Eurocode 2.
+  The 1990 Model Code provides comprehensive guidance to the scientific and
+  technical developments that have occurred over the past decade in the safety,
+  analysis and design of concrete structures. It has already influenced the
+  codification work that is being carried out both nationally and
+  internationally and will continue so to do%
+    }
+    \field{edition}{1st}
+    \field{title}{{CEB-FIP Model Code 90}}
+    \list{location}{1}{%
+      {London}%
+    }
+    \field{year}{1993}
   \endentry
 
   \entry{Filippou1983}{report}{}
@@ -464,6 +497,53 @@
     \field{volume}{18}
     \field{journaltitle}{Journal of Bridge Engineering}
     \field{year}{2013}
+  \endentry
+
+  \entry{Goodnight2016}{article}{}
+    \name{author}{3}{}{%
+      {{hash=GJC}{%
+         family={Goodnight},
+         familyi={G\bibinitperiod},
+         given={Jason\bibnamedelima C.},
+         giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=KMJ}{%
+         family={Kowalsky},
+         familyi={K\bibinitperiod},
+         given={Mervyn\bibnamedelima J.},
+         giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=NJM}{%
+         family={Nau},
+         familyi={N\bibinitperiod},
+         given={James\bibnamedelima M.},
+         giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GJCKMJNJM1}
+    \strng{fullhash}{GJCKMJNJM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{abstract}{%
+    Hierarchy of Effects [7 stages]--exposure, awareness, comprehension,
+  persuasion, behavior change (intent), behavior change (actual) -- each stage
+  reaches fewer and fewer people%
+    }
+    \verb{doi}
+    \verb 10.1193/030315EQS036M
+    \endverb
+    \field{isbn}{2012120717}
+    \field{issn}{87552930}
+    \field{title}{{Strain limit states for circular RC bridge columns}}
+    \verb{file}
+    \verb :C$\backslash$:/Users/vacalder/AppData/Local/Mendeley Ltd./Mendeley D
+    \verb esktop/Downloaded/Goodnight, Kowalsky, Nau - 2016 - Strain limit stat
+    \verb es for circular RC bridge columns.pdf:pdf
+    \endverb
+    \field{journaltitle}{Earthquake Spectra}
+    \field{year}{2016}
   \endentry
 
   \entry{Ma2012}{article}{}
@@ -847,7 +927,7 @@
     \name{author}{4}{}{%
       {{hash=RPJ}{%
          family={Restrepo-Posada},
-         familyi={R\bibinithyphendelim P\bibinitperiod},
+         familyi={R\bibinitperiod-P\bibinitperiod},
          given={J.I.},
          giveni={J\bibinitperiod},
       }}%
@@ -977,7 +1057,7 @@
     \name{author}{1}{}{%
       {{hash=TCP}{%
          family={Thoft-Christensen},
-         familyi={T\bibinithyphendelim C\bibinitperiod},
+         familyi={T\bibinitperiod-C\bibinitperiod},
          given={Palle},
          giveni={P\bibinitperiod},
       }}%
@@ -1067,19 +1147,19 @@
          family={Yang},
          familyi={Y\bibinitperiod},
          given={Shu-Yan},
-         giveni={S\bibinithyphendelim Y\bibinitperiod},
+         giveni={S\bibinitperiod-Y\bibinitperiod},
       }}%
       {{hash=SXB}{%
          family={Song},
          familyi={S\bibinitperiod},
          given={Xiao-Bing},
-         giveni={X\bibinithyphendelim B\bibinitperiod},
+         giveni={X\bibinitperiod-B\bibinitperiod},
       }}%
       {{hash=JHX}{%
          family={Jia},
          familyi={J\bibinitperiod},
          given={Hong-Xue},
-         giveni={H\bibinithyphendelim X\bibinitperiod},
+         giveni={H\bibinitperiod-X\bibinitperiod},
       }}%
       {{hash=CX}{%
          family={Chen},
@@ -1091,7 +1171,7 @@
          family={Liu},
          familyi={L\bibinitperiod},
          given={Xi-La},
-         giveni={X\bibinithyphendelim L\bibinitperiod},
+         giveni={X\bibinitperiod-L\bibinitperiod},
       }}%
     }
     \keyw{Circular stiffness,Corroded RC column,Ductility,Energy
