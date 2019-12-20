@@ -80,10 +80,14 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
     Fy = 60.0 * ksi * (1 - 0.021 * CLl)  # STEEL yield stress
     Fu = 1.375*Fy #Steel Ultimate Stress
     Es = 29000.0 * ksi  # modulus of steel
-    Bs = 0.01  # strain-hardening ratio
+    Bs = 0.012  # strain-hardening ratio
     R0 = 20.0  # control the transition from elastic to plastic branches
-    cR1 = 0.925  # control the transition from elastic to plastic branches
-    cR2 = 0.15  # control the transition from elastic to plastic branches
+    cR1 = 0.90  # control the transition from elastic to plastic branches
+    cR2 = 0.08  # control the transition from elastic to plastic branches
+    a1=0.039
+    a2=1
+    a3=0.029
+    a4=1.0
     c = cover * cm  # Column cover to reinforcing steel NA.
     numBarsSec = 16  # number of uniformly-distributed longitudinal-reinforcement bars
     barAreaSec = Ablc * mm2  # area of longitudinal-reinforcement bars
@@ -129,7 +133,7 @@ def Build_RC_Column(dbi,dti,CLl,dblc, cover, Ablc, CLt, Atc, dbtc, datadir,PCol,
     # Reinforcing steel 
     params = [R0, cR1, cR2]
     #                        tag  fy E0    b
-    uniaxialMaterial('Steel02', IDreinf, Fy, Es, Bs, R0, cR1, cR2)
+    uniaxialMaterial('Steel02', IDreinf, Fy, Es, Bs,params,a1,a2,a3,a4)
     
     
     # STRAIN PENETRATION MATERIAL
