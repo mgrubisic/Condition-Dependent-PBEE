@@ -358,6 +358,9 @@ for xdisp in disp:
     u3 = nodeDisp(3, 1)
     print(u3)
 
+
+plot_model()
+
 #Force Displacement Plot
 #    
 #    
@@ -384,19 +387,19 @@ for xdisp in disp:
 
 # Steel Stress Strain Analysis
 
-
-SteelStressStrain=open("StressStrain.out")
-linesSteelStressStrain=SteelStressStrain.readlines()
-StlStress=[line.split()[1] for line in linesSteelStressStrain]
-StlStrain=[line.split()[2] for line in linesSteelStressStrain]
-sigmaStl=[float(i) for i in StlStress]
-epsilonStl=[float(i) for i in StlStrain]
-
-plt.figure(2)
-plt.plot(epsilonStl,sigmaStl)
-plt.title('Example of Steel Response for ChiChi EQ w/c=0.4', fontsize=32)
-plt.xlabel('strain (in/in)', fontsize=24)
-plt.ylabel('Stress (ksi)', fontsize=24)
-plt.tick_params(direction='out',axis='both',labelsize=20)
-plt.grid()
-plt.show()
+#
+#SteelStressStrain=open("StressStrain.out")
+#linesSteelStressStrain=SteelStressStrain.readlines()
+#StlStress=[line.split()[1] for line in linesSteelStressStrain]
+#StlStrain=[line.split()[2] for line in linesSteelStressStrain]
+#sigmaStl=[float(i) for i in StlStress]
+#epsilonStl=[float(i) for i in StlStrain]
+#
+#plt.figure(2)
+#plt.plot(epsilonStl,sigmaStl)
+#plt.title('Example of Steel Response for ChiChi EQ w/c=0.4', fontsize=32)
+#plt.xlabel('strain (in/in)', fontsize=24)
+#plt.ylabel('Stress (ksi)', fontsize=24)
+#plt.tick_params(direction='out',axis='both',labelsize=20)
+#plt.grid()
+#plt.show()
