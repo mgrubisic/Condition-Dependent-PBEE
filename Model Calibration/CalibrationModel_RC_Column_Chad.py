@@ -4,7 +4,7 @@ Created on Mon Apr 22 15:12:06 2019
 
 @author: pchi893
 """
-
+from Get_Rendering import *
 from openseespy.opensees import *
 # import the os module
 #    import os
@@ -211,6 +211,8 @@ ColIntTag=1
 beamIntegration('HingeRadau', ColIntTag, ColSecTag, Lpt, ColSecTag, 1e-10, ColSecTag)
 element('forceBeamColumn', ColeleTag, 2, 3, ColTransfTag, ColIntTag, '-mass', 0.0)
 
+plot_model()
+
 # Setting Recorders
 
 
@@ -359,7 +361,7 @@ for xdisp in disp:
     print(u3)
 
 
-plot_model()
+
 
 #Force Displacement Plot
 #    
