@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 2.9 $
+% $ biblatex bbl format version 3.1 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -927,7 +927,7 @@
     \name{author}{4}{}{%
       {{hash=RPJ}{%
          family={Restrepo-Posada},
-         familyi={R\bibinitperiod-P\bibinitperiod},
+         familyi={R\bibinithyphendelim P\bibinitperiod},
          given={J.I.},
          giveni={J\bibinitperiod},
       }}%
@@ -1057,7 +1057,7 @@
     \name{author}{1}{}{%
       {{hash=TCP}{%
          family={Thoft-Christensen},
-         familyi={T\bibinitperiod-C\bibinitperiod},
+         familyi={T\bibinithyphendelim C\bibinitperiod},
          given={Palle},
          giveni={P\bibinitperiod},
       }}%
@@ -1147,19 +1147,19 @@
          family={Yang},
          familyi={Y\bibinitperiod},
          given={Shu-Yan},
-         giveni={S\bibinitperiod-Y\bibinitperiod},
+         giveni={S\bibinithyphendelim Y\bibinitperiod},
       }}%
       {{hash=SXB}{%
          family={Song},
          familyi={S\bibinitperiod},
          given={Xiao-Bing},
-         giveni={X\bibinitperiod-B\bibinitperiod},
+         giveni={X\bibinithyphendelim B\bibinitperiod},
       }}%
       {{hash=JHX}{%
          family={Jia},
          familyi={J\bibinitperiod},
          given={Hong-Xue},
-         giveni={H\bibinitperiod-X\bibinitperiod},
+         giveni={H\bibinithyphendelim X\bibinitperiod},
       }}%
       {{hash=CX}{%
          family={Chen},
@@ -1171,7 +1171,7 @@
          family={Liu},
          familyi={L\bibinitperiod},
          given={Xi-La},
-         giveni={X\bibinitperiod-L\bibinitperiod},
+         giveni={X\bibinithyphendelim L\bibinitperiod},
       }}%
     }
     \keyw{Circular stiffness,Corroded RC column,Ductility,Energy

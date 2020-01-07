@@ -1,101 +1,101 @@
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{LIST OF TABLES}{iv}
+\contentsline {chapter}{LIST OF TABLES}{iv}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{LIST OF FIGURES}{v}
+\contentsline {chapter}{LIST OF FIGURES}{v}% 
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {1}INTRODUCTION}{1}
+\contentsline {chapter}{\numberline {1}INTRODUCTION}{1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Motivation}{2}
+\contentsline {section}{\numberline {1.1}Motivation}{2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Scope and layout}{2}
+\contentsline {section}{\numberline {1.2}Scope and layout}{2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}LITERATURE REVIEW}{3}
+\contentsline {chapter}{\numberline {2}LITERATURE REVIEW}{3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Cumulative Damage}{3}
+\contentsline {section}{\numberline {2.1}Cumulative Damage}{3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.1}Damage Index}{3}
+\contentsline {subsection}{\numberline {2.1.1}Damage Index}{3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.2}Fragility Curves}{3}
+\contentsline {subsection}{\numberline {2.1.2}Fragility Curves}{3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Study Gap}{4}
+\contentsline {chapter}{\numberline {3}Study Gap}{4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Research Gap}{4}
+\contentsline {section}{\numberline {3.1}Research Gap}{4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Objectives}{4}
+\contentsline {section}{\numberline {3.2}Objectives}{4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {3.2.0.0.1}Filler Text}{4}
+\contentsline {paragraph}{\numberline {3.2.0.0.1}Filler Text}{4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Methodology}{7}
+\contentsline {chapter}{\numberline {4}Methodology}{7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Corrosion}{7}
+\contentsline {section}{\numberline {4.1}Corrosion}{7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.1}Time to Corrosion}{9}
+\contentsline {subsection}{\numberline {4.1.1}Time to Corrosion}{9}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.2}Rate of corrosion}{11}
+\contentsline {subsection}{\numberline {4.1.2}Rate of corrosion}{11}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.3}Corrosion modified properties of reinforcing steel bars}{15}
+\contentsline {subsection}{\numberline {4.1.3}Corrosion modified properties of reinforcing steel bars}{15}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.4}Physical test on corroded RC Structures}{15}
+\contentsline {subsection}{\numberline {4.1.4}Physical test on corroded RC Structures}{15}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.5}Proposed Experimental campaign}{17}
+\contentsline {subsection}{\numberline {4.1.5}Proposed Experimental campaign}{17}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.6}Modeling of corrosion for Structural Analysis}{22}
+\contentsline {subsection}{\numberline {4.1.6}Modeling of corrosion for Structural Analysis}{22}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Steel Strain Aging}{24}
+\contentsline {section}{\numberline {4.2}Steel Strain Aging}{24}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.1}Metallurgical Process}{24}
+\contentsline {subsection}{\numberline {4.2.1}Metallurgical Process}{24}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}Strain aging effects in structures}{25}
+\contentsline {subsection}{\numberline {4.2.2}Strain aging effects in structures}{25}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Multiple Seismic Events}{27}
+\contentsline {section}{\numberline {4.3}Multiple Seismic Events}{27}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}Earthquake Selection}{27}
+\contentsline {subsection}{\numberline {4.3.1}Earthquake Selection}{27}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.2}Discrete Modeling of Main Shock Series}{29}
+\contentsline {subsection}{\numberline {4.3.2}Discrete Modeling of Main Shock Series}{29}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.3}Multiple Main Shock Series}{29}
+\contentsline {subsection}{\numberline {4.3.3}Multiple Main Shock Series}{29}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Future Topics}{30}
+\contentsline {section}{\numberline {4.4}Future Topics}{30}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Analytical Model and Preliminary Results}{31}
+\contentsline {chapter}{\numberline {5}Analytical Model and Preliminary Results}{31}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Analytical Model}{31}
+\contentsline {section}{\numberline {5.1}Analytical Model}{31}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.1}Cantilever Column}{31}
+\contentsline {subsection}{\numberline {5.1.1}Cantilever Column}{31}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.2}Strain Penetration Component}{32}
+\contentsline {subsection}{\numberline {5.1.2}Strain Penetration Component}{32}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.3}Design Limit States}{34}
+\contentsline {subsection}{\numberline {5.1.3}Design Limit States}{34}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Comparison with existing physical Tests}{35}
+\contentsline {section}{\numberline {5.2}Comparison with existing physical Tests}{35}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.1}Pristine Condition Columns}{35}
+\contentsline {subsection}{\numberline {5.2.1}Pristine Condition Columns}{35}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.2}Accelerated Corrosion Columns}{36}
+\contentsline {subsection}{\numberline {5.2.2}Accelerated Corrosion Columns}{36}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Analytical Framework}{36}
+\contentsline {section}{\numberline {5.3}Analytical Framework}{36}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}Earthquake selection}{36}
+\contentsline {section}{\numberline {5.4}Earthquake selection}{36}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.5}Results from NLTHA}{37}
+\contentsline {section}{\numberline {5.5}Results from NLTHA}{37}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.5.1}Effect on structure response}{37}
+\contentsline {subsection}{\numberline {5.5.1}Effect on structure response}{37}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.5.2}Effect on material response}{38}
+\contentsline {subsection}{\numberline {5.5.2}Effect on material response}{37}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.5.3}Preliminary results}{38}
+\contentsline {subsection}{\numberline {5.5.3}Preliminary results}{38}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{{\uppercase {Bibliography}}}{39}
+\contentsline {chapter}{{\uppercase {Bibliography}}}{39}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{APPENDIX}{41}
+\contentsline {chapter}{APPENDIX}{41}% 
 \defcounter {refsection}{0}\relax 
  \renewcommand {\cftchappresnum }{Appendix } \renewcommand {\cftchapnumwidth }{\appendixwidth } \renewcommand {\cftchapfont }{\cftsecfont } \setlength {\cftbeforechapskip }{\cftbeforesecskip } \setlength {\cftchapindent }{\cftsecindent } \renewcommand {\cftchappagefont }{\cftchapfont } \setlength {\cftsecindent }{\cftsubsecindent } \addtolength {\cftsubsecindent }{\cftsecnumwidth } \setcounter {tocdepth}{\c@ncsu@appendixtocdepth } 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}LOREM IPSUM}{42}
+\contentsline {chapter}{\numberline {A}LOREM IPSUM}{42}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}A First Section}{42}
+\contentsline {section}{\numberline {A.1}A First Section}{42}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {A.1.0.0.1}Filler Text}{42}
+\contentsline {paragraph}{\numberline {A.1.0.0.1}Filler Text}{42}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}A Second Section}{45}
+\contentsline {section}{\numberline {A.2}A Second Section}{45}% 

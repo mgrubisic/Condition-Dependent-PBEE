@@ -79,10 +79,14 @@ IDSP    = 4  # material ID tag -- Strain Penetration
 Fy = 574.0 * MPa  # STEEL yield stress
 Fu = 753.3 * MPa  # Steel Ultimate Stress
 Es = 160000.0 * MPa  # modulus of steel
-Bs = 0.01  # strain-hardening ratio
+Bs = 0.012  # strain-hardening ratio
 R0 = 20.0  # control the transition from elastic to plastic branches
-cR1 = 0.925  # control the transition from elastic to plastic branches
-cR2 = 0.15  # control the transition from elastic to plastic branches
+cR1 = 0.9  # control the transition from elastic to plastic branches
+cR2 = 0.08  # control the transition from elastic to plastic branches
+a1=0.039
+a2=1.0
+a3=0.029
+a4=1.0
 c = 1.25 * inch  # Column cover to reinforcing steel NA.
 numBarsSec = 16  # number of uniformly-distributed longitudinal-reinforcement bars
 barAreaSec = 0.60 * in2  # area of longitudinal-reinforcement bars
@@ -128,7 +132,7 @@ uniaxialMaterial('Concrete01', IDconcU, fc1U, eps1U, fc2U, eps2U)
 # Reinforcing steel 
 params = [R0, cR1, cR2]
 #                        tag  fy E0    b
-uniaxialMaterial('Steel02', IDreinf, Fy, Es, Bs, R0, cR1, cR2)
+uniaxialMaterial('Steel02', IDreinf, Fy, Es, Bs,R0, cR1, cR2, a1, a2, a3, a4)
 
 
 # STRAIN PENETRATION MATERIAL
@@ -211,7 +215,7 @@ ColIntTag=1
 beamIntegration('HingeRadau', ColIntTag, ColSecTag, Lpt, ColSecTag, 1e-10, ColSecTag)
 element('forceBeamColumn', ColeleTag, 2, 3, ColTransfTag, ColIntTag, '-mass', 0.0)
 
-plot_model()
+#plot_model()
 
 # Setting Recorders
 
@@ -262,7 +266,7 @@ algorithm('Newton') # use Newton's solution algorithm: updates tangent stiffness
 dy = 1.05 * inch
 dy1 = 0.78 * inch
 ddmax=6
-nIncres=100
+nIncres=500
 FracStr=0.3
 stDisp=0.
 pdisp=[]
@@ -364,31 +368,31 @@ for xdisp in disp:
 
 
 #Force Displacement Plot
-#    
-#    
-#d=open("DFree.out")
-#F=open("RBase.out")
-#
-#
-#linesd = d.readlines()
-#linesf = F.readlines()
-#x = [line.split()[1] for line in linesd]
-#y = [line.split()[-1] for line in linesf]
-#
-#X=[float(i) for i in x]
-#Y=[float(i) for i in y]
-#
-#plt.figure(1)    
-#plt.plot(X,Y)
-#plt.title('Example for ChiChi EQ w/c=0.4', fontsize=32)
-#plt.xlabel('Diplacement (in)', fontsize=24)
-#plt.ylabel('BaseShear (kip)', fontsize=24)
-#plt.tick_params(direction='out',axis='both',labelsize=20)
-#plt.grid()
-#plt.show()
+    
+    
+d=open("DFree.out")
+F=open("RBase.out")
 
-# Steel Stress Strain Analysis
 
+linesd = d.readlines()
+linesf = F.readlines()
+x = [line.split()[1] for line in linesd]
+y = [line.split()[0] for line in linesf]
+
+X=[float(i) for i in x]
+Y=[float(i) for i in y]
+
+plt.figure(2)    
+plt.plot(X,Y[0:24889])
+plt.title('Example for ChiChi EQ w/c=0.4', fontsize=32)
+plt.xlabel('Diplacement (in)', fontsize=24)
+plt.ylabel('BaseShear (kip)', fontsize=24)
+plt.tick_params(direction='out',axis='both',labelsize=20)
+plt.grid()
+plt.show()
+
+##Steel Stress Strain Analysis
+#
 #
 #SteelStressStrain=open("StressStrain.out")
 #linesSteelStressStrain=SteelStressStrain.readlines()
